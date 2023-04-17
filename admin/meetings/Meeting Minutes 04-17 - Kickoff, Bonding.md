@@ -16,6 +16,7 @@
 * Create Github Organization and Repo
 * Discussion about branding
 * Wrap-up, Looking Ahead, Ground rules
+* Post-meeting bonding
 
 ## Meeting Minutes Markdown
 
@@ -42,3 +43,7 @@ We also attempted to get a preliminary skeleton of ground rules, to later be ada
 * Communciate if something comes up. Stuff happens, but try to let everyone know when it does.
 * Aim for at least a 24-hour notice for meetings: if the notice is given, we can start on time and need not wait.
 * Do in-person meetings whenever possible-- shorter meetings may warrant zoom, but longer coding sessions should typically be in-person.
+
+## Post-meeting bonding
+
+Afterwards, we played skribbl.io
