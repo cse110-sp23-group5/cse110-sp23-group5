@@ -18,6 +18,10 @@ We can add an image of the logo, like ![Powellpoint Pundits logo](/link/to/image
 
 #### Joseph Del Val
 
+I'm a developer for this project!
+
+Here's a link to my [personal github page!](https://jtdelval.github.io/)
+
 #### Abhimanyu Srivastava
 
 #### Julia Poon
