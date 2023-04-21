@@ -1,0 +1,12 @@
+{
+  "responses": [
+    "Yes.",
+    "No.",
+    "Maybe.",
+    "It is certain.",
+    "Cannot predict now.",
+    "Ask again later.",
+    "Outlook not so good.",
+    "Don't count on it."
+  ]
+}
