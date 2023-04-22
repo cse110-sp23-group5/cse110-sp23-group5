@@ -10,10 +10,7 @@ function loadResponses(selectedCharacter) {
 
 // returns a random answer from the responses array
 function getAnswer() {
-  
-
-  // questionInput is not used as of now
-  //const questionInput = document.getElementById('question-input');
+  const questionInput = document.getElementById('question-input');
   const answerOutput = document.getElementById('answer');
   
   // error handling if responses isn't loaded
@@ -28,6 +25,11 @@ function getAnswer() {
 
   // pick random response and set answer after audio stops playing
   audio.addEventListener('ended', () => {
+
+    if (questionInput.value === "") {
+      answerOutput.innerHTML = "Please ask a question.";
+      return;
+    }
     const randomResponse = responses[Math.floor(Math.random() * responses.length)];
     answerOutput.innerHTML = randomResponse;
   });
