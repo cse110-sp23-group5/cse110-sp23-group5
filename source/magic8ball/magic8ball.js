@@ -36,7 +36,16 @@ function getAnswer() {
   
 
 }
+// event listener for shake button
+function shakeBall() {
+  const ballContainer = document.getElementById('eight-ball-container');
+  ballContainer.classList.add('shaking');
 
+  // Remove the "shaking" class after the animation has completed 750ms
+  setTimeout(() => {
+    ballContainer.classList.remove('shaking');
+  }, 750);
+}
 let responses = [];
 
 // event listener for character selection
@@ -47,3 +56,4 @@ characterSelect.addEventListener("change", () => {
 
 loadResponses(characterSelect.value);
 let audio = document.getElementById("myAudio")
+
