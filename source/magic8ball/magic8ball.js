@@ -10,6 +10,8 @@ function loadResponses(selectedCharacter) {
 
 // returns a random answer from the responses array
 function getAnswer() {
+  
+
   // questionInput is not used as of now
   //const questionInput = document.getElementById('question-input');
   const answerOutput = document.getElementById('answer');
@@ -20,9 +22,17 @@ function getAnswer() {
     return;
   }
   
-  // pick random response and set answer
-  const randomResponse = responses[Math.floor(Math.random() * responses.length)];
-  answerOutput.innerHTML = randomResponse;
+  // Effects
+  answerOutput.innerHTML = "";
+  audio.play();
+
+  // pick random response and set answer after audio stops playing
+  audio.addEventListener('ended', () => {
+    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+    answerOutput.innerHTML = randomResponse;
+  });
+  
+
 }
 
 let responses = [];
@@ -33,4 +43,5 @@ characterSelect.addEventListener("change", () => {
   loadResponses(characterSelect.value);
 });
 
-loadResponses("default");
+loadResponses(characterSelect.value);
+let audio = document.getElementById("myAudio")
