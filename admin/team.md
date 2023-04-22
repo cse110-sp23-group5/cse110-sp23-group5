@@ -3,6 +3,9 @@
 ## About the Team Brand
 
 ![Powellpoint Pundits logo](branding/PowellPointPundits.png)
+Since Powell doesn't go a lecture without mentioning soccer in his slides, 
+our brand is based around a pun of "Powell" and "Powerpoint",
+and the brand image is a Powerpoint themed soccer ball.
 ## Our Values
 
 Teamwork, Communication, Hardwork, and Fun!
