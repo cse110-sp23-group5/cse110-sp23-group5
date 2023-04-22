@@ -1,11 +1,9 @@
-let responses = [];
-
 //get responses from json file
-function loadResponses() {
+function loadResponses(selectedCharacter) {
   fetch('responses.json')
     .then(response => response.json())
     .then(data => {
-      responses = data.responses;
+      responses = data[selectedCharacter];
     })
     .catch(error => console.error(error));
 }
@@ -27,4 +25,12 @@ function getAnswer() {
   answerOutput.innerHTML = randomResponse;
 }
 
-loadResponses();
+let responses = [];
+
+// event listener for character selection
+const characterSelect = document.getElementById("character-select");
+characterSelect.addEventListener("change", () => {
+  loadResponses(characterSelect.value);
+});
+
+loadResponses("default");

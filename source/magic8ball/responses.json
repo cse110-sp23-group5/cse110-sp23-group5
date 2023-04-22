@@ -1,5 +1,5 @@
 {
-  "responses": [
+  "default": [
     "Yes.",
     "No.",
     "Maybe.",
@@ -8,5 +8,22 @@
     "Ask again later.",
     "Outlook not so good.",
     "Don't count on it."
+  ],
+  "powell": [
+    "The father of software engineering tweeted no.",
+    "I think the kids these days would think your question is sussy.",
+    "Have you looked at my 100+ slide deck?",
+    "You have to be able to live with uncertainty as a software engineer.",
+    "You should ask your users.",
+    "Yikes a skateboard! Ask again later."
+  ],
+  "batman": [
+    "I am vengeance. I am the night. I am Batman.",
+    "It's not who I am underneath, but what I do that defines me.",
+    "I have one power. I never give up.",
+    "Sometimes the truth isn't good enough, sometimes people deserve more.",
+    "It's not about what I want, it's about what's fair!",
+    "The training is nothing! The will is everything! The will to act.",
+    "I won't kill you, but I don't have to save you."
   ]
 }

@@ -8,9 +8,17 @@
   <body>
       <h1>Magic 8 Ball</h1>
       <p>Ask a question:</p>
+      <select id="character-select">
+        <option value="default">Default</option>
+        <option value="powell">Powell</option>
+        <option value="batman">Batman</option>
+      </select>
       <input type="text" id="question-input">
-      <button onclick="getAnswer()">Shake</button>
-      <p id="answer"></p>
+      <button onclick="getAnswer()">Shake</button><br>
+      <div id="eight-ball-container" style="position: relative;">
+        <img src="8-ball.png" style="position: relative;">
+        <p id="answer" >Ask me a Question!</p>
+      </div>
     <script src="magic8ball.js"></script>
   </body>
 </html>

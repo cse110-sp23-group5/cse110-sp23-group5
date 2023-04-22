@@ -4,3 +4,17 @@ body {
     background-color: black;
     text-align: center; 
 }
+
+#answer {
+    position: absolute; 
+    top: 45%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+
+    word-wrap: break-word;
+    width: 100px;
+}
+
+#eight-ball-container {
+    padding-top: 20px;
+}
