@@ -27,7 +27,7 @@ Here's a link to my [personal github page!](https://github.com/ZhouYuantian)
 #### Joseph Del Val
 I'm a developer for this project!
 I enjoy writing, literature, and film.
-Here's a link to my [personal github page!](https://jtdelval.github.io/)
+Here's a link to my [personal github page!](https://github.com/jtdelval)
 
 #### Abhimanyu Srivastava
 I'm a developer for this project!
