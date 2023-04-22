@@ -12,8 +12,9 @@ Responses is an array that contains the responses.
 The loadresponses() function loads the responses from the json file into the responses array.
 It takes in a string that represents the character to be loaded.
 The getAnswer() function chooses a random response from the responses array for the loaded character
- and changes the internal html of the answer element to contain the answer.
- It plays audio and clears the screen before changing the response.
+and changes the internal html of the answer element to contain the answer.
+It plays audio and clears the screen before changing the response.
+It also replies with "Please ask a question" if no question is asked.
 
 # responses.json
 This is a json that contains the responses the 8 ball can give for each character.
