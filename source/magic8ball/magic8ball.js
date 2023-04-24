@@ -57,4 +57,12 @@ characterSelect.addEventListener("change", () => {
 loadResponses(characterSelect.value);
 let audio = document.getElementById("myAudio");
 
-bgm.volume = 0.3;
+// volume for background music
+bgm.volume = 0.2;
+
+function playBGM() {
+  bgm.play();
+}
+function pauseBGM() {
+  bgm.pause();
+}
