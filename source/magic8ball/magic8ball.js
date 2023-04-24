@@ -55,5 +55,6 @@ characterSelect.addEventListener("change", () => {
 });
 
 loadResponses(characterSelect.value);
-let audio = document.getElementById("myAudio")
+let audio = document.getElementById("myAudio");
 
+bgm.volume = 0.3;
