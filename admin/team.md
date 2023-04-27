@@ -18,7 +18,7 @@ Here's a link to my [personal github page!](https://github.com/AndrewOnozuka)
 
 #### Vivin Vinil
 I'm a teamlead!
-I enjoy sailing, and listening to Classsic Rock
+I enjoy sailing, and listening to Classsic Rock.
 Here's a link to my [personal github page!](https://github.com/vivin2709)
 
 #### Yuantian Zhou
