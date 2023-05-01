@@ -50,3 +50,9 @@ Monday, May 1st, 2023 from 1:15 pm - 2:00 pm. Hosted on Zoom.
   - Explain how it's a CRUD app
   - User centered design
   - Small, specific, focused 
+## Finalised plan 
+- Key Features  - Horoscope app 
+- Take in Birthday and mood/bias/response type 
+- Return Horoscope 
+- Change daily and have an extensive response bank
+- Additional features to be added as and when we decide. 
