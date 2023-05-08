@@ -56,7 +56,7 @@ Our solution is to make a horoscope app that solves the previously mentioned pro
 - Minimalistic UI
 
 ### Wireframe
-See ![wireframe](../interface/wireframes/wireframes.png)
+See ![wireframe](/../interface/wireframes/wireframes.png)
 
 ### Technical Details
 Inputs: user information (birthday, birth location, etc.), category selection
