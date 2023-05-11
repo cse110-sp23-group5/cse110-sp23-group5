@@ -1,0 +1,62 @@
+/*
+* CSS file for horoscope.html
+*/
+
+
+/* ELEMENT SELECTORS */
+body {
+    font-family: Arial, sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+/* CLASS SELECTORS */
+.flex-column {
+    display:flex;
+    flex-direction:column;
+    flex: 1;
+    align-items: center;
+}
+
+/* ID SELECTORS */
+/* in Profile */
+#profiles {
+    background-color: grey;
+}
+
+/* in Interface */
+#interface {
+    background-color: darkgrey;
+}
+
+#user-form {
+    flex: 1;
+}
+
+#sign-image {
+    max-width: 100%;
+    height: auto;
+    flex: 1;
+}
+
+#sign-display {
+    flex: 1;
+}
+
+/* in Output */
+#output {
+    flex: 1;
+    background-color: dimgray;
+}
+#horoscope-fortune {
+    flex: 1;
+}
+
+
+
+
+

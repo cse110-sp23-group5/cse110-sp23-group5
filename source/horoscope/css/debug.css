@@ -1,0 +1,22 @@
+/*
+* CSS file that adds colors for each element for debugging
+*/
+
+#user-form {
+    background-color: red;
+}
+#sign-display {
+    background-color: orange;
+}
+#date-display {
+    background-color: blue;
+}
+#horoscope-fortune {
+    flex: 1;
+    background-color: purple;
+}
+
+
+
+
+
