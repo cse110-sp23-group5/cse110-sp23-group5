@@ -24,11 +24,13 @@ function init() {
 
         // Find the correct sign object.
         // Date is 1 day off when printing to console because of time zone conversions.
-        // This doesn't matter though because all the dates have the same conversion.
         const date = new Date(dateString); 
+        const year = dateString.substring(0,4);
+        console.log(date);
+
         const matchingSign = zodiacSigns.find(sign => {
-            const start = new Date(`${date.getFullYear()}-${sign.start}`).getTime();
-            const end = new Date(`${date.getFullYear()}-${sign.end}`).getTime();
+            const start = new Date(`${year}-${sign.start}`).getTime();
+            const end = new Date(`${year}-${sign.end}`).getTime();
             const birthdayTime = date.getTime();
             return (birthdayTime >= start && birthdayTime <= end);
           });
