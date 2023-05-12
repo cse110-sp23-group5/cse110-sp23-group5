@@ -4,38 +4,37 @@ function init() {
     let submit = document.getElementById('submit');
 
     // date to horoscope
-    function date_to_horoscope(d) {
-        //split, take month and day
-        const dateArray = d.split('-');
-        let month = parseInt(dateArray[1]);
-        let day = parseInt(dateArray[2]);
-        let sign = "Capricorn";
+    function date_to_horoscope(dateString) {
+        // Array of signs. Capricorn is repeated since it crosses the new year
+        const zodiacSigns = [
+            { name: "Capricorn", start: "01-01", end: "01-19" },
+            { name: "Aquarius", start: "01-20", end: "02-18" },
+            { name: "Pisces", start: "02-19", end: "03-20" },
+            { name: "Aries", start: "03-21", end: "04-19" },
+            { name: "Taurus", start: "04-20", end: "05-20" },
+            { name: "Gemini", start: "05-21", end: "06-20" },
+            { name: "Cancer", start: "06-21", end: "07-22" },
+            { name: "Leo", start: "07-23", end: "08-22" },
+            { name: "Virgo", start: "08-23", end: "09-22" },
+            { name: "Libra", start: "09-23", end: "10-22" },
+            { name: "Scorpio", start: "10-23", end: "11-21" },
+            { name: "Sagittarius", start: "11-22", end: "12-21" },
+            { name: "Capricorn", start: "12-22", end: "12-31" },
+        ];
 
-        // Is there a better way to do this?
-        if (((month == 12) && (day<22)) || ((month==11) && (day>21))){
-            sign = "Sagittarius";
-        } else if (((month == 11) && (day<22)) || ((month==10) && (day>22))){
-            sign = "Scorpio"; 
-        } else if (((month == 10) && (day<23)) || ((month==9) && (day>22))){
-            sign = "Libra";
-        } else if (((month == 9) && (day<23)) || ((month==8) && (day>22))){
-            sign = "Virgo";
-        } else if (((month == 8) && (day<23)) || ((month==7) && (day>22))){
-            sign = "Leo";
-        } else if (((month == 7) && (day<23)) || ((month==6) && (day>20))){
-            sign = "Cancer";
-        } else if (((month == 6) && (day<21)) || ((month==5) && (day>20))){
-            sign = "Gemini";
-        } else if (((month == 5) && (day<21)) || ((month==4) && (day>19))){
-            sign = "Taurus";
-        } else if (((month == 4) && (day<20)) || ((month==3) && (day>20))){
-            sign = "Aries";
-        } else if (((month == 3) && (day<21)) || ((month==2) && (day>18))){
-            sign = "Pisces";
-        } else if (((month == 2) && (day<19)) || ((month==1) && (day>19))){
-            sign = "Aquarius";
-        }
-        return sign;
+        // Find the correct sign object.
+        // Date is 1 day off when printing to console because of time zone conversions.
+        // This doesn't matter though because all the dates have the same conversion.
+        const date = new Date(dateString); 
+        const matchingSign = zodiacSigns.find(sign => {
+            const start = new Date(`${date.getFullYear()}-${sign.start}`).getTime();
+            const end = new Date(`${date.getFullYear()}-${sign.end}`).getTime();
+            const birthdayTime = date.getTime();
+            return (birthdayTime >= start && birthdayTime <= end);
+          });
+        
+        // Check if a sign is found
+        return matchingSign ? matchingSign.name : "NO SIGN FOUND";
     }
 
     submit.addEventListener('click', function() {
