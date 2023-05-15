@@ -53,6 +53,8 @@ function init() {
         //switch sign display text
         let sign_display = document.getElementById("sign-display");
         sign_display.textContent = "Your sign is: " + sign;
-
+        
+        let date_display = document.getElementById("date-display");
+        date_display.textContent = "Today is " + new Date().toLocaleDateString();
     })
 }

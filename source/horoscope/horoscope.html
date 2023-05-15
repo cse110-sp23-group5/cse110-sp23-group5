@@ -27,7 +27,7 @@
             <h1 id="sign-display"> Your sign is: ____</h1>
         </div>
         <div id="output" class="flex-column">
-            <h1 id="date-display"> Today is ___day, ____ __</h1>
+            <h1 id="date-display"> Today is <script> document.write(new Date().toLocaleDateString()); </script> </h1>
             <label for="category">Select a category:</label>
             <select id="category" name="category">
                 <option value="option1">Option 1</option>
