@@ -1,0 +1,74 @@
+{
+    "Aries": {
+        "love": ["aries love","works"],
+        "career": ["aries career"],
+        "health": ["aries health"],
+        "daily": ["aries daily"]
+    },
+    "Taurus": {
+        "love": ["taurus love"],
+        "career": ["taurus career"],
+        "health": ["taurus health"],
+        "daily": ["taurus daily"]
+    },
+    "Gemini": {
+        "love": ["gemini love"],
+        "career": ["gemini career"],
+        "health": ["gemini health"],
+        "daily": ["gemini daily"]
+    },
+    "Cancer": {
+        "love": ["cancer love"],
+        "career": ["cancer career"],
+        "health": ["cancer health"],
+        "daily": ["cancer daily"]
+    },
+    "Leo": {
+        "love": ["Leo love"],
+        "career": ["Leo career"],
+        "health": ["Leo health"],
+        "daily": ["Leo daily"]
+    },
+    "Virgo": {
+        "love": ["Virgo love"],
+        "career": ["Virgo career"],
+        "health": ["Virgo health"],
+        "daily": ["Virgo daily"]
+    },
+    "Libra": {
+        "love": ["Libra love"],
+        "career": ["Libra career"],
+        "health": ["Libra health"],
+        "daily": ["Libra daily"]
+    },
+    "Scorpio": {
+        "love": ["scoprio love"],
+        "career": ["scoprio career"],
+        "health": ["scoprio health"],
+        "daily": ["scoprio daily"]
+    },
+    "Sagittarius": {
+        "love": ["Sagittarius love"],
+        "career": ["Sagittarius career"],
+        "health": ["Sagittarius health"],
+        "daily": ["Sagittarius daily"]
+    },
+    "Capricorn": {
+        "love": ["Capricorn love"],
+        "career": ["Capricorn career"],
+        "health": ["Capricorn health"],
+        "daily": ["capricorn daily"]
+    },
+    "Aquarius": {
+        "love": ["Aquarius  love"],
+        "career": ["Aquarius career"],
+        "health": ["Aquarius health"],
+        "daily": ["Aquarius daily"]
+    },
+    "Pisces": {
+        "love": ["Pisces love"],
+        "career": ["Pisces career"],
+        "health": ["Pisces health"],
+        "daily": ["Pisces daily"]
+    }
+}
