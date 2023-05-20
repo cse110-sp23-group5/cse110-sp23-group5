@@ -1,5 +1,4 @@
 window.addEventListener('DOMContentLoaded', init);
-import promptDB from '../json/horoResponses.json' assert { type: 'json' };
 function init() {
     let submit = document.getElementById('submit');
 
@@ -68,13 +67,21 @@ function init() {
 
     //add event listener for category change
     categoryElement.addEventListener('change',  (event) => {
-        let date = document.getElementById('birthday').value;
-        let sign = date_to_horoscope(date);
-        //parse json
-        let data = JSON.parse(JSON.stringify(promptDB));
-       
-        let horoscopeprompt = data[sign][event.target.value];
-        let selectedPrompt = horoscopeprompt[Math.floor((Math.random() * horoscopeprompt.length)%horoscopeprompt.length)];
-        fortuneElement.textContent = selectedPrompt;
+        let promptDB;
+
+        fetch('./json/horoResponses.json')
+            .then(response => response.json())
+            .then(data => {
+                //parse json
+                promptDB = JSON.parse(JSON.stringify(data));
+                //console.log(promptDB);
+                let date = document.getElementById('birthday').value;
+                let sign = date_to_horoscope(date);
+                let horoscopeprompt = promptDB[sign][event.target.value];
+                let selectedPrompt = horoscopeprompt[Math.floor((Math.random() * horoscopeprompt.length)%horoscopeprompt.length)];
+                fortuneElement.textContent = selectedPrompt;
+                //console.log(selectedPrompt);
+            })
+            .catch(error => console.error('Error:', error));        
     });
 }
