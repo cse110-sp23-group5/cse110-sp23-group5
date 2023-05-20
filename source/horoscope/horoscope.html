@@ -4,6 +4,7 @@
     <title>Horoscope App, Team #5</title>
     <link rel="icon" type="image/x-icon" href="images/star_favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/horoscope.css">
+    <script src="./js/horoscope.js" type="module"></script>
     <!-- <link rel="stylesheet" type="text/css" href="css/debug.css"> -->
   </head>
   <body>
@@ -20,19 +21,19 @@
                 <label for="location">Location:</label>
                 <input type="text" id="location" name="location"><br>
                 
-                <input type="submit" value="Submit">
+                <input type="button" id="submit" value="Submit">
             </form>
             <img id="sign-image" src="https://placehold.co/400"> 
             <h1 id="sign-display"> Your sign is: ____</h1>
         </div>
         <div id="output" class="flex-column">
-            <h1 id="date-display"> Today is ___day, ____ __</h1>
+            <h1 id="date-display"> Today is <script> document.write(new Date().toLocaleDateString()); </script> </h1>
             <label for="category">Select a category:</label>
             <select id="category" name="category">
-                <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
-                <option value="option4">Option 4</option>
+                <option value="love">Love</option>
+                <option value="health">Health</option>
+                <option value="career">career</option>
+                <option value="daily">Daily</option>
             </select>
 
             <p id="horoscope-fortune">
