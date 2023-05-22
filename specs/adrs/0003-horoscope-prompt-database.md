@@ -10,31 +10,19 @@ Informed: Andrew Onozuka, Alex Tahan, Joseph Del Val, Vivin Vinil, Julia Poon, J
 
 We decided to store our prompts in the form of JSON files. This allows us to not be reliant on external APIs (see [ADR-0002 Extrenal API Integration](0002-external-api-integration.md)). The next step is to figure out the generation of the various responses and come up with unique answers.
 
-<!-- This is an optional element. Feel free to remove. -->
-## Decision Drivers
-
-* {decision driver 1, e.g., a force, facing concern, …}
-* {decision driver 2, e.g., a force, facing concern, …}
-* … <!-- numbers of drivers can vary -->
 
 ## Considered Options
 
-* {title of option 1}
-* {title of option 2}
-* {title of option 3}
-* … <!-- numbers of options can vary -->
+* JSON file, uses key value pairs, allows for a tree type structure for data storage.
+* Java script object, Can model what we require.
 
 ## Decision Outcome
 
-Chosen option: "{title of option 1}", because
-{justification. e.g., only option, which meets k.o. criterion decision driver | which resolves force {force} | … | comes out best (see below)}.
+Chosen option: "Json File", because it serves the purpose best.
 
-<!-- This is an optional element. Feel free to remove. -->
 ### Consequences
 
-* Good, because {positive consequence, e.g., improvement of one or more desired qualities, …}
-* Bad, because {negative consequence, e.g., compromising one or more desired qualities, …}
-* … <!-- numbers of consequences can vary -->
+* Good
 
 <!-- This is an optional element. Feel free to remove. -->
 ## Validation
