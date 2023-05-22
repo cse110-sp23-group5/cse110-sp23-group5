@@ -1,18 +1,10 @@
----
-# These are optional elements. Feel free to remove any of them.
-status: {proposed | rejected | accepted | deprecated | … | superseded by [ADR-0005](0005-example.md)}
-date: {YYYY-MM-DD when the decision was last updated}
-deciders: {list everyone involved in the decision}
-consulted: {list everyone whose opinions are sought (typically subject-matter experts); and with whom there is a two-way communication}
-informed: {list everyone who is kept up-to-date on progress; and with whom there is a one-way communication}
----
-<!-- status: proposed  # Replace "proposed" with the desired status
-date: YYYY-MM-DD  # Replace with the actual date
-deciders: []  # Replace with a list of deciders
-consulted: []  # Replace with a list of consulted individuals
-informed: []  # Replace with a list of informed individuals -->
+# ADR-0002 Extrernal API Integration
 
-# {short title of solved problem and solution}
+Status: Accepted <br>
+Date: 2023-05-18 <br>
+Deciders: Andrew Onozuka, Merrick Qiu, Abhimanyu Srivastava, Yuantian Zhou <br>
+Consulted: Professor Thomas A. Powell, Malcolm McSwain (TA) <br>
+Informed: Alex Tahan, Joseph Del Val, Vivin Vinil, Julia Poon, Jacob Felts, Leo Lee
 
 ## Context and Problem Statement
 
