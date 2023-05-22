@@ -1,18 +1,10 @@
 # ADR-0001 CRUD Functionality
 
-status: accepted
-date: "2023-05-08"
-deciders: {Andrew Onozuka}
-consulted: {Malcolm McSwain}
-informed: {Merrick Qiu, Abhimanyu Srivastava, Alex Tahan, Joseph Del Val, Vivin Vinil, Julia Poon, Jacob Felts, Yuantian Zhou, Leo Lee}
-
-<!-- status: proposed  # Replace "proposed" with the desired status
-date: YYYY-MM-DD  # Replace with the actual date
-deciders: []  # Replace with a list of deciders
-consulted: []  # Replace with a list of consulted individuals
-informed: []  # Replace with a list of informed individuals -->
-
-
+Status: Accepted
+Date: 2023-05-08
+Deciders: Andrew Onozuka
+Consulted: Malcolm McSwain
+Informed: Merrick Qiu, Abhimanyu Srivastava, Alex Tahan, Joseph Del Val, Vivin Vinil, Julia Poon, Jacob Felts, Yuantian Zhou, Leo Lee
 
 ## Context and Problem Statement
 
