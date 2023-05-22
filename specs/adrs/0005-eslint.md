@@ -1,6 +1,6 @@
-# NNNN-{Choosing ESLint for our Linter}
+# 0005-{Choosing ESLint for our Linter}
 
-Status: accepted <br>
+Status: Accepted <br>
 Date: 2023-05-20 <br>
 Deciders: Joseph Del Val <br>
 Consulted: Internet <br>

@@ -8,7 +8,7 @@ Informed: Alex Tahan, Joseph Del Val, Vivin Vinil, Julia Poon, Jacob Felts, Leo 
 
 ## Context and Problem Statement
 
-We rejected the use of external API's in order to operate our CRUD app, after speaking with prof. Powell and our TA Malcolm, since we do not want our app to be reliant on services from external providers. Our goal now is to still be able to provide variable responses and specifically catered responses to unique inputs.
+We rejected the use of external API's in order to operate our CRUD app, after speaking with Prof. Powell and our TA Malcolm, since we do not want our app to be reliant on services from external providers. Our goal now is to still be able to provide variable responses and specifically catered responses to unique inputs.
 
 <!-- This is an optional element. Feel free to remove. -->
 ## Decision Drivers

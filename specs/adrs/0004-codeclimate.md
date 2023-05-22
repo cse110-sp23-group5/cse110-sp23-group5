@@ -1,6 +1,6 @@
 # 0004-codeclimate
 
-Status: accepted <br>
+Status: Accepted <br>
 Date: 2023-05-21 <br>
 Deciders: Merrick Qiu <br>
 Consulted: None <br>
