@@ -1,0 +1,1 @@
+make sure we add phase1.png and phase1.mp4! @vivin & @jacob
