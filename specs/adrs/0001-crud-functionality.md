@@ -1,10 +1,10 @@
 ---
 # These are optional elements. Feel free to remove any of them.
 status: accepted
-date: 2023-05-08
+date: "2023-05-08"
 deciders: {Andrew Onozuka}
-consulted: [Malcolm McSwain]
-informed: [Merrick Qiu, Abhimanyu Srivastava, Alex Tahan, Joseph Del Val, Vivin Vinil, Julia Poon, Jacob Felts, Yuantian Zhou, Leo Lee]
+consulted: {Malcolm McSwain}
+informed: {Merrick Qiu, Abhimanyu Srivastava, Alex Tahan, Joseph Del Val, Vivin Vinil, Julia Poon, Jacob Felts, Yuantian Zhou, Leo Lee}
 ---
 <!-- status: proposed  # Replace "proposed" with the desired status
 date: YYYY-MM-DD  # Replace with the actual date
