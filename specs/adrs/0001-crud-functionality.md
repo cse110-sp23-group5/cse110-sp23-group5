@@ -1,18 +1,18 @@
----
-# These are optional elements. Feel free to remove any of them.
-status: {proposed | rejected | accepted | deprecated | … | superseded by [ADR-0005](0005-example.md)}
-date: {YYYY-MM-DD when the decision was last updated}
-deciders: {list everyone involved in the decision}
-consulted: {list everyone whose opinions are sought (typically subject-matter experts); and with whom there is a two-way communication}
-informed: {list everyone who is kept up-to-date on progress; and with whom there is a one-way communication}
----
+# ADR-0001 CRUD Functionality
+
+status: accepted
+date: "2023-05-08"
+deciders: {Andrew Onozuka}
+consulted: {Malcolm McSwain}
+informed: {Merrick Qiu, Abhimanyu Srivastava, Alex Tahan, Joseph Del Val, Vivin Vinil, Julia Poon, Jacob Felts, Yuantian Zhou, Leo Lee}
+
 <!-- status: proposed  # Replace "proposed" with the desired status
 date: YYYY-MM-DD  # Replace with the actual date
 deciders: []  # Replace with a list of deciders
 consulted: []  # Replace with a list of consulted individuals
 informed: []  # Replace with a list of informed individuals -->
 
-# {short title of solved problem and solution}
+
 
 ## Context and Problem Statement
 
