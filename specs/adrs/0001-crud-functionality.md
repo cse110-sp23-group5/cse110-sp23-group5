@@ -1,9 +1,9 @@
 # ADR-0001 CRUD Functionality
 
-Status: Accepted
-Date: 2023-05-08
-Deciders: Andrew Onozuka
-Consulted: Malcolm McSwain
+Status: Accepted <br>
+Date: 2023-05-08 <br>
+Deciders: Andrew Onozuka <br>
+Consulted: Malcolm McSwain <br>
 Informed: Merrick Qiu, Abhimanyu Srivastava, Alex Tahan, Joseph Del Val, Vivin Vinil, Julia Poon, Jacob Felts, Yuantian Zhou, Leo Lee
 
 ## Context and Problem Statement
