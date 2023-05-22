@@ -1,4 +1,4 @@
-# ADR-0003 Horoscope Data Storage
+# ADR-0003 Horoscope Prompt Database
 
 Status: Accepted <br>
 Date: 2023-05-18 <br>
@@ -8,8 +8,7 @@ Informed: Andrew Onozuka, Alex Tahan, Joseph Del Val, Vivin Vinil, Julia Poon, J
 
 ## Context and Problem Statement
 
-{Describe the context and problem statement, e.g., in free form using two to three sentences or in the form of an illustrative story.
- You may want to articulate the problem in form of a question and add links to collaboration boards or issue management systems.}
+We decided to store our prompts in the form of JSON files. This allows us to not be reliant on external APIs (see [ADR-0002 Extrenal API Integration](0002-external-api-integration.md)). The next step is to figure out the generation of the various responses and come up with unique answers.
 
 <!-- This is an optional element. Feel free to remove. -->
 ## Decision Drivers
