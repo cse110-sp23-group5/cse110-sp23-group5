@@ -1,12 +1,10 @@
----
-# These are optional elements. Feel free to remove any of them.
-status: {proposed | rejected | accepted | deprecated | … | superseded by [ADR-0005](0005-example.md)}
-date: {YYYY-MM-DD when the decision was last updated}
-deciders: {list everyone involved in the decision}
-consulted: {list everyone whose opinions are sought (typically subject-matter experts); and with whom there is a two-way communication}
-informed: {list everyone who is kept up-to-date on progress; and with whom there is a one-way communication}
----
-# {short title of solved problem and solution}
+# NNNN-{short title of solved problem and solution}
+
+Status: {proposed | rejected | accepted | deprecated | … | superseded by [ADR-0005](0005-example.md)} <br>
+Date: {YYYY-MM-DD when the decision was last updated} <br>
+Deciders: {list everyone involved in the decision} <br>
+Consulted: {list everyone whose opinions are sought (typically subject-matter experts); and with whom there is a two-way communication} <br>
+Informed: {list everyone who is kept up-to-date on progress; and with whom there is a one-way communication}
 
 ## Context and Problem Statement
 
