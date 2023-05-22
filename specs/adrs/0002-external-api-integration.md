@@ -1,7 +1,7 @@
 # ADR-0002 Extrernal API Integration
 
 Status: Accepted <br>
-Date: 2023-05-18 <br>
+Date: 2023-05-10 <br>
 Deciders: Andrew Onozuka, Merrick Qiu, Abhimanyu Srivastava, Yuantian Zhou <br>
 Consulted: Professor Thomas A. Powell, Malcolm McSwain (TA) <br>
 Informed: Alex Tahan, Joseph Del Val, Vivin Vinil, Julia Poon, Jacob Felts, Leo Lee
