@@ -1,6 +1,6 @@
 # ADR-0002 Extrernal API Integration
 
-Status: Accepted <br>
+Status: Rejected <br>
 Date: 2023-05-10 <br>
 Deciders: Andrew Onozuka, Merrick Qiu, Abhimanyu Srivastava, Yuantian Zhou <br>
 Consulted: Professor Thomas A. Powell, Malcolm McSwain (TA) <br>
@@ -8,8 +8,7 @@ Informed: Alex Tahan, Joseph Del Val, Vivin Vinil, Julia Poon, Jacob Felts, Leo 
 
 ## Context and Problem Statement
 
-{Describe the context and problem statement, e.g., in free form using two to three sentences or in the form of an illustrative story.
- You may want to articulate the problem in form of a question and add links to collaboration boards or issue management systems.}
+We rejected the use of external API's in order to operate our CRUD app, after speaking with prof. Powell and our TA Malcolm. Our goal now is to still be able to provide variable responses and specifically catered responses to unique inputs.
 
 <!-- This is an optional element. Feel free to remove. -->
 ## Decision Drivers
