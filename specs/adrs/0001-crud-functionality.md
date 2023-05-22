@@ -8,8 +8,7 @@ Informed: Merrick Qiu, Abhimanyu Srivastava, Alex Tahan, Joseph Del Val, Vivin V
 
 ## Context and Problem Statement
 
-{Describe the context and problem statement, e.g., in free form using two to three sentences or in the form of an illustrative story.
- You may want to articulate the problem in form of a question and add links to collaboration boards or issue management systems.}
+We decided to implent a chat GPT like side bar that allows you to store previous horoscopes from your current session, after talking with our TA Malcolm and receiving feedback that our app needed to be more clear and focused on the CRUD functionality - (Create, Read, Update, and Delete).
 
 <!-- This is an optional element. Feel free to remove. -->
 ## Decision Drivers
