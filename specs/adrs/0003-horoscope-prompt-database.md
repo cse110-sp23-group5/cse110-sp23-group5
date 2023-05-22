@@ -18,47 +18,9 @@ We decided to store our prompts in the form of JSON files. This allows us to not
 
 ## Decision Outcome
 
-Chosen option: "Json File", because it serves the purpose best.
-
-### Consequences
-
-* Good
-
-<!-- This is an optional element. Feel free to remove. -->
-## Validation
-
-{describe how the implementation of/compliance with the ADR is validated. E.g., by a review or an ArchUnit test}
-
-<!-- This is an optional element. Feel free to remove. -->
-## Pros and Cons of the Options
-
-### {title of option 1}
-
-<!-- This is an optional element. Feel free to remove. -->
-{example | description | pointer to more information | …}
-
-* Good, because {argument a}
-* Good, because {argument b}
-<!-- use "neutral" if the given argument weights neither for good nor bad -->
-* Neutral, because {argument c}
-* Bad, because {argument d}
-* … <!-- numbers of pros and cons can vary -->
-
-### {title of other option}
-
-{example | description | pointer to more information | …}
-
-* Good, because {argument a}
-* Good, because {argument b}
-* Neutral, because {argument c}
-* Bad, because {argument d}
-* …
+Chosen option: "Json File", because it serves the purpose best. We will be saving pre-generated sentences(strings) that will be prompted to give unique answers to user input. JSON does exactly that, saving data and objects as text in one file.
 
 <!-- This is an optional element. Feel free to remove. -->
 ## More Information
 
-{You might want to provide additional evidence/confidence for the decision outcome here and/or
- document the team agreement on the decision and/or
- define when this decision when and how the decision should be realized and if/when it should be re-visited and/or
- how the decision is validated.
- Links to other decisions and resources might here appear as well.}
+There are no significant pros and cons in our application for choosing one or the other, as the only thing we need is save the promts to be able to "calculate" horoscope without the need for external APIs or data. Only that JSON file is simpler way that we can save these sentences into. However, if we were trying to generate individual responses everytime new input is given by the user, using Java Script Object might have been more applicable as we would need to create various functions to mix and match different outcomes. 
