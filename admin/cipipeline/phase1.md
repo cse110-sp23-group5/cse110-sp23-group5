@@ -19,3 +19,4 @@ Test for documentation generation via automation (e.g., JSDocs):
 Write test cases to validate that the documentation generation step is included in the CI/CD pipeline.
 Create test scenarios where code changes introduce new functions or classes and verify that the documentation is updated accordingly.
 Confirm that the generated documentation is accessible and contains the expected information, such as function signatures, descriptions, and examples.
+![graph](phase1.png)
