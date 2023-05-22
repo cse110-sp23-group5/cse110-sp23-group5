@@ -6,6 +6,12 @@ deciders: {list everyone involved in the decision}
 consulted: {list everyone whose opinions are sought (typically subject-matter experts); and with whom there is a two-way communication}
 informed: {list everyone who is kept up-to-date on progress; and with whom there is a one-way communication}
 ---
+<!-- status: proposed  # Replace "proposed" with the desired status
+date: YYYY-MM-DD  # Replace with the actual date
+deciders: []  # Replace with a list of deciders
+consulted: []  # Replace with a list of consulted individuals
+informed: []  # Replace with a list of informed individuals -->
+
 # {short title of solved problem and solution}
 
 ## Context and Problem Statement
