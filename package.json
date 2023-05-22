@@ -1,5 +1,5 @@
 {
-  "name": "my-node-project",
+  "name": "horoscope",
   "version": "1.0.0",
   "scripts": {
     "test": "jest"
