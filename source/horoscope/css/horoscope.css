@@ -44,26 +44,34 @@ main {
 #interface {
     font-size: 20px;
     text-transform:uppercase;
+    /* border: 3px solid rgb(0, 128, 0); */
 }
 
 #user-form {
-    flex: 1;
+    flex: 0 1 auto;
+    text-align: center;
+    /* padding: 100 vw; */
+    /* border: 3px solid rgb(0, 128, 0); */
 }
 
 #sign-image {
     max-width: 100%;
     height: auto;
-    flex: 1;
+    flex: 0 1 auto;
+    /* border: 3px solid rgb(0, 128, 0); */
 }
 
 #sign-display {
-    flex: 1;
+    flex: 0 1 auto;
+    text-align: center;
+    /* border: 3px solid rgb(0, 128, 0); */
 }
 
 /* in Output */
 #output {
     flex: 1;
-    font-size: 20px;    
+    font-size: 20px;   
+    /* border: 3px solid rgb(0, 128, 0);  */
 }
 
 #horoscope-fortune {
@@ -72,7 +80,44 @@ main {
     background-image: linear-gradient( rgba(0, 17, 85, 0.75),  rgba(0, 183, 255, 0.1));
 }
 
+input[type="date"] {
+    /* font-family: Arial, sans-serif; */
+    background-color: #f2f2f2;
+    /* border: 1px solid #ccc; */
+    /* padding: 8px; */
+    border-radius: 4px;
+  }
 
+input[type="text"] {
+    /* font-family: Arial, sans-serif; */
+    background-color: #f2f2f2;
+    /* border: 1px solid #ccc; */
+    /* padding: 8px; */
+    border-radius: 4px;
+  }
 
+/* Submit Button Styles */
 
+input[type="button"] {
+    background-color: #1565C0; /*navy blue*/
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="button"]:hover {
+    background-color: #0D47A1; /*midnight blue*/
+}
+
+input[type="button"]:active {
+    background-color: #2196F3; /*light blue*/
+}
+
+input[type="button"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #1A237E; /*dark blue*/
+}
 
