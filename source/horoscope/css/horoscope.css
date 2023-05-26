@@ -5,7 +5,19 @@
 
 /* ELEMENT SELECTORS */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Garamond,Baskerville,Baskerville Old Face,Hoefler Text,Times New Roman,serif;
+    color: white;
+    /*-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;*/
+
+    background-image: url("../images/background.jpg");
+    /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 main {
@@ -25,12 +37,13 @@ main {
 /* ID SELECTORS */
 /* in Profile */
 #profiles {
-    background-color: grey;
+    
 }
 
 /* in Interface */
 #interface {
-    background-color: darkgrey;
+    font-size: 20px;
+    text-transform:uppercase;
 }
 
 #user-form {
@@ -50,10 +63,13 @@ main {
 /* in Output */
 #output {
     flex: 1;
-    background-color: dimgray;
+    font-size: 20px;    
 }
+
 #horoscope-fortune {
     flex: 1;
+    font-size: 20px;
+    background-image: linear-gradient( rgba(0, 17, 85, 0.75),  rgba(0, 183, 255, 0.1));
 }
 
 
