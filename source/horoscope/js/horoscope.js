@@ -59,7 +59,7 @@ function init() {
         sign_image.src = forImage;
         
         let date_display = document.getElementById("date-display");
-        date_display.textContent = "Today is " + new Date().toLocaleDateString();
+        date_display.textContent = "TODAY IS " + new Date().toLocaleDateString();
     })
     //create event listener for option change
     let categoryElement = document.getElementById('category');
