@@ -2,7 +2,7 @@
 
 ## Date, Time, Location
 
-Friday, May 26th, 2023 from 4:00 pm -  5:00 pm. Hosted on Zoom.
+Friday, May 26th, 2023 from 4:45 pm -  5:30 pm. Hosted on Zoom.
 
 ## Attendance
 - Andrew Onozuka
@@ -17,9 +17,17 @@ Friday, May 26th, 2023 from 4:00 pm -  5:00 pm. Hosted on Zoom.
 
 ## Agenda
 
-- Sprint Review Meeting
+- Sprint Retrospective
 
 ## Overview
+
+Highs:
+- 
+
+Lows:
+- 
+
+
 
 Wireframe:
 - basic html down
