@@ -36,3 +36,11 @@ Design:
 - Basic UI
 - color scheme
 - background
+
+![Sprint 1 page design](images/sprint1-design.png)
+
+Sidebar
+- Custom element for each individual card
+- Basic layout:
+
+![Current sidebar design](images/sidebar1.png)

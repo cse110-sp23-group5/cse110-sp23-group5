@@ -5,6 +5,20 @@
     "test": "jest"
   },
   "devDependencies": {
+    "eslint": "^8.41.0",
     "jest": "^29.5.0"
-  }
+  },
+  "description": "This will serve as the landing page for your project and should be updated as you add code, tests, documentation and other important artifacts.",
+  "main": "math.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cse110-sp23-group5/cse110-sp23-group5.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cse110-sp23-group5/cse110-sp23-group5/issues"
+  },
+  "homepage": "https://github.com/cse110-sp23-group5/cse110-sp23-group5#readme"
 }
