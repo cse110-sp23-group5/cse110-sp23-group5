@@ -1,0 +1,67 @@
+
+
+article {
+    background-color: rgb(40, 56, 56);
+    border-radius: 8px;
+    color: azure;
+    display: grid;
+    height: auto;
+    row-gap: 5px;
+    column-gap: 5px;
+    padding: 16px;
+    width: auto;
+    grid-template: 
+        [row1-start] "image horoscope horoscope date" 60% [row1-end]
+        [row2-start] "image birthday birthday date" 40% [row2-end]
+        / 50px auto auto 50px;
+}
+
+/* When hovering over a card, it changes color */
+article:hover{
+    background-color: rgb(122, 122, 122);
+    color:rgb(40, 36, 36)
+}
+
+/* When hovering over a card, delete button appears */
+article:hover .delete {
+    display: block;
+}
+
+article:hover .date {
+    display: none;
+}
+
+.delete {
+    display: none;
+    border: none;
+    background: none;
+    grid-area: date;
+}
+
+.delete:hover {
+    color: lightgray;
+}
+
+.date {
+    grid-area: date;
+    justify-self: end;
+    align-self: center;
+}
+
+.birthday {
+    grid-area: birthday;
+    margin: 0px;
+}
+
+.horo {
+    grid-area: image;
+    max-width: 100%;
+    height: auto;
+}
+
+.sign {
+    grid-area: horoscope;
+    margin: 0px;
+}
+
+

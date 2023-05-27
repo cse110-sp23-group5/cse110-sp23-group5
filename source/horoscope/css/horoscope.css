@@ -2,6 +2,8 @@
 * CSS file for horoscope.html
 */
 
+@import "pastEntryCard.css";
+
 
 /* ELEMENT SELECTORS */
 body {
@@ -35,9 +37,12 @@ main {
 }
 
 /* ID SELECTORS */
-/* in Profile */
-#profiles {
-    
+/* in Sidebar */
+#sidebar {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+    width: 20%;
 }
 
 /* in Interface */

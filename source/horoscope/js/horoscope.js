@@ -3,7 +3,7 @@ function init() {
     let submit = document.getElementById('submit');
 
     // date to horoscope
-    function date_to_horoscope(dateString) {
+    function dateToHoroscope(dateString) {
         // Array of signs. Capricorn is repeated since it crosses the new year
         const zodiacSigns = [
             { name: "Capricorn", start: "01-01", end: "01-19" },
@@ -46,20 +46,20 @@ function init() {
         //make horoscope object
         let horoscope = {date: birthday,
                         place: location};
-        let sign = date_to_horoscope(horoscope.date);
+        let sign = dateToHoroscope(horoscope.date);
         horoscope.sign = sign;
 
         //switch sign display text
-        let sign_display = document.getElementById("sign-display");
-        sign_display.textContent = "Your sign is: " + sign;
+        let signDisplay = document.getElementById("sign-display");
+        signDisplay.textContent = "Your sign is: " + sign;
 
         //switch sign display image
-        let sign_image = document.getElementById("sign-image");
+        let signImage = document.getElementById("sign-image");
         const forImage = "images/Horoscopes/" + sign + ".png";
-        sign_image.src = forImage;
+        signImage.src = forImage;
         
-        let date_display = document.getElementById("date-display");
-        date_display.textContent = "TODAY IS " + new Date().toLocaleDateString();
+        let dateDisplay = document.getElementById("date-display");
+        dateDisplay.textContent = "TODAY IS " + new Date().toLocaleDateString();
     })
     //create event listener for option change
     let categoryElement = document.getElementById('category');
