@@ -76,7 +76,7 @@ function init() {
                 promptDB = JSON.parse(JSON.stringify(data));
                 //console.log(promptDB);
                 let date = document.getElementById('birthday').value;
-                let sign = date_to_horoscope(date);
+                let sign = dateToHoroscope(date);
                 let horoscopeprompt = promptDB[sign][event.target.value];
                 let selectedPrompt = horoscopeprompt[Math.floor((Math.random() * horoscopeprompt.length)%horoscopeprompt.length)];
                 fortuneElement.textContent = selectedPrompt;
