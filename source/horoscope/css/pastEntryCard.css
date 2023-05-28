@@ -1,9 +1,9 @@
 
 
 article {
-    background-color: rgb(40, 56, 56);
+    background-color: #757575;
     border-radius: 8px;
-    color: azure;
+    color: white;
     display: grid;
     height: auto;
     row-gap: 5px;
@@ -18,8 +18,8 @@ article {
 
 /* When hovering over a card, it changes color */
 article:hover{
-    background-color: rgb(122, 122, 122);
-    color:rgb(40, 36, 36)
+    background-color: #9E9E9E;
+    color:black;
 }
 
 /* When hovering over a card, delete button appears */
