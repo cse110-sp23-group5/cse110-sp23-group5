@@ -51,7 +51,7 @@ function init() {
 
         //switch sign display text
         let signDisplay = document.getElementById("sign-display");
-        signDisplay.textContent = "Your sign is: " + sign;
+        signDisplay.textContent = "Your sign: " + sign;
 
         //switch sign display image
         let signImage = document.getElementById("sign-image");
