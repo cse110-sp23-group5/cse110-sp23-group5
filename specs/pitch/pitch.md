@@ -56,7 +56,7 @@ Our solution is to make a horoscope app that solves the previously mentioned pro
 - Minimalistic UI
 
 ### Wireframe
-![wireframe](../interface/wireframes/wireframe.png)
+![wireframe](../interface/wireframes/layout.png)
 
 From [specs/interface/wireframes/](../interface/wireframes/wireframe.png)
 
