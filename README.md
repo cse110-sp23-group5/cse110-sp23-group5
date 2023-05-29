@@ -1,6 +1,8 @@
-# Project Description
+# PowellPoint Pundits
+## CSE 110 SP23 Team 5
 
-This will serve as the landing page for your project and should be updated as you add code, tests, documentation and other important artifacts.
+This README.md serves as the landing page for our project and is updated as we add code, tests, documentation and other important artifacts.
+We merge our `dev` branch into `main` after discussing our progress and agreeing to merge each week.
 
 [TEAM PAGE](admin/team.md)
 
