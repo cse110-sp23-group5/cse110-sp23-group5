@@ -2,7 +2,7 @@
 
 ## Date, Time, Location
 
-Friday, May 26th, 2023 from 4:45 pm -  5:30 pm. Hosted on Zoom.
+Sunday, May 28th, 2023 from 8:00 pm -  9:00 pm. Hosted on Zoom.
 
 ## Attendance
 - Andrew Onozuka
@@ -21,7 +21,7 @@ Friday, May 26th, 2023 from 4:45 pm -  5:30 pm. Hosted on Zoom.
 
 ## Overview
 
-The following will cover the general consensus of the group regarding each category. Exact artifacts are stores and can be accessed [HERE](link later!)
+The following will cover the general consensus of the group regarding each category. Exact artifacts are stores and can be accessed [HERE]([link later!](https://docs.google.com/spreadsheets/d/1chBs-Okdulef91qALr7XLX1B4q89s7Lpfb7uExe933E/edit?usp=sharing))
 
 # Good & Bad
 
