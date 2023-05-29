@@ -126,6 +126,8 @@ Culture and Values
 
 \* 1 for poor and 5 for excellent
 
+We can see that collaboration, processes and practices, and scope and schedules are areas for improvement going into next sprint.
+
 # Takeaways
 
 1. Importance of Organization and Planning:
