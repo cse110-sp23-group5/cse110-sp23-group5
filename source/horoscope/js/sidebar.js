@@ -14,9 +14,9 @@ function init() {
     
     //TODO: get actual horoscopes and save, this is a placeholder for testing
     const arr = [
-        new Horoscope("/source/horoscope/images/Horoscopes/Capricorn.png", "Capricorn", "Capricorn", "1/1/2000", "9:14 am"),
-        new Horoscope("/source/horoscope/images/Horoscopes/Capricorn.png", "Capricorn", "Capricorn", "1/1/2000", "Wed"), 
-        new Horoscope("/source/horoscope/images/Horoscopes/Capricorn.png", "Capricorn", "Capricorn", "1/1/2000", "Tues"), 
+        new Horoscope("./images/Horoscopes/Capricorn.png", "Capricorn", "Capricorn", "1/1/2000", "9:14 am"),
+        new Horoscope("./images/Horoscopes/Capricorn.png", "Capricorn", "Capricorn", "1/1/2000", "Wed"), 
+        new Horoscope("./images/Horoscopes/Capricorn.png", "Capricorn", "Capricorn", "1/1/2000", "Tues"), 
     ];
     console.log(arr);
     saveHoroscopesToStorage(arr);
