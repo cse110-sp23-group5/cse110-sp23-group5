@@ -21,7 +21,7 @@ Sunday, May 28th, 2023 from 8:00 pm -  9:00 pm. Hosted on Zoom.
 
 ## Overview
 
-The following will cover the general consensus of the group regarding each category. Exact artifacts are stores and can be accessed [HERE]([link later!](https://docs.google.com/spreadsheets/d/1chBs-Okdulef91qALr7XLX1B4q89s7Lpfb7uExe933E/edit?usp=sharing))
+The following will cover the general consensus of the group regarding each category. Exact artifacts are stores and can be accessed [HERE](https://docs.google.com/spreadsheets/d/1chBs-Okdulef91qALr7XLX1B4q89s7Lpfb7uExe933E/edit?usp=sharing)
 
 # Good & Bad
 
