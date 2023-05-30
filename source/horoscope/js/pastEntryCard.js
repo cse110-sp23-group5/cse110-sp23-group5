@@ -24,10 +24,8 @@ class pastEntryCard extends HTMLElement {
      * Called when the .data property is set on this element
      * 
      * @param {Horoscope} data - The data to pass into <past-entry-card>, 
-     *                          of following format:
+     *                          as a Horoscope object of following format:
      *                          {
-     *                              "imgSrc": "string",
-     *                              "imgAlt": "string",
      *                              "sign": "string",
      *                              "birthday": "string",
      *                              "date": "string",
@@ -45,8 +43,8 @@ class pastEntryCard extends HTMLElement {
          * as well as the birthday and date created, and a delete button
          */
         article.innerHTML = `
-        <img class="horo" src="${data.imgSrc}"
-            alt="${data.imgAlt}">
+        <img class="horo" src="./images/Horoscopes/${data.sign}.png"
+            alt="${data.sign}">
         <span class="sign">${data.sign}</span>
         <span class="birthday">${data.birthday}</span>
         <span class="date">${data.date}</span>
@@ -69,13 +67,13 @@ class pastEntryCard extends HTMLElement {
         // NOTE: because the dates are in M/D/YYYY format,
         // this code turns it into YYYY-MM-DD
         // This is because you need it in this format to update the birthday form
-        let birthday_raw = article.querySelector(".birthday").textContent.split("/").reverse();
-        for (let i=1;i<birthday_raw.length;i++){
-            if (birthday_raw[i].length==1){
-                birthday_raw[i] = "0" + birthday_raw[i];
+        let birthdayRaw = article.querySelector(".birthday").textContent.split("/").reverse();
+        for (let i=1;i<birthdayRaw.length;i++){
+            if (birthdayRaw[i].length==1){
+                birthdayRaw[i] = "0" + birthdayRaw[i];
             }
         };
-        const birthday = birthday_raw.join("-");
+        const birthday = birthdayRaw.join("-");
         
         let horoscope = {sign: sign,
         birthday: birthday,

@@ -27,6 +27,7 @@ article:hover .delete {
     display: block;
 }
 
+/* When hovering over a card, date disappears */
 article:hover .date {
     display: none;
 }
@@ -38,6 +39,7 @@ article:hover .date {
     grid-area: date;
 }
 
+/* When hovering over a card, changes color */
 .delete:hover {
     color: lightgray;
 }
