@@ -26,18 +26,27 @@ function init() {
     // Add each horoscopes to the <main> element
     addHoroscopesToDocument(horoscopes);
     
+    /*
     const card = document.querySelector('past-entry-card');
     const deleteButton = card.shadowRoot.querySelector('.delete');
 
     card.addEventListener('click', onClick);
     deleteButton.addEventListener('click', deleteCard);
+    */
+    const cards = document.querySelectorAll('past-entry-card');
+    cards.forEach(card => {
+        const deleteButton = card.shadowRoot.querySelector('.delete');
+        card.addEventListener('click', onClick);
+        deleteButton.addEventListener('click', deleteCard);
+    });
 }
 
 /**
  * When card is clicked, display the information on the main page
  */
 function onClick() {
-
+    let horo = this.data;
+    setHoroscope(horo);
 }
 
 /**

@@ -56,6 +56,33 @@ class pastEntryCard extends HTMLElement {
         `;
     }
 
+    /**
+     * Called when the .data property is retrieved on this element
+     */
+    get data(){
+        // Query the article so you can get the information from it
+        const article = this.shadowRoot.querySelector('article');
+
+
+        const sign = article.querySelector(".sign").textContent;
+        const date = article.querySelector(".date").textContent;
+        // NOTE: because the dates are in M/D/YYYY format,
+        // this code turns it into YYYY-MM-DD
+        // This is because you need it in this format to update the birthday form
+        let birthday_raw = article.querySelector(".birthday").textContent.split("/").reverse();
+        for (let i=1;i<birthday_raw.length;i++){
+            if (birthday_raw[i].length==1){
+                birthday_raw[i] = "0" + birthday_raw[i];
+            }
+        };
+        const birthday = birthday_raw.join("-");
+        
+        let horoscope = {sign: sign,
+        birthday: birthday,
+        date: date}
+        return horoscope
+    }
+
     
 
 

@@ -38,16 +38,19 @@ function init() {
         return matchingSign ? matchingSign.name : "NO SIGN FOUND";
     }
 
-    submit.addEventListener('click', function() {
-        //get birthday and location
-        let birthday = document.getElementById('birthday').value;
-        let location = document.getElementById('location').value;
-
-        //make horoscope object
-        let horoscope = {date: birthday,
-                        place: location};
-        let sign = dateToHoroscope(horoscope.date);
-        horoscope.sign = sign;
+    /**
+    * Called when you want to update the horoscope on the main page
+    * 
+    * @param {Horoscope} - the data to update the page with,
+    *                       of the following format:
+    *                       {
+    *                           "sign": string
+    *                           "birthday": string
+    *                       }
+    */
+    window.setHoroscope = function setHoroscope(Horoscope){
+        let sign = Horoscope.sign;
+        let birthday = Horoscope.birthday;
 
         //switch sign display text
         let signDisplay = document.getElementById("sign-display");
@@ -60,7 +63,29 @@ function init() {
         
         let dateDisplay = document.getElementById("date-display");
         dateDisplay.textContent = "TODAY IS " + new Date().toLocaleDateString();
+
+        //update birthday
+        document.getElementById('birthday').value = birthday;
+    }
+
+
+
+    // Add event listener for the submit window
+    submit.addEventListener('click', function() {
+        //get birthday and location
+        let birthday = document.getElementById('birthday').value;
+        let location = document.getElementById('location').value;
+
+        //make horoscope object
+        let sign = dateToHoroscope(birthday);
+        let horoscope = {birthday: birthday,
+                        place: location,
+                        sign: sign};
+
+        setHoroscope(horoscope);
     })
+
+
     //create event listener for option change
     let categoryElement = document.getElementById('category');
     let fortuneElement = document.getElementById('horoscope-fortune');
