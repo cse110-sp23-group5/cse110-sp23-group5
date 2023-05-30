@@ -20,6 +20,15 @@ This will serve as the landing page for your project and should be updated as yo
 
 
 # Roadmap
+## Short-term
 - Revamp design
 - Add more prompts
 - Sidebar functionality
+- Horoscope changes daily
+
+## Medium-term
+- More accurate responses based on location
+- More varieties of responses
+
+## Long-term
+- Login/account system

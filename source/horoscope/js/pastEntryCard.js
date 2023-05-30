@@ -75,10 +75,8 @@ class pastEntryCard extends HTMLElement {
         };
         const birthday = birthdayRaw.join("-");
         
-        let horoscope = {sign: sign,
-        birthday: birthday,
-        date: date}
-        return horoscope
+        let horoscope = Horoscope(sign, birthday, date);
+        return horoscope;
     }
 
     
