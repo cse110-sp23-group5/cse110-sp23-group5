@@ -11,29 +11,40 @@ body {
     color: white;
     /*-webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: white;*/
-
-    background-image: url("../images/background.jpg");
+    
     /* Full height */
-  height: 100%;
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-main {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    
     display: flex;
     flex-direction: row;
     height: 100vh;
+    /* border: 3px solid rgb(0, 128, 0); */
 }
 
 /* CLASS SELECTORS */
-.flex-column {
+/* .flex-column {
     display:flex;
     flex-direction:column;
     flex: 1;
     align-items: center;
+    border: 3px solid rgb(0, 128, 0);
+} */
+
+main {
+    background-image: url("../images/background.jpg");
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    /* border: 3px solid rgb(0, 128, 0); */
 }
 
 /* ID SELECTORS */
@@ -42,7 +53,11 @@ main {
     display: flex;
     flex-flow: column nowrap;
     gap: 10px;
-    width: 20%;
+    width: 25%;
+    /* border: 3px solid rgb(0, 128, 0); */
+    background-color: #424242;
+    padding: 10px;
+    /* background-image: linear-gradient( rgba(0, 17, 85, 0.75),  rgba(0, 183, 255, 0.1)); */
 }
 
 /* in Interface */
@@ -55,6 +70,7 @@ main {
 #user-form {
     flex: 0 1 auto;
     text-align: center;
+    padding-bottom: 20px; /* so submit button isn't directly touching png */
     /* padding: 100 vw; */
     /* border: 3px solid rgb(0, 128, 0); */
 }
@@ -76,13 +92,21 @@ main {
 #output {
     flex: 1;
     font-size: 20px;   
+    text-align: center;
     /* border: 3px solid rgb(0, 128, 0);  */
 }
 
 #horoscope-fortune {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
     flex: 1;
-    font-size: 20px;
+    font-size: 30px;
+    padding: 30px;
+    border-radius: 20px;
     background-image: linear-gradient( rgba(0, 17, 85, 0.75),  rgba(0, 183, 255, 0.1));
+    /* border: 3px solid rgb(0, 128, 0); */
 }
 
 input[type="date"] {
@@ -124,4 +148,10 @@ input[type="button"]:active {
 input[type="button"]:focus {
     outline: none;
     box-shadow: 0 0 0 2px #1A237E; /*dark blue*/
+}
+
+.center-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

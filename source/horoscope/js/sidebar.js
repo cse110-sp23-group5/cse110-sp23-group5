@@ -1,9 +1,7 @@
 window.addEventListener('DOMContentLoaded', init);
 
 class Horoscope{
-    constructor(imgSrc, imgAlt, sign, birthday, date) {
-        this.imgSrc = imgSrc;
-        this.imgAlt = imgAlt;
+    constructor(sign, birthday, date) {
         this.sign = sign;
         this.birthday = birthday;
         this.date = date;
@@ -12,11 +10,11 @@ class Horoscope{
 
 function init() {
     
-    //TODO: get actual horoscopes and save, this is a placeholder for testing
+    //TODO: get actual horoscopes and save, this is a placeholder for testing/demo
     const arr = [
-        new Horoscope("./images/Horoscopes/Capricorn.png", "Capricorn", "Capricorn", "1/1/2000", "9:14 am"),
-        new Horoscope("./images/Horoscopes/Capricorn.png", "Capricorn", "Capricorn", "1/1/2000", "Wed"), 
-        new Horoscope("./images/Horoscopes/Capricorn.png", "Capricorn", "Capricorn", "1/1/2000", "Tues"), 
+        new Horoscope("Capricorn", "1/1/2000", "9:14 am"),
+        new Horoscope("Capricorn", "1/1/2000", "Wed"), 
+        new Horoscope("Capricorn", "1/1/2000", "Tues"), 
     ];
     console.log(arr);
     saveHoroscopesToStorage(arr);
@@ -26,13 +24,6 @@ function init() {
     // Add each horoscopes to the <main> element
     addHoroscopesToDocument(horoscopes);
     
-    /*
-    const card = document.querySelector('past-entry-card');
-    const deleteButton = card.shadowRoot.querySelector('.delete');
-
-    card.addEventListener('click', onClick);
-    deleteButton.addEventListener('click', deleteCard);
-    */
     const cards = document.querySelectorAll('past-entry-card');
     cards.forEach(card => {
         const deleteButton = card.shadowRoot.querySelector('.delete');
@@ -53,7 +44,7 @@ function onClick() {
  * When delete button is clicked, delete the card and its data
  */
 function deleteCard() {
-
+    
 }
 
 /**
@@ -87,7 +78,7 @@ function addHoroscopesToDocument(horoscopes) {
 /**
  * Takes in an array of horoscopes, converts it to a string, and then
  * saves that string to 'horoscopes' in localStorage
- * @param {Array<Object>} horoscopes An array of horoscopes
+ * @param {Array<Horoscope>} horoscopes An array of horoscopes
  */
 function saveHoroscopesToStorage(horoscopes) {
     localStorage.setItem('horoscopes', JSON.stringify(horoscopes));
