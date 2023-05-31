@@ -14,8 +14,9 @@
         <div id="sidebar">
             
         </div>
-        <div id="interface" class="flex-column">
-            <form id="user-form">
+          <div>
+            <div id="interface">
+              <form id="user-form">
                 <p>Enter your information:</p>
                 <label for="birthday">Birthday:</label>
                 <input type="date" id="birthday" name="birthday"><br>
@@ -24,11 +25,11 @@
                 <input type="text" id="location" name="location"><br>
                 <br>
                 <input type="button" id="submit" value="SUBMIT">
-            </form>
-            <img id="sign-image" src="images/placeholder.png"> 
+              </form>
+            <img class="center-image" id="sign-image" src="images/placeholder.png"> 
             <h1 id="sign-display"> Find your sign!</h1>
         </div>
-        <div id="output" class="flex-column">
+        <div id="output">
             <h1 id="date-display"> Today is <script> document.write(new Date().toLocaleDateString()); </script> </h1>
             <label for="category">Select a category:</label>
             <select id="category" name="category">
@@ -43,6 +44,7 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
+          </div>
         </div>
     </main>
   </body>

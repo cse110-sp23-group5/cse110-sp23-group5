@@ -20,21 +20,24 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border: 3px solid rgb(0, 128, 0);
 }
 
 main {
     display: flex;
     flex-direction: row;
     height: 100vh;
+    /* border: 3px solid rgb(0, 128, 0); */
 }
 
 /* CLASS SELECTORS */
-.flex-column {
+/* .flex-column {
     display:flex;
     flex-direction:column;
     flex: 1;
     align-items: center;
-}
+    border: 3px solid rgb(0, 128, 0);
+} */
 
 /* ID SELECTORS */
 /* in Sidebar */
@@ -43,6 +46,7 @@ main {
     flex-flow: column nowrap;
     gap: 10px;
     width: 20%;
+    border: 3px solid rgb(0, 128, 0);
 }
 
 /* in Interface */
@@ -124,4 +128,10 @@ input[type="button"]:active {
 input[type="button"]:focus {
     outline: none;
     box-shadow: 0 0 0 2px #1A237E; /*dark blue*/
+}
+
+.center-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
