@@ -14,6 +14,7 @@ Sunday, May 28th, 2023 from 8:00 pm -  9:00 pm. Hosted on Zoom.
 - Jacob Felts
 - Vivin Vinil
 - Abhimanyu Srivastava
+- Leo Lee
 
 ## Agenda
 
@@ -101,28 +102,28 @@ Glad:
 # Work Environment
 
 Technical Skills and Expertise
-- mean score: 4.56
-- distribution: 4 (44.4%); 5 (55.6%)
+- mean score: 4.5
+- distribution: 5 (50%); 5 (50%)
 
 Tools and Technology
-- mean score: 4.33
-- distribution: 4 (66.7%); 5 (33.3%)
+- mean score: 4.3
+- distribution: 4 (70%); 5 (30%)
 
 Collaboration
-- mean score: 3.56
-- distribution: 2 (11.1%); 3 (33.3%); 4 (44.4%); 5 (11.1%)
+- mean score: 3.5
+- distribution: 2 (10%); 3 (40%); 4 (40%); 5 (10%)
 
 Processes and Practices
-- mean score: 3.78
-- distribution: 2 (11.1%); 3 (22.2%); 4 (44.4%); 5 (22.2%)
+- mean score: 3.8
+- distribution: 2 (10%); 3 (20%); 4 (50%); 5 (20%)
 
 Scope and Schedule
-- mean score: 3.67
-- distribution: 3 (55.6%); 4 (22.2%); 5 (22.2%)
+- mean score: 3.7
+- distribution: 3 (50%); 4 (30%); 5 (20%)
 
 Culture and Values
-- mean score: 4.33
-- distribution: 3 (11.1%); 4 (44.4%); 5 (44.4%)
+- mean score: 4.4
+- distribution: 3 (10%); 4 (40%); 5 (50%)
 
 \* 1 for poor and 5 for excellent
 
