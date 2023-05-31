@@ -3,7 +3,7 @@ function init() {
     let submit = document.getElementById('submit');
 
     // date to horoscope
-    function date_to_horoscope(dateString) {
+    function dateToHoroscope(dateString) {
         // Array of signs. Capricorn is repeated since it crosses the new year
         const zodiacSigns = [
             { name: "Capricorn", start: "01-01", end: "01-19" },
@@ -38,29 +38,55 @@ function init() {
         return matchingSign ? matchingSign.name : "NO SIGN FOUND";
     }
 
+    /**
+    * Called when you want to update the horoscope on the main page
+    * 
+    * @param {Horoscope} - the data to update the page with,
+    *                       of the following format:
+    *                       {
+    *                           "sign": string
+    *                           "birthday": string
+    *                       }
+    */
+    window.setHoroscope = function setHoroscope(Horoscope){
+        let sign = Horoscope.sign;
+        let birthday = Horoscope.birthday;
+
+        //switch sign display text
+        let signDisplay = document.getElementById("sign-display");
+        signDisplay.textContent = "Your sign: " + sign;
+
+        //switch sign display image
+        let signImage = document.getElementById("sign-image");
+        const forImage = "images/Horoscopes/" + sign + ".png";
+        signImage.src = forImage;
+        
+        let dateDisplay = document.getElementById("date-display");
+        dateDisplay.textContent = "TODAY IS " + new Date().toLocaleDateString();
+
+        //update birthday
+        document.getElementById('birthday').value = birthday;
+    }
+
+
+
+    // Add event listener for the submit window
     submit.addEventListener('click', function() {
         //get birthday and location
         let birthday = document.getElementById('birthday').value;
         let location = document.getElementById('location').value;
 
         //make horoscope object
-        let horoscope = {date: birthday,
-                        place: location};
-        let sign = date_to_horoscope(horoscope.date);
-        horoscope.sign = sign;
+        let sign = dateToHoroscope(birthday);
+        let horoscope = {birthday: birthday,
+                        place: location,
+                        sign: sign};
 
-        //switch sign display text
-        let sign_display = document.getElementById("sign-display");
-        sign_display.textContent = "Your sign is: " + sign;
-
-        //switch sign display image
-        let sign_image = document.getElementById("sign-image");
-        const forImage = "images/Horoscopes/" + sign + ".png";
-        sign_image.src = forImage;
-        
-        let date_display = document.getElementById("date-display");
-        date_display.textContent = "Today is " + new Date().toLocaleDateString();
+        setHoroscope(horoscope);
+        categoryElement.dispatchEvent(new Event('change'));
     })
+
+
     //create event listener for option change
     let categoryElement = document.getElementById('category');
     let fortuneElement = document.getElementById('horoscope-fortune');
@@ -76,7 +102,7 @@ function init() {
                 promptDB = JSON.parse(JSON.stringify(data));
                 //console.log(promptDB);
                 let date = document.getElementById('birthday').value;
-                let sign = date_to_horoscope(date);
+                let sign = dateToHoroscope(date);
                 let horoscopeprompt = promptDB[sign][event.target.value];
                 let selectedPrompt = horoscopeprompt[Math.floor((Math.random() * horoscopeprompt.length)%horoscopeprompt.length)];
                 fortuneElement.textContent = selectedPrompt;

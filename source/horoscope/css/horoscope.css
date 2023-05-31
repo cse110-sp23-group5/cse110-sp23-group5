@@ -2,61 +2,156 @@
 * CSS file for horoscope.html
 */
 
+@import "pastEntryCard.css";
+
 
 /* ELEMENT SELECTORS */
 body {
-    font-family: Arial, sans-serif;
-}
-
-main {
+    font-family: Garamond,Baskerville,Baskerville Old Face,Hoefler Text,Times New Roman,serif;
+    color: white;
+    /*-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;*/
+    
+    /* Full height */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    
     display: flex;
     flex-direction: row;
     height: 100vh;
+    /* border: 3px solid rgb(0, 128, 0); */
 }
 
 /* CLASS SELECTORS */
-.flex-column {
+/* .flex-column {
     display:flex;
     flex-direction:column;
     flex: 1;
     align-items: center;
+    border: 3px solid rgb(0, 128, 0);
+} */
+
+main {
+    background-image: url("../images/background.jpg");
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    /* border: 3px solid rgb(0, 128, 0); */
 }
 
 /* ID SELECTORS */
-/* in Profile */
-#profiles {
-    background-color: grey;
+/* in Sidebar */
+#sidebar {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+    width: 25%;
+    /* border: 3px solid rgb(0, 128, 0); */
+    background-color: #424242;
+    padding: 10px;
+    /* background-image: linear-gradient( rgba(0, 17, 85, 0.75),  rgba(0, 183, 255, 0.1)); */
 }
 
 /* in Interface */
 #interface {
-    background-color: darkgrey;
+    font-size: 20px;
+    text-transform:uppercase;
+    /* border: 3px solid rgb(0, 128, 0); */
 }
 
 #user-form {
-    flex: 1;
+    flex: 0 1 auto;
+    text-align: center;
+    padding-bottom: 20px; /* so submit button isn't directly touching png */
+    /* padding: 100 vw; */
+    /* border: 3px solid rgb(0, 128, 0); */
 }
 
 #sign-image {
     max-width: 100%;
     height: auto;
-    flex: 1;
+    flex: 0 1 auto;
+    /* border: 3px solid rgb(0, 128, 0); */
 }
 
 #sign-display {
-    flex: 1;
+    flex: 0 1 auto;
+    text-align: center;
+    /* border: 3px solid rgb(0, 128, 0); */
 }
 
 /* in Output */
 #output {
     flex: 1;
-    background-color: dimgray;
+    font-size: 20px;   
+    text-align: center;
+    /* border: 3px solid rgb(0, 128, 0);  */
 }
+
 #horoscope-fortune {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
     flex: 1;
+    font-size: 30px;
+    padding: 30px;
+    border-radius: 20px;
+    background-image: linear-gradient( rgba(0, 17, 85, 0.75),  rgba(0, 183, 255, 0.1));
+    /* border: 3px solid rgb(0, 128, 0); */
 }
 
+input[type="date"] {
+    /* font-family: Arial, sans-serif; */
+    background-color: #f2f2f2;
+    /* border: 1px solid #ccc; */
+    /* padding: 8px; */
+    border-radius: 4px;
+  }
 
+input[type="text"] {
+    /* font-family: Arial, sans-serif; */
+    background-color: #f2f2f2;
+    /* border: 1px solid #ccc; */
+    /* padding: 8px; */
+    border-radius: 4px;
+  }
 
+/* Submit Button Styles */
 
+input[type="button"] {
+    background-color: #1565C0; /*navy blue*/
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
 
+input[type="button"]:hover {
+    background-color: #0D47A1; /*midnight blue*/
+}
+
+input[type="button"]:active {
+    background-color: #2196F3; /*light blue*/
+}
+
+input[type="button"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #1A237E; /*dark blue*/
+}
+
+.center-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
