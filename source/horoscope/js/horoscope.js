@@ -83,6 +83,7 @@ function init() {
                         sign: sign};
 
         setHoroscope(horoscope);
+        categoryElement.dispatchEvent(new Event('change'));
     })
 
 
