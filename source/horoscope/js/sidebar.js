@@ -44,7 +44,9 @@ function onClick() {
  * When delete button is clicked, delete the card and its data
  */
 function deleteCard() {
-    
+    // Remove the card from the DOM
+    this.parentNode.parentNode.removeChild(this.parentNode);
+    this.parentNode.remove();
 }
 
 /**
@@ -71,10 +73,14 @@ function addHoroscopesToDocument(horoscopes) {
     for (let horo of horoscopes) {
       let card = document.createElement('past-entry-card');
       card.data = horo;
+      // need event listeners for each delete button
+      const deleteButton = card.shadowRoot.querySelector('.delete');
+      card.addEventListener('click', onClick);
+      deleteButton.addEventListener('click', deleteCard);
       sidebar.appendChild(card);
     }
 }
-
+export {addHoroscopesToDocument};
 /**
  * Takes in an array of horoscopes, converts it to a string, and then
  * saves that string to 'horoscopes' in localStorage

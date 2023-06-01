@@ -1,3 +1,5 @@
+import { Horoscope } from "./sidebar.js";
+import { addHoroscopesToDocument } from "./sidebar.js";
 window.addEventListener('DOMContentLoaded', init);
 function init() {
     let submit = document.getElementById('submit');
@@ -84,6 +86,15 @@ function init() {
 
         setHoroscope(horoscope);
         categoryElement.dispatchEvent(new Event('change'));
+
+        //save horoscope to local storage for sidebar
+        var today = new Date();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        let horoscopeElement = new Horoscope(sign, birthday, time);
+        let storageHoroscopes =  JSON.parse(localStorage.getItem('horoscopes') || '[]');
+        storageHoroscopes.push(horoscopeElement);
+        localStorage.setItem('horoscopes', JSON.stringify(storageHoroscopes));
+        addHoroscopesToDocument([horoscopeElement]);
     })
 
 
