@@ -1,4 +1,4 @@
-
+import { Horoscope } from "./sidebar.js";
 /**
  * Card displaying a past horoscope entry
  * 
@@ -75,7 +75,7 @@ class pastEntryCard extends HTMLElement {
         };
         const birthday = birthdayRaw.join("-");
         
-        let horoscope = Horoscope(sign, birthday, date);
+        let horoscope = new Horoscope(sign, birthday, date);
         return horoscope;
     }
 

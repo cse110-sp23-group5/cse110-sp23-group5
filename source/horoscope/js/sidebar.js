@@ -7,7 +7,7 @@ class Horoscope{
         this.date = date;
     }
 }
-
+export {Horoscope};
 function init() {
     
     //TODO: get actual horoscopes and save, this is a placeholder for testing/demo
