@@ -43,10 +43,12 @@ function onClick() {
 /**
  * When delete button is clicked, delete the card and its data
  */
-function deleteCard() {
+function deleteCard(event) {
     // Remove the card from the DOM
     this.parentNode.parentNode.removeChild(this.parentNode);
     this.parentNode.remove();
+    if(event.stopPropagation)
+        event.stopPropagation();
 }
 
 /**
