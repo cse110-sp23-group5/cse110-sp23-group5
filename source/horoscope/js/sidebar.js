@@ -1,35 +1,45 @@
 window.addEventListener('DOMContentLoaded', init);
 
+
+/**
+ * A simple counter that increments each time it is called
+ * @param start starting number
+ * @returns function that returns an incremented number each time
+ */
+function makeCounter(start) {
+    var i = start;
+    return function() {
+        return i++;
+    }
+}
+
+let counter = makeCounter(0); //TODO: make it so that the numbers wont repeat when calling from localstorage
+
 class Horoscope{
     constructor(sign, birthday, date) {
+        this.id = counter();
         this.sign = sign;
         this.birthday = birthday;
         this.date = date;
     }
 }
 export {Horoscope};
+
+let horoscopes = [];
+
 function init() {
-    
-    //TODO: get actual horoscopes and save, this is a placeholder for testing/demo
-    const arr = [
-        new Horoscope("Capricorn", "1/1/2000", "9:14 am"),
-        new Horoscope("Capricorn", "1/1/2000", "Wed"), 
-        new Horoscope("Capricorn", "1/1/2000", "Tues"), 
-    ];
-    console.log(arr);
-    saveHoroscopesToStorage(arr);
-    
     // Get the horoscopes from localStorage
-    let horoscopes = getHoroscopesFromStorage();
+    horoscopes = getHoroscopesFromStorage();
     // Add each horoscopes to the <main> element
     addHoroscopesToDocument(horoscopes);
-    
-    const cards = document.querySelectorAll('past-entry-card');
-    cards.forEach(card => {
-        const deleteButton = card.shadowRoot.querySelector('.delete');
-        card.addEventListener('click', onClick);
-        deleteButton.addEventListener('click', deleteCard);
-    });
+
+    const addSave = document.getElementById('testadd');
+    addSave.addEventListener('click', function() {saveHoroscope(new Horoscope("Capricorn", "1/1/2000", "9:14 am"));});
+}
+
+function saveHoroscope(horoscope) {
+    horoscopes.push(horoscope);
+    addHoroscopesToDocument([horoscope]);
 }
 
 /**
@@ -44,11 +54,17 @@ function onClick() {
  * When delete button is clicked, delete the card and its data
  */
 function deleteCard(event) {
+    //get the id of the card and remove it from the array and localStorage
+    const id = this.parentNode.dataset.id;
+    horoscopes = horoscopes.filter(obj => obj.id != id);
+    saveHoroscopesToStorage(horoscopes);
+
     // Remove the card from the DOM
     this.parentNode.parentNode.removeChild(this.parentNode);
     this.parentNode.remove();
     if(event.stopPropagation)
         event.stopPropagation();
+
 }
 
 /**
@@ -66,7 +82,7 @@ function getHoroscopesFromStorage() {
  * Takes in an array of Horoscopes and for each horoscope creates a
  * new <past-entry-card> element, adds the horoscope data to that card
  * using element.data = {...}, and then appends that new recipe
- * to sidebar
+ * to the top of the sidebar
  * @param {Array<Horoscope>} horoscopes An array of horoscopes
  */
 function addHoroscopesToDocument(horoscopes) {
@@ -79,10 +95,11 @@ function addHoroscopesToDocument(horoscopes) {
       const deleteButton = card.shadowRoot.querySelector('.delete');
       card.addEventListener('click', onClick);
       deleteButton.addEventListener('click', deleteCard);
-      sidebar.appendChild(card);
+      sidebar.prepend(card);
     }
 }
 export {addHoroscopesToDocument};
+
 /**
  * Takes in an array of horoscopes, converts it to a string, and then
  * saves that string to 'horoscopes' in localStorage

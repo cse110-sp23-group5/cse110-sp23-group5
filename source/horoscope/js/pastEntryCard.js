@@ -18,6 +18,8 @@ class pastEntryCard extends HTMLElement {
 
         shadow.appendChild(style);
         shadow.appendChild(article);
+
+        
     }
 
     /**
@@ -26,6 +28,7 @@ class pastEntryCard extends HTMLElement {
      * @param {Horoscope} data - The data to pass into <past-entry-card>, 
      *                          as a Horoscope object of following format:
      *                          {
+     *                              "id": number,                             
      *                              "sign": "string",
      *                              "birthday": "string",
      *                              "date": "string",
@@ -37,6 +40,8 @@ class pastEntryCard extends HTMLElement {
 
         const article = this.shadowRoot.querySelector('article');
         console.log(data);
+
+        article.dataset.id = `${data.id}`;
 
         /**
          * Display the image and name of the user's horoscope, 
