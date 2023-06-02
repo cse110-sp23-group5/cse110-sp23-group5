@@ -13,18 +13,20 @@ We merge our `dev` branch into `main` weekly after discussing our progress and a
 [//]: # (Version format: MAJOR.MINOR.PATCH)
 
 # Release Notes
+## Version 0.2
+- Improved UI/UX
+- Added more responses
+
+# Changelog
+[//]: # (Previous release notes here)
 ## Version 0.1
 - Basic app skeleton
 - Allows for user input of birthday and response selection based on horoscope sign
 
-# Changelog
-[//]: # (Previous release notes here)
-
-
 # Roadmap
 ## Short-term
-- Revamp design
-- Add more prompts
+- Clean up design elements: UI/UX (Design)
+- Implement short description for each sign + category
 - Sidebar functionality
 - Horoscope changes daily
 
