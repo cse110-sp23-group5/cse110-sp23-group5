@@ -9,11 +9,11 @@ window.addEventListener('DOMContentLoaded', init);
 function makeCounter(start) {
     var i = start;
     return function() {
-        return i++;
+        return ++i;
     }
 }
 
-let counter = makeCounter(0); //TODO: make it so that the numbers wont repeat when calling from localstorage
+let counter; //TODO: make it so that the numbers wont repeat when calling from localstorage
 
 class Horoscope{
     constructor(sign, birthday, date) {
@@ -30,6 +30,12 @@ let horoscopes = [];
 function init() {
     // Get the horoscopes from localStorage
     horoscopes = getHoroscopesFromStorage();
+    let id = 0;
+    horoscopes.forEach((horoscope) => {
+        id = Math.max(id, horoscope.id);
+    });
+    counter = makeCounter(id);
+
     // Add each horoscopes to the <main> element
     addHoroscopesToDocument(horoscopes);
 
@@ -40,6 +46,7 @@ function init() {
 function saveHoroscope(horoscope) {
     horoscopes.push(horoscope);
     addHoroscopesToDocument([horoscope]);
+    saveHoroscopesToStorage(horoscopes);
 }
 
 /**
