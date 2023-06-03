@@ -1,7 +1,7 @@
 # 0007- Prompt Generation Final 
 
 Status: {accepted} <br>
-Date: {2002-06-02} when the decision was last updated} <br>
+Date: {2023-06-02} when the decision was last updated} <br>
 Deciders: Merrick Qiu, Alex Tahan, Vivin Vinil, Andrew Onozuka, Julia Poon, Leo Lee, Abhi Shrivastava <br>
 Consulted: Entire Team, Internet <br>
 Informed: Entire team
