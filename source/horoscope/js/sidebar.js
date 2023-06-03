@@ -62,6 +62,7 @@ function onClick() {
  */
 function deleteCard(event) {
     //get the id of the card and remove it from the array and localStorage
+    let horoscopes = getHoroscopesFromStorage();
     const id = this.parentNode.dataset.id;
     horoscopes = horoscopes.filter(obj => obj.id != id);
     saveHoroscopesToStorage(horoscopes);
