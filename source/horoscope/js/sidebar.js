@@ -13,7 +13,7 @@ function makeCounter(start) {
     }
 }
 
-let counter; //TODO: make it so that the numbers wont repeat when calling from localstorage
+let counter;
 
 class Horoscope{
     constructor(sign, birthday, date) {
