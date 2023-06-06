@@ -23,7 +23,6 @@ class Horoscope{
         this.date = date;
     }
 }
-export {Horoscope};
 
 let horoscopes = [];
 
@@ -39,10 +38,19 @@ function init() {
     // Add each horoscopes to the <main> element
     addHoroscopesToDocument(horoscopes);
 
-    const addSave = document.getElementById('testadd');
-    addSave.addEventListener('click', function() {saveHoroscope(new Horoscope("Capricorn", "1/1/2000", "9:14 am"));});
+    const clear = document.querySelector("#clear-horos");
+    const savedList = document.querySelector("#saved-list");
+    clear.addEventListener('click', function () {
+        localStorage.clear();
+        horoscopes = [];
+        savedList.innerHTML = "";
+    });
 }
 
+/**
+ * Add horoscope to the array of horoscopes and save to local storage
+ * @param {Horoscope} horoscope horoscope object to save
+ */
 function saveHoroscope(horoscope) {
     horoscopes.push(horoscope);
     addHoroscopesToDocument([horoscope]);
@@ -94,7 +102,7 @@ function getHoroscopesFromStorage() {
  * @param {Array<Horoscope>} horoscopes An array of horoscopes
  */
 function addHoroscopesToDocument(horoscopes) {
-    const sidebar = document.querySelector('#sidebar');
+    const sidebar = document.querySelector('#saved-list');
   
     for (let horo of horoscopes) {
       let card = document.createElement('past-entry-card');
@@ -115,4 +123,6 @@ export {addHoroscopesToDocument};
  */
 function saveHoroscopesToStorage(horoscopes) {
     localStorage.setItem('horoscopes', JSON.stringify(horoscopes));
-  }
+}
+
+export {Horoscope, saveHoroscope};

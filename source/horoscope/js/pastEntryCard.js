@@ -42,6 +42,11 @@ class pastEntryCard extends HTMLElement {
         console.log(data);
 
         article.dataset.id = `${data.id}`;
+        article.dataset.birthday = `${data.birthday}`
+        article.dataset.date = `${data.date}`
+
+        //reformat birthday from YYYY-MM-DD to TODO
+        let birthdayDisplay;
 
         /**
          * Display the image and name of the user's horoscope, 
@@ -68,7 +73,7 @@ class pastEntryCard extends HTMLElement {
 
 
         const sign = article.querySelector(".sign").textContent;
-        const date = article.querySelector(".date").textContent;
+        const date = article.dataset.date;
         // NOTE: because the dates are in M/D/YYYY format,
         // this code turns it into YYYY-MM-DD
         // This is because you need it in this format to update the birthday form
@@ -78,7 +83,7 @@ class pastEntryCard extends HTMLElement {
                 birthdayRaw[i] = "0" + birthdayRaw[i];
             }
         };
-        const birthday = birthdayRaw.join("-");
+        const birthday = article.dataset.birthday;
         
         let horoscope = new Horoscope(sign, birthday, date);
         return horoscope;

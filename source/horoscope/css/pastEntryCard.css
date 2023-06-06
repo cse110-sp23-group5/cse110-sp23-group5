@@ -66,8 +66,3 @@ article:hover .date {
     grid-area: horoscope;
     margin: 0px;
 }
-#sidebar {
-  height: 100%;
-  overflow-y: scroll;
-}
-

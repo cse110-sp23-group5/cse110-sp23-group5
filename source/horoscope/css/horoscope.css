@@ -50,8 +50,13 @@ main {
 /* ID SELECTORS */
 /* in Sidebar */
 #sidebar {
-    display: flex;
-    flex-flow: column nowrap;
+    display: grid;
+    grid-template: 
+        [row1-start] "new-horo new-horo" 100px [row1-end]
+        [row2-start] "sidebar-title clear-horos" 50px [row2-end]
+        [row3-start] "saved-list saved-list" auto [row3-end]
+        / 75% 25%;
+    grid-template-columns: 75% 25%;
     width: 25%;
     /* border: 3px solid rgb(0, 128, 0); */
     background-color: #424242;
@@ -153,4 +158,31 @@ input[type="button"]:focus {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+#sidebar > * {
+    margin-bottom: 10px;
+    width: auto;
+}
+
+#new-horo {
+    grid-area: new-horo;
+}
+
+#sidebar-title {
+    grid-area: sidebar-title;
+    align-self: center;
+    margin-left: 10px;
+}
+
+#clear-horos {
+    grid-area: clear-horos;
+}
+
+#saved-list {
+    grid-area: saved-list;
+    display: flex;
+    flex-flow: column nowrap;
+    width: auto;
+    overflow-y: scroll;
 }
