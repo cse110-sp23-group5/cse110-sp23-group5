@@ -49,7 +49,7 @@ function init() {
     *                           "birthday": string
     *                       }
     */
-    window.setHoroscope = function setHoroscope(Horoscope){
+    window.setHoroscope = (Horoscope) => {
         let sign = Horoscope.sign;
         let birthday = Horoscope.birthday;
 
@@ -68,11 +68,37 @@ function init() {
         //update birthday
         document.getElementById('birthday').value = birthday;
     }
+    /**
+    * Called when you want to clear the horoscope on the main page
+    */
+    window.clearHoroscope = () => {
+        let birthdayInput = document.getElementById('birthday');
+        birthdayInput.value = '';
+        
+        let locationInput = document.getElementById('location');
+        locationInput.value = '';
+        
+        //switch sign display text
+        let signDisplay = document.getElementById("sign-display");
+        signDisplay.textContent = "Find your Sign!";
+
+        //switch sign display image
+        let signImage = document.getElementById("sign-image");
+        const forImage = "images/placeholder.png";
+        signImage.src = forImage;
+        
+        let dateDisplay = document.getElementById("date-display");
+        dateDisplay.textContent = "Today is " + new Date().toLocaleDateString();
+
+        let fortuneElement = document.getElementById('horoscope-fortune')
+        console.log(fortuneElement);
+        fortuneElement.textContent = "Enter your birthday above and choose a category to see your daily horoscope!";
+    }
 
 
 
     // Add event listener for the submit window
-    submit.addEventListener('click', function() {
+    submit.addEventListener('click', (event) => {
         //get birthday and location
         let birthday = document.getElementById('birthday').value;
         let location = document.getElementById('location').value;
@@ -121,4 +147,10 @@ function init() {
             })
             .catch(error => console.error('Error:', error));        
     });
+
+    //clear page when user clicks new horoscope
+    let newHoroscopeButton = document.getElementById('new-horo');
+    newHoroscopeButton.addEventListener('click', (event => {
+        window.clearHoroscope();
+    }));
 }
