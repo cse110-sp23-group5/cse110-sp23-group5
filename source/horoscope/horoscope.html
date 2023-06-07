@@ -20,10 +20,16 @@
       <div id="main">
         <div id="interface">
           <form id="user-form">
-            <p>Enter your information:</p>
+            <!--. <p>Enter your information:</p> -->
+            <br><br>
             <label for="birthday">Birthday:</label>
             <input type="date" id="birthday" name="birthday"><br>
-            
+            <label for="category">Select a category:</label>
+        <select id="category" name="category">
+            <option value="love">Love</option>
+            <option value="health">Health</option>
+            <option value="career">Career</option>
+        </select>
             
             <br>
             <input type="button" id="submit" value="SUBMIT">
@@ -33,13 +39,8 @@
     </div>
     <div id="output">
         <!--. <h1 id="date-display"> Today is <script> document.write(new Date().toLocaleDateString()); </script> </h1> -->
-        <label for="category">Select a category:</label>
-        <select id="category" name="category">
-            <option value="love">Love</option>
-            <option value="health">Health</option>
-            <option value="career">Career</option>
-        </select>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <p id="horoscope-fortune">
             Enter your birthday above and choose a category to see your daily horoscope!
         </p>
