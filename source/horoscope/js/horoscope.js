@@ -54,16 +54,16 @@ function init() {
         let birthday = Horoscope.birthday;
 
         //switch sign display text
-        let signDisplay = document.getElementById("sign-display");
-        signDisplay.textContent = "Your sign: " + sign;
+        //let signDisplay = document.getElementById("sign-display");
+        //signDisplay.textContent = "Your sign: " + sign;
 
         //switch sign display image
-        let signImage = document.getElementById("sign-image");
-        const forImage = "images/Horoscopes/" + sign + ".png";
-        signImage.src = forImage;
+        //let signImage = document.getElementById("sign-image");
+        //const forImage = "images/Horoscopes/" + sign + ".png";
+        //signImage.src = forImage;
         
-        let dateDisplay = document.getElementById("date-display");
-        dateDisplay.textContent = "TODAY IS " + new Date().toLocaleDateString();
+        //let dateDisplay = document.getElementById("date-display");
+        //dateDisplay.textContent = "TODAY IS " + new Date().toLocaleDateString();
 
         //update birthday
         document.getElementById('birthday').value = birthday;
@@ -75,12 +75,12 @@ function init() {
         let birthdayInput = document.getElementById('birthday');
         birthdayInput.value = '';
         
-        let locationInput = document.getElementById('location');
-        locationInput.value = '';
+        //let locationInput = document.getElementById('location');
+        //locationInput.value = '';
         
         //switch sign display text
-        let signDisplay = document.getElementById("sign-display");
-        signDisplay.textContent = "Find your Sign!";
+        //let signDisplay = document.getElementById("sign-display");
+        //signDisplay.textContent = "Find your Sign!";
 
         //switch sign display image
         let signImage = document.getElementById("sign-image");
@@ -101,7 +101,7 @@ function init() {
     submit.addEventListener('click', (event) => {
         //get birthday and location
         let birthday = document.getElementById('birthday').value;
-        let location = document.getElementById('location').value;
+        //let location = document.getElementById('location').value;
 
         //make horoscope object
         let sign = dateToHoroscope(birthday);
