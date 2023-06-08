@@ -4,6 +4,18 @@
 
 @import "pastEntryCard.css";
 
+@font-face {
+    font-family: 'montserrat';
+    src: url('fonts/Montserrat-Regular.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'pacifico';
+    src: url('fonts/Pacifico-Regular.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* ELEMENT SELECTORS */
 body {
@@ -48,6 +60,10 @@ main {
     /* border: 3px solid rgb(0, 128, 0); */
 }
 
+label {
+    font-family: 'pacifico';
+}
+
 /* ID SELECTORS */
 /* in Sidebar */
 #sidebar {
@@ -68,7 +84,7 @@ main {
 /* in Interface */
 #interface {
     font-size: 20px;
-    text-transform:uppercase;
+    /* text-transform:uppercase; */
     /* border: 3px solid rgb(0, 128, 0); */
 }
 
@@ -168,9 +184,18 @@ input[type="button"]:focus {
 
 #new-horo {
     grid-area: new-horo;
+    color: lightgrey;
+    background-color: transparent;
+    border: none;
+    height: 5rem;
+}
+
+#new-horo img {
+    height: 5rem;
 }
 
 #sidebar-title {
+    font-family: 'montserrat';
     grid-area: sidebar-title;
     align-self: center;
     margin-left: 10px;
@@ -178,6 +203,10 @@ input[type="button"]:focus {
 
 #clear-horos {
     grid-area: clear-horos;
+    color: lightgrey;
+    background-color: transparent;
+    box-shadow: 0 0 0 2px lightgrey;
+    border: none;
 }
 
 #saved-list {
