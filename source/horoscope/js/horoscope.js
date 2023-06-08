@@ -101,6 +101,12 @@ function init() {
     submit.addEventListener('click', (event) => {
         //get birthday and location
         let birthday = document.getElementById('birthday').value;
+        //check if the birthday is in date format: MM/DD/YYYY
+        if (birthday.length != 10 || birthday[4] != '-' || birthday[7] != '-') {
+            alert("Please enter a valid date in the format MM/DD/YYYY");
+            return;
+        }
+        
         //let location = document.getElementById('location').value;
 
         //make horoscope object
