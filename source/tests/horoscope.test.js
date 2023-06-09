@@ -11,7 +11,7 @@ describe('Basic user flow for Website', () => {
         await page.select('#category', 'health')
         // Submit the form
         await page.evaluate(() => {
-            document.querySelector('#submit').click();
+            document.querySelector('#save').click();
         });
 
         // Make sure localStorage is updated with the correct horoscope
