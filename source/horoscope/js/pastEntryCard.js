@@ -32,6 +32,7 @@ class pastEntryCard extends HTMLElement {
      *                              "sign": "string",
      *                              "birthday": "string",
      *                              "date": "string",
+     *                              "message": "string",
      *                          }
      */
     set data(data) {
@@ -39,11 +40,11 @@ class pastEntryCard extends HTMLElement {
         if (!data) return;
 
         const article = this.shadowRoot.querySelector('article');
-        console.log(data);
 
         article.dataset.id = `${data.id}`;
-        article.dataset.birthday = `${data.birthday}`
-        article.dataset.date = `${data.date}`
+        article.dataset.birthday = `${data.birthday}`;
+        article.dataset.date = `${data.date}`;
+        article.dataset.message = `${data.message}`;
 
         //reformat birthday from YYYY-MM-DD to TODO
         let birthdayDisplay;
@@ -73,6 +74,7 @@ class pastEntryCard extends HTMLElement {
 
 
         const sign = article.querySelector(".sign").textContent;
+        const message = article.dataset.message;
         const date = article.dataset.date;
         // NOTE: because the dates are in M/D/YYYY format,
         // this code turns it into YYYY-MM-DD
@@ -85,7 +87,7 @@ class pastEntryCard extends HTMLElement {
         };
         const birthday = article.dataset.birthday;
         
-        let horoscope = new Horoscope(sign, birthday, date);
+        let horoscope = new Horoscope(sign, birthday, date, message);
         return horoscope;
     }
 

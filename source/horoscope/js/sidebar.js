@@ -1,3 +1,4 @@
+import { clearHoroscope } from "./horoscope.js";
 window.addEventListener('DOMContentLoaded', init);
 
 
@@ -16,11 +17,12 @@ function makeCounter(start) {
 let counter;
 
 class Horoscope{
-    constructor(sign, birthday, date) {
+    constructor(sign, birthday, date, message) {
         this.id = counter();
         this.sign = sign;
         this.birthday = birthday;
         this.date = date;
+        this.message = message;
     }
 }
 
@@ -44,6 +46,7 @@ function init() {
         localStorage.clear();
         horoscopes = [];
         savedList.innerHTML = "";
+        clearHoroscope();
     });
 }
 
@@ -64,8 +67,8 @@ function onClick() {
     let horo = this.data;
     setHoroscope(horo);
 
-    let categoryElement = document.getElementById('category');
-    categoryElement.dispatchEvent(new Event('change')); // TODO: remember the saved horoscope instead of generating a new one
+    //let categoryElement = document.getElementById('category');
+    //categoryElement.dispatchEvent(new Event('change')); // TODO: remember the saved horoscope instead of generating a new one
 }
 
 /**
@@ -78,11 +81,14 @@ function deleteCard(event) {
     horoscopes = horoscopes.filter(obj => obj.id != id);
     saveHoroscopesToStorage(horoscopes);
 
+    clearHoroscope();
+
     // Remove the card from the DOM
     this.parentNode.parentNode.removeChild(this.parentNode);
     this.parentNode.remove();
     if(event.stopPropagation)
         event.stopPropagation();
+
 
 }
 

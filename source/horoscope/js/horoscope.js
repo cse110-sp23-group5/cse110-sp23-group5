@@ -1,9 +1,19 @@
 import { Horoscope, saveHoroscope } from "./sidebar.js";
 window.addEventListener('DOMContentLoaded', init);
-function init() {
-    let submit = document.getElementById('submit');
+async function init() {
+    let save = document.getElementById('save');
+    let birthday = document.getElementById('birthday');
+    let categoryElement = document.getElementById('category');
+    let fortuneElement = document.getElementById('horoscope-fortune');
+    
+    //clear the main page
+    clearHoroscope();
 
-    // date to horoscope
+    /**
+     * Determines horoscope sign based on birthday
+     * @param {string} dateString string representation of the date
+     * @returns name of the zodiac sign
+     */
     function dateToHoroscope(dateString) {
         // Array of signs. Capricorn is repeated since it crosses the new year
         const zodiacSigns = [
@@ -47,11 +57,13 @@ function init() {
     *                       {
     *                           "sign": string
     *                           "birthday": string
+    *                           "message": string
     *                       }
     */
     window.setHoroscope = (Horoscope) => {
         let sign = Horoscope.sign;
         let birthday = Horoscope.birthday;
+        let message = Horoscope.message;
 
         //switch sign display text
         //let signDisplay = document.getElementById("sign-display");
@@ -67,78 +79,61 @@ function init() {
 
         //update birthday
         document.getElementById('birthday').value = birthday;
-    }
-    /**
-    * Called when you want to clear the horoscope on the main page
-    */
-    window.clearHoroscope = () => {
-        let birthdayInput = document.getElementById('birthday');
-        birthdayInput.value = '';
-        
-        //let locationInput = document.getElementById('location');
-        //locationInput.value = '';
-        
-        //switch sign display text
-        //let signDisplay = document.getElementById("sign-display");
-        //signDisplay.textContent = "Find your Sign!";
 
-        //switch sign display image
-        let signImage = document.getElementById("sign-image");
-        const forImage = "images/placeholder.png";
-        signImage.src = forImage;
-        
-        let dateDisplay = document.getElementById("date-display");
-        dateDisplay.textContent = "Today is " + new Date().toLocaleDateString();
-
-        let fortuneElement = document.getElementById('horoscope-fortune')
-        console.log(fortuneElement);
-        fortuneElement.textContent = "Enter your birthday above and choose a category to see your daily horoscope!";
+        //set text content
+        fortuneElement.textContent = message;
     }
 
 
 
-    // Add event listener for the submit window
-    submit.addEventListener('click', (event) => {
-        //get birthday and location
-        let birthday = document.getElementById('birthday').value;
+    // Add event listener for the save button
+    save.addEventListener('click', async (event) => {
+        let bday = birthday.value;
+        
+        if (bday.length != 10 || bday[4] != '-' || bday[7] != '-') {
+            alert("Please enter a valid date in the format MM/DD/YYYY");
+            return;
+        }
+        
+        let sign = dateToHoroscope(bday);
+        let message = fortuneElement.innerText;
+        let today = new Date();
+        let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        
+        //save horoscope to local storage for sidebar
+        let horoscopeElement = new Horoscope(sign, bday, time, message);
+        saveHoroscope(horoscopeElement);
+    })
+
+    // add event listener for birthday change
+    birthday.addEventListener('change',  async (event) => {
+        //get birthday
+        let birthday = event.target.value;
         //check if the birthday is in date format: MM/DD/YYYY
         if (birthday.length != 10 || birthday[4] != '-' || birthday[7] != '-') {
             alert("Please enter a valid date in the format MM/DD/YYYY");
             return;
         }
         
-        //let location = document.getElementById('location').value;
+        //update text
+        fortuneElement.innerText = await getPrompt();
+    });
 
-        //make horoscope object
-        let sign = dateToHoroscope(birthday);
-        let horoscope = {birthday: birthday,
-                        place: location,
-                        sign: sign};
+    // add event listener for category change
+    categoryElement.addEventListener('change',  async (event) => {
+        fortuneElement.innerText = await getPrompt();       
+    });
 
-        setHoroscope(horoscope);
-        categoryElement.dispatchEvent(new Event('change'));
-
-        //save horoscope to local storage for sidebar
-        var today = new Date();
-        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        let horoscopeElement = new Horoscope(sign, birthday, time);
-        saveHoroscope(horoscopeElement);
-        // let storageHoroscopes =  JSON.parse(localStorage.getItem('horoscopes') || '[]');
-        // storageHoroscopes.push(horoscopeElement);
-        // localStorage.setItem('horoscopes', JSON.stringify(storageHoroscopes));
-        // addHoroscopesToDocument([horoscopeElement]);
-    })
-
-
-    //create event listener for option change
-    let categoryElement = document.getElementById('category');
-    let fortuneElement = document.getElementById('horoscope-fortune');
-
-    //add event listener for category change
-    categoryElement.addEventListener('change',  (event) => {
+    /**
+     * Generates horoscope prompt based on category and sign
+     * Randomly selects prompt from database
+     * @returns horoscope prompt
+     */
+    async function getPrompt() {
         let promptDB;
 
-        fetch('./json/horoResponses.json')
+        return new Promise(async (resolve, reject) => {
+            await fetch('./json/horoResponses.json')
             .then(response => response.json())
             .then(data => {
                 //parse json
@@ -146,17 +141,50 @@ function init() {
                 //console.log(promptDB);
                 let date = document.getElementById('birthday').value;
                 let sign = dateToHoroscope(date);
-                let horoscopeprompt = promptDB[sign][event.target.value];
+                let horoscopeprompt = promptDB[sign][categoryElement.value];
                 let selectedPrompt = horoscopeprompt[Math.floor((Math.random() * horoscopeprompt.length)%horoscopeprompt.length)];
-                fortuneElement.textContent = selectedPrompt;
+                resolve(selectedPrompt);
                 //console.log(selectedPrompt);
             })
-            .catch(error => console.error('Error:', error));        
-    });
+            .catch(error => {
+                console.error('Error:', error);
+                reject(error);
+            });  
+        });
+    }
 
     //clear page when user clicks new horoscope
     let newHoroscopeButton = document.getElementById('new-horo');
     newHoroscopeButton.addEventListener('click', (event => {
-        window.clearHoroscope();
+        clearHoroscope();
     }));
+
 }
+
+/**
+ * Called when you want to clear the horoscope on the main page
+ */
+function clearHoroscope() {
+    let birthdayInput = document.getElementById('birthday');
+    birthdayInput.value = '';
+    
+    //let locationInput = document.getElementById('location');
+    //locationInput.value = '';
+    
+    //switch sign display text
+    //let signDisplay = document.getElementById("sign-display");
+    //signDisplay.textContent = "Find your Sign!";
+
+    //switch sign display image
+    // let signImage = document.getElementById("sign-image");
+    // const forImage = "images/placeholder.png";
+    // signImage.src = forImage;
+    
+    // let dateDisplay = document.getElementById("date-display");
+    // dateDisplay.textContent = "Today is " + new Date().toLocaleDateString();
+
+    let fortuneElement = document.getElementById('horoscope-fortune')
+    fortuneElement.textContent = "Enter your birthday above and choose a category to see your daily horoscope!";
+}
+
+export {clearHoroscope}
