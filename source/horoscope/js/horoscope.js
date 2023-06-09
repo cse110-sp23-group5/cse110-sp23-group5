@@ -36,7 +36,6 @@ async function init() {
         // Date is 1 day off when printing to console because of time zone conversions.
         const date = new Date(dateString); 
         const year = dateString.substring(0,4);
-        console.log(date);
 
         const matchingSign = zodiacSigns.find(sign => {
             const start = new Date(`${year}-${sign.start}`).getTime();
@@ -103,11 +102,11 @@ async function init() {
         let category = categoryElement.value;
         let message = fortuneElement.innerText;
         let today = new Date();
-        let time = today.getMonth() + "-" + today.getDate() + "-" + today.getFullYear();
+        let time = today.getFullYear() + "-" + today.getMonth() + "-" + today.getDate();
         // let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
         
         //save horoscope to local storage for sidebar
-        let horoscopeElement = new Horoscope(sign, bday, time, message, category);
+        let horoscopeElement = new Horoscope(sign, bday, today, message, category);
         saveHoroscope(horoscopeElement);
     })
 

@@ -6,15 +6,15 @@ article {
     margin-bottom: 10px;
     color: white;
     display: grid;
-    height: auto;
+    height: 50px;
     row-gap: 5px;
     column-gap: 5px;
     padding: 16px;
     width: auto;
     grid-template: 
-        [row1-start] "image horoscope horoscope date" 60% [row1-end]
-        [row2-start] "image birthday birthday category" 40% [row2-end]
-        / 50px auto auto 50px;
+        [row1-start] "image horoscope horoscope category" 60% [row1-end]
+        [row2-start] "image birthday birthday date" 40% [row2-end]
+        / 50px auto auto auto;
 }
 
 /* When hovering over a card, it changes color */
@@ -55,6 +55,7 @@ article:hover .category {
     grid-area: date;
     justify-self: end;
     align-self: center;
+    font-size: auto;
 }
 
 .category {
@@ -78,4 +79,5 @@ article:hover .category {
 .sign {
     grid-area: horoscope;
     margin: 0px;
+    font-size: 150%;
 }
