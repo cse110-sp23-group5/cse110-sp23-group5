@@ -183,6 +183,7 @@ input[type="text"] {
 /* Submit Button Styles */
 
 input[type="button"] {
+    transition: background-color 1s ease;
     background-color: #1565C0;
     /*navy blue*/
     color: white;
