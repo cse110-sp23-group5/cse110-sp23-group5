@@ -133,6 +133,14 @@ label {
     /* border: 3px solid rgb(0, 128, 0); */
 }
 
+label[for="birthday"] {
+    font-size: clamp(20px, 3vw, 40px);
+}
+
+label[for="category"] {
+    font-size: clamp(20px, 3vw, 40px);
+}
+
 input[type="date"] {
     /* font-family: Arial, sans-serif; */
     background-color: transparent;
@@ -142,6 +150,7 @@ input[type="date"] {
     border: 2px;
     border-style: solid;
     border-radius: 4px;
+    font-size: clamp(20px, 3vw, 40px);
   }
   
 ::-webkit-calendar-picker-indicator{
@@ -154,6 +163,8 @@ select{
     border: 2px;
     border-style: solid;
     border-radius: 4px;
+    font-size: clamp(20px, 3vw, 40px);
+    text-align: center;
 }
 
 select option{
@@ -166,6 +177,7 @@ input[type="text"] {
     /* border: 1px solid #ccc; */
     /* padding: 8px; */
     border-radius: 4px;
+    /* border: 3px solid rgb(0, 128, 0); */
 }
 
 /* Submit Button Styles */
@@ -178,7 +190,7 @@ input[type="button"] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: clamp(15px, 1.5vw, 30px);
 }
 
 input[type="button"]:hover {
