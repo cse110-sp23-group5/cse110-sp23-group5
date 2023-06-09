@@ -44,7 +44,7 @@ describe('Basic user flow for Website', () => {
 
 
 //Unit tests for formatDynamicDate
-const formatDynamicDate = reqiure('./pastEntryCard.js');
+const formatDynamicDate = require('./pastEntryCard.js');
 
 describe('formatDynamicDate', () => {
   // Test case for a date within one minute
