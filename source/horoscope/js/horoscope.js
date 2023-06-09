@@ -98,7 +98,8 @@ async function init() {
         let sign = dateToHoroscope(bday);
         let message = fortuneElement.innerText;
         let today = new Date();
-        let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        let time = today.getMonth() + "-" + today.getDate() + "-" + today.getFullYear();
+        // let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
         
         //save horoscope to local storage for sidebar
         let horoscopeElement = new Horoscope(sign, bday, time, message);
