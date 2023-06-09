@@ -17,12 +17,13 @@ function makeCounter(start) {
 let counter;
 
 class Horoscope{
-    constructor(sign, birthday, date, message) {
+    constructor(sign, birthday, date, message, category) {
         this.id = counter();
         this.sign = sign;
         this.birthday = birthday;
         this.date = date;
         this.message = message;
+        this.category = category;
     }
 }
 
@@ -123,7 +124,6 @@ function addHoroscopesToDocument(horoscopes) {
       sidebar.prepend(card);
     }
 }
-export {addHoroscopesToDocument};
 
 /**
  * Takes in an array of horoscopes, converts it to a string, and then
@@ -134,4 +134,4 @@ function saveHoroscopesToStorage(horoscopes) {
     localStorage.setItem('horoscopes', JSON.stringify(horoscopes));
 }
 
-export {Horoscope, saveHoroscope};
+export {Horoscope, addHoroscopesToDocument, saveHoroscope};

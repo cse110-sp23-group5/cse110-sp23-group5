@@ -64,6 +64,7 @@ async function init() {
         let sign = Horoscope.sign;
         let birthday = Horoscope.birthday;
         let message = Horoscope.message;
+        let category = Horoscope.category;
 
         //switch sign display text
         //let signDisplay = document.getElementById("sign-display");
@@ -76,6 +77,9 @@ async function init() {
         
         //let dateDisplay = document.getElementById("date-display");
         //dateDisplay.textContent = "TODAY IS " + new Date().toLocaleDateString();
+
+        //update category
+        categoryElement.value = category;
 
         //update birthday
         document.getElementById('birthday').value = birthday;
@@ -96,13 +100,14 @@ async function init() {
         }
         
         let sign = dateToHoroscope(bday);
+        let category = categoryElement.value;
         let message = fortuneElement.innerText;
         let today = new Date();
         let time = today.getMonth() + "-" + today.getDate() + "-" + today.getFullYear();
         // let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
         
         //save horoscope to local storage for sidebar
-        let horoscopeElement = new Horoscope(sign, bday, time, message);
+        let horoscopeElement = new Horoscope(sign, bday, time, message, category);
         saveHoroscope(horoscopeElement);
     })
 

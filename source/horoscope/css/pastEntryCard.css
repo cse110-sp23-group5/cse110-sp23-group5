@@ -13,7 +13,7 @@ article {
     width: auto;
     grid-template: 
         [row1-start] "image horoscope horoscope date" 60% [row1-end]
-        [row2-start] "image birthday birthday date" 40% [row2-end]
+        [row2-start] "image birthday birthday category" 40% [row2-end]
         / 50px auto auto 50px;
 }
 
@@ -33,20 +33,33 @@ article:hover .date {
     display: none;
 }
 
+/* When hovering over a card, category disappears */
+article:hover .category {
+    display: none;
+}
+
 .delete {
     display: none;
     border: none;
     background: none;
-    grid-area: date;
+    grid-area: 1 / 4 / 3 / 5;
 }
 
-/* When hovering over a card, changes color */
+/* When hovering over delete button, changes color */
 .delete:hover {
     color: lightgray;
 }
 
 .date {
+    display: block;
     grid-area: date;
+    justify-self: end;
+    align-self: center;
+}
+
+.category {
+    display: block;
+    grid-area: category;
     justify-self: end;
     align-self: center;
 }

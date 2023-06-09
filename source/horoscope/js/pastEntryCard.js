@@ -33,6 +33,7 @@ class pastEntryCard extends HTMLElement {
      *                              "birthday": "string",
      *                              "date": "string",
      *                              "message": "string",
+     *                              "category": "string",
      *                          }
      */
     set data(data) {
@@ -59,6 +60,7 @@ class pastEntryCard extends HTMLElement {
         <span class="sign">${data.sign}</span>
         <span class="birthday">${data.birthday}</span>
         <span class="date">${data.date}</span>
+        <span class="category">${data.category}</span>
         <button class="delete" aria-label="Close alert" type="button">
             <span class="delete" aria-hidden="true">&#x2715;</span>         <!--Could also use &#10006;-->
         </button>
@@ -74,6 +76,7 @@ class pastEntryCard extends HTMLElement {
 
 
         const sign = article.querySelector(".sign").textContent;
+        const category = article.querySelector(".category").textContent;
         const message = article.dataset.message;
         const date = article.dataset.date;
         // NOTE: because the dates are in M/D/YYYY format,
@@ -87,7 +90,7 @@ class pastEntryCard extends HTMLElement {
         };
         const birthday = article.dataset.birthday;
         
-        let horoscope = new Horoscope(sign, birthday, date, message);
+        let horoscope = new Horoscope(sign, birthday, date, message, category);
         return horoscope;
     }
 
