@@ -212,8 +212,13 @@ input[type="button"]:focus {
     grid-area: new-horo;
     color: lightgrey;
     background-color: transparent;
-    border: none;
+    border-radius: 8px;
     height: 5rem;
+}
+
+#new-horo:hover {
+    background-color: #9e9e9e;
+    color: black;
 }
 
 #new-horo img {
