@@ -82,7 +82,7 @@ label {
 /* in Interface */
 #interface {
     font-size: 20px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     /* border: 3px solid rgb(0, 128, 0); */
 }
 
@@ -91,6 +91,7 @@ label {
     text-align: left;
     padding-bottom: 20px;
     margin-left: 25px;
+    text-align: center;
     /*line-height: 1.5px;*/
 
     /* so submit button isn't directly touching png */
@@ -231,7 +232,11 @@ input[type="button"]:focus {
     color: lightgrey;
     background-color: transparent;
     box-shadow: 0 0 0 2px lightgrey;
-    border: none;
+    border-radius: 3px;
+}
+
+#clear-horos:hover {
+    background-color: red;
 }
 
 #saved-list {
@@ -239,5 +244,5 @@ input[type="button"]:focus {
     display: flex;
     flex-flow: column nowrap;
     width: auto;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
