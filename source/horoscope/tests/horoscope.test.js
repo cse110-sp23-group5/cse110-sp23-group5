@@ -9,7 +9,7 @@ describe('Basic user flow for Website', () => {
         // Submit birthday
         await page.$eval('#birthday', el => el.value = '2003-08-05');
         // Select health fortune from dropdown
-        await page.select('#category', 'health')
+        await page.select('#category', 'Health')
         // Submit the form
         await page.evaluate(() => {
             document.querySelector('#save').click();

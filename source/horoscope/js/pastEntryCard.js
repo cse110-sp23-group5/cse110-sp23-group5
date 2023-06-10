@@ -133,5 +133,5 @@ function formatDynamicDate(date) {
     }
 }
 
-module.exports = { formatDynamicDate };
 customElements.define('past-entry-card', pastEntryCard);
+export { formatDynamicDate };
