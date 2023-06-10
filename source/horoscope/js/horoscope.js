@@ -5,6 +5,7 @@ async function init() {
     let birthday = document.getElementById('birthday');
     let categoryElement = document.getElementById('category');
     let fortuneElement = document.getElementById('horoscope-fortune');
+    let backgroundVideo=document.getElementById("bgvideo");
     
     //clear the main page
     clearHoroscope();
