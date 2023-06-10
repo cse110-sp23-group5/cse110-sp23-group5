@@ -102,8 +102,6 @@ async function init() {
         let category = categoryElement.value;
         let message = fortuneElement.innerText;
         let today = new Date();
-        let time = today.getFullYear() + "-" + today.getMonth() + "-" + today.getDate();
-        // let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
         
         //save horoscope to local storage for sidebar
         let horoscopeElement = new Horoscope(sign, bday, today, message, category);
@@ -143,13 +141,11 @@ async function init() {
             .then(data => {
                 //parse json
                 promptDB = JSON.parse(JSON.stringify(data));
-                //console.log(promptDB);
                 let date = document.getElementById('birthday').value;
                 let sign = dateToHoroscope(date);
                 let horoscopeprompt = promptDB[sign][categoryElement.value];
                 let selectedPrompt = horoscopeprompt[Math.floor((Math.random() * horoscopeprompt.length)%horoscopeprompt.length)];
                 resolve(selectedPrompt);
-                //console.log(selectedPrompt);
             })
             .catch(error => {
                 console.error('Error:', error);

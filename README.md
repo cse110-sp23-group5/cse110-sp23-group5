@@ -36,3 +36,6 @@ We merge our `dev` branch into `main` weekly after discussing our progress and a
 
 ## Long-term
 - Login/account system
+
+
+[Build Pipeline](admin/cipipeline/setup.md)

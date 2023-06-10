@@ -67,9 +67,6 @@ function saveHoroscope(horoscope) {
 function onClick() {
     let horo = this.data;
     setHoroscope(horo);
-
-    //let categoryElement = document.getElementById('category');
-    //categoryElement.dispatchEvent(new Event('change')); // TODO: remember the saved horoscope instead of generating a new one
 }
 
 /**
