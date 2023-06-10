@@ -263,7 +263,11 @@ input[type="button"]:focus {
 }
 
 #new-horo img {
-    height: 5rem;
+    height: 4rem;
+}
+
+#new-horo:hover img {
+    filter: opacity(50%);
 }
 
 #sidebar-title {
