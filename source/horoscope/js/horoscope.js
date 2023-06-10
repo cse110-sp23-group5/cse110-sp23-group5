@@ -120,6 +120,12 @@ async function init() {
         
         //update text
         fortuneElement.innerText = await getPrompt();
+        
+        //update backgroundVideo
+        let date = document.getElementById('birthday').value;
+        backgroundVideo.setAttribute("src","https://github.com/ZhouYuantian/CSE110-Storge/raw/main/"+dateToHoroscope(date)+".mp4");
+        startMove(document.getElementById("output"));
+        
     });
 
     // add event listener for category change
@@ -186,6 +192,22 @@ function clearHoroscope() {
 
     let fortuneElement = document.getElementById('horoscope-fortune')
     fortuneElement.textContent = "Enter your birthday above and choose a category to see your daily horoscope!";
+}
+
+function startMove(oDiv){
+    let alpha=0;
+    var timer = null;
+    clearInterval(timer);　　　　
+    timer = setInterval(function(){
+        var speed = 1;               
+        if(alpha==100){
+            return ;
+        }else{
+            alpha+=speed;       
+            oDiv.style.opacity = alpha/100; 
+            document.title = alpha;        
+        }
+    },30);
 }
 
 export {clearHoroscope}
