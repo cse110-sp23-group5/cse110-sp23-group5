@@ -52,7 +52,8 @@ class pastEntryCard extends HTMLElement {
         const formattedDate = formatDynamicDate(date);
 
         //reformat birthday from "YYYY-MM-DD" to "MMM D, YYYY"
-        const birthday = new Date(data.birthday);
+        let birthday = new Date(data.birthday);
+        birthday = new Date(birthday.getTime() - birthday.getTimezoneOffset()*-60000);
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         const birthdayDisplay = birthday.toLocaleDateString(undefined, options);
 

@@ -16,7 +16,7 @@ describe('Basic user flow for Website', () => {
         });
 
         // Make sure localStorage is updated with the correct horoscope
-        const localHoroscopes = await page.evaluate(() => window.localStorage.getItem("horoscopes"));
+        const localHoroscopes = await page.evaluate(() => localStorage.getItem("horoscopes"));
         let obj = JSON.parse(localHoroscopes)[0];
         expect(obj["sign"]).toBe("Leo");
 
