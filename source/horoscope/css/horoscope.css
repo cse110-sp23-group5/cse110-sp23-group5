@@ -159,10 +159,12 @@ label[for="category"] {
 }
 
 #horoscope-title {
-    position: fixed; /* Set the position property to relative */
-    
-    top: 60px; /* Adjust the top property to move the element vertically */
-    
+    position: fixed;
+    /* Set the position property to relative */
+
+    top: 60px;
+    /* Adjust the top property to move the element vertically */
+
     font-family: 'pacifico';
 
     z-index: 9999; /*bring elem forward*/
