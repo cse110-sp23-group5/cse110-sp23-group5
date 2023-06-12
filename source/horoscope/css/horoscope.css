@@ -159,9 +159,9 @@ label[for="category"] {
 }
 
 #horoscope-title {
-    position: relative; /* Set the position property to relative */
+    position: fixed; /* Set the position property to relative */
     
-    top: 180px; /* Adjust the top property to move the element vertically */
+    top: 60px; /* Adjust the top property to move the element vertically */
     
     font-family: 'pacifico';
 
@@ -180,7 +180,7 @@ label[for="category"] {
     border-radius: 20px;
     background-image: linear-gradient(rgba(0, 17, 85, 0.75), rgba(0, 183, 255, 0.0));
     position: relative;
-    top: 40px;
+    top: 70px;
     /* border: 3px solid rgb(0, 128, 0); */
 }
 
