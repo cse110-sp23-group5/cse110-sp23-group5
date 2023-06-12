@@ -129,6 +129,9 @@ function clearHoroscope() {
 
     let fortuneElement = document.getElementById('horoscope-fortune')
     fortuneElement.textContent = "Enter your birthday above and choose a category to see your daily horoscope!";
+    
+    let fortuneElementTitle = document.getElementById('horoscope-title');
+    fortuneElementTitle.textContent = "Your Horoscope";
 }
 
 /**
