@@ -162,7 +162,7 @@ label[for="category"] {
     position: fixed;
     /* Set the position property to relative */
 
-    top: 60px;
+    top: 80px;
     /* Adjust the top property to move the element vertically */
 
     font-family: 'pacifico';
@@ -178,7 +178,7 @@ label[for="category"] {
     flex: 1;
     font-size: clamp(20px, 3vw, 30px);
     padding: 30px;
-    padding-top: 50px;
+    padding-top: 70px;
     border-radius: 20px;
     background-image: linear-gradient(rgba(0, 17, 85, 0.75), rgba(0, 183, 255, 0.0));
     position: relative;
