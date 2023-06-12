@@ -46,7 +46,7 @@ body {
     border: 3px solid rgb(0, 128, 0);
 } */
 
-#vbgimg{
+#vbgimg {
     position: absolute;
     object-fit: cover;
     top: 0;
@@ -109,8 +109,12 @@ label {
 }
 
 #user-form {
+    /*  display: flex;
     flex: 0 1 auto;
-    text-align: left;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    */
     padding-bottom: 20px;
     margin-left: 25px;
     text-align: center;
@@ -120,6 +124,12 @@ label {
     /* padding: 100 vw; */
     /* border: 3px solid rgb(0, 128, 0); */
 }
+
+/* label[for="birthday"],
+label[for="category"] {
+    flex: 0 0 auto;
+    margin-right: 10px;
+} */
 
 #sign-image {
     max-width: 100%;
@@ -163,10 +173,14 @@ label {
 
 label[for="birthday"] {
     font-size: clamp(20px, 3vw, 40px);
+    height: 40px;
+    line-height: 40px;
 }
 
 label[for="category"] {
     font-size: clamp(20px, 3vw, 40px);
+    height: 40px;
+    line-height: 40px;
 }
 
 input[type="date"] {
@@ -178,14 +192,17 @@ input[type="date"] {
     border: 2px;
     border-style: solid;
     border-radius: 4px;
-    font-size: clamp(20px, 3vw, 40px);
-  }
-  
-::-webkit-calendar-picker-indicator{
+    /*font-size: clamp(20px, 3vw, 40px);*/
+    font-size: 24px;
+    margin-right: 35px;
+    padding: 10px 18px;
+}
+
+::-webkit-calendar-picker-indicator {
     background-color: white;
 }
 
-select{
+select {
     background-color: transparent;
     color: white;
     border: 2px;
@@ -195,7 +212,7 @@ select{
     text-align: center;
 }
 
-select option{
+select option {
     color: black;
 }
 
@@ -205,12 +222,15 @@ input[type="text"] {
     /* border: 1px solid #ccc; */
     /* padding: 8px; */
     border-radius: 4px;
+    /*margin-left: 20px;*/
+
     /* border: 3px solid rgb(0, 128, 0); */
 }
 
 /* Submit Button Styles */
 
 input[type="button"] {
+    position: absolute;
     transition: background-color 1s ease;
     background-color: #1565C0;
     /*navy blue*/
@@ -220,6 +240,9 @@ input[type="button"] {
     border-radius: 4px;
     cursor: pointer;
     font-size: clamp(15px, 1.5vw, 30px);
+    margin-left: 320px;
+    margin-top: -75px;
+    /*margin-bottom: 100px;*/
 }
 
 input[type="button"]:hover {
@@ -295,4 +318,33 @@ input[type="button"]:focus {
     flex-flow: column nowrap;
     width: auto;
     overflow-y: auto;
+}
+
+label[for="birthday"],
+input[type="date"] select {
+    margin-left: -340px;
+    /* margin-right: 16px;*/
+}
+
+input[type="category"],
+label[for="category"] select {
+    margin-left: -340px;
+}
+
+label[for="birthday"] {
+    font-size: 32px;
+    /* Adjust the font size as desired */
+}
+
+label[for="category"] {
+    font-size: 32px;
+    /* Adjust the font size as desired */
+}
+
+
+select#category {
+    font-size: 24px;
+    /* Adjust the font size as desired */
+    padding: 10px 16px;
+    /* Adjust the padding as desired */
 }
