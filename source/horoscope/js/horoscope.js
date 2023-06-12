@@ -6,7 +6,7 @@ async function init() {
     let categoryElement = document.getElementById('category');
     let fortuneElement = document.getElementById('horoscope-fortune');
     let backgroundVideo=document.getElementById("bgvideo");
-    
+    let fortuneElementTitle = document.getElementById('horoscope-title');
     //clear the main page
     clearHoroscope();
 
@@ -30,6 +30,7 @@ async function init() {
 
         //set text content
         fortuneElement.textContent = message;
+        fortuneElementTitle.textContent = dateToHoroscope(birthday);
     }
 
 
@@ -65,7 +66,13 @@ async function init() {
         
         //update text
         fortuneElement.innerText = await getPrompt();
+        // update horoscope sign
+        let divElement = document.getElementById("horoscope-title");
+        // set font style
         
+        let sign = dateToHoroscope(birthday);
+        divElement.innerText = sign;
+
         //update backgroundVideo
         let date = document.getElementById('birthday').value;
         backgroundVideo.setAttribute("src","https://github.com/ZhouYuantian/CSE110-Storge/raw/main/"+dateToHoroscope(date)+".mp4");
