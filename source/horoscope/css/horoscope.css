@@ -4,13 +4,13 @@
 
 @import "pastEntryCard.css";
 
+/* New fonts for sidebar and input labels */
 @font-face {
     font-family: 'montserrat';
     src: url('fonts/Montserrat-Regular.ttf') format('woff');
     font-weight: normal;
     font-style: normal;
 }
-
 @font-face {
     font-family: 'pacifico';
     src: url('fonts/Pacifico-Regular.ttf') format('woff');
@@ -18,14 +18,14 @@
     font-style: normal;
 }
 
+
 /* ELEMENT SELECTORS */
+/* wrapper over all components of the webpage */
 body {
     font-family: Garamond, Baskerville, Baskerville Old Face, Hoefler Text, Times New Roman, serif;
     color: white;
-    /*-webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: white;*/
 
-    /* Full height */
+    /* takes up the full page */
     margin: 0;
     padding: 0;
     height: 100%;
@@ -34,29 +34,11 @@ body {
     display: flex;
     flex-direction: row;
     height: 100vh;
-    /* border: 3px solid rgb(0, 128, 0); */
 }
 
-/* CLASS SELECTORS */
-/* .flex-column {
-    display:flex;
-    flex-direction:column;
-    flex: 1;
-    align-items: center;
-    border: 3px solid rgb(0, 128, 0);
-} */
-
-#vbgimg {
-    position: absolute;
-    object-fit: cover;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -10;
-}
-
+/* Video that plays when birthdate is submitted */
 video {
+    /* takes up the full page */
     position: absolute;
     top: 0;
     left: 0;
@@ -66,6 +48,7 @@ video {
     z-index: -1;
 }
 
+/* The center body, not including the sidebar */
 main {
     /* Center and scale the image nicely */
     background-position: center;
@@ -73,6 +56,7 @@ main {
     background-size: cover;
     background-origin: padding-box;
 
+    /* takes up the full page, but adjusts based on display size */
     margin: 0;
     padding: 0;
     height: 100%;
@@ -80,14 +64,22 @@ main {
     display: flex;
     flex-direction: column;
     position: relative;
-    /* border: 3px solid rgb(0, 128, 0); */
-}
-
-label {
-    font-family: 'pacifico';
 }
 
 /* ID SELECTORS */
+
+/* Background image */
+#vbgimg {
+    /* takes up the full page */
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+}
+
 /* in Sidebar */
 #sidebar {
     display: grid;
@@ -95,57 +87,22 @@ label {
         [row1-start] "new-horo new-horo" 100px [row1-end] [row2-start] "sidebar-title clear-horos" 50px [row2-end] [row3-start] "saved-list saved-list" auto [row3-end] / 75% 25%;
     grid-template-columns: 75% 25%;
     width: 25%;
-    /* border: 3px solid rgb(0, 128, 0); */
     background-color: #424242;
     padding: 10px;
-    /* background-image: linear-gradient( rgba(0, 17, 85, 0.75),  rgba(0, 183, 255, 0.1)); */
 }
 
-/* in Interface */
-#interface {
-    font-size: 20px;
-    /* text-transform: uppercase; */
-    /* border: 3px solid rgb(0, 128, 0); */
-}
-
+/* all the input related components. 'Birthday', 'Select a category', and 'Save' button. */
 #user-form {
-    /*  display: flex;
-    flex: 0 1 auto;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    */
+    /* positioning on the webpage based on bottom and left side */
     padding-bottom: 20px;
     margin-left: 25px;
     text-align: center;
-    /*line-height: 1.5px;*/
-
-    /* so submit button isn't directly touching png */
-    /* padding: 100 vw; */
-    /* border: 3px solid rgb(0, 128, 0); */
-}
-
-/* label[for="birthday"],
-label[for="category"] {
-    flex: 0 0 auto;
-    margin-right: 10px;
-} */
-
-#sign-image {
-    max-width: 100%;
-    height: auto;
-    flex: 0 1 auto;
-    /* border: 3px solid rgb(0, 128, 0); */
-}
-
-#sign-display {
-    flex: 0 1 auto;
-    text-align: center;
-    /* border: 3px solid rgb(0, 128, 0); */
 }
 
 /* in Output */
+/* for the prompt that is displayed based on the input */
 #output {
+    /* positioning on the webpage, changes based on the webpage size but keeps itself centered */
     position: absolute;
     bottom: 4vw;
     left: 50%;
@@ -158,11 +115,12 @@ label[for="category"] {
     width: 80%;
 }
 
+/* Name of the corresponding horoscope */
 #horoscope-title {
     position: fixed;
     /* Set the position property to relative */
 
-    top: 80px;
+    top: 60px;
     /* Adjust the top property to move the element vertically */
 
     font-family: 'pacifico';
@@ -170,7 +128,9 @@ label[for="category"] {
     z-index: 9999; /*bring elem forward*/
 }
 
+/* Fortune prompt */
 #horoscope-fortune {
+    /* positioning in the 'output' box. text is centered at all times. */
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -178,75 +138,71 @@ label[for="category"] {
     flex: 1;
     font-size: clamp(20px, 3vw, 30px);
     padding: 30px;
-    padding-top: 70px;
+    padding-top: 50px;
     border-radius: 20px;
     background-image: linear-gradient(rgba(0, 17, 85, 0.75), rgba(0, 183, 255, 0.0));
     position: relative;
     top: 70px;
-    /* border: 3px solid rgb(0, 128, 0); */
 }
 
+/* 'Birthday' label */
 label[for="birthday"] {
-    font-size: clamp(20px, 3vw, 40px);
+    font-size: 32px;
     height: 40px;
     line-height: 40px;
 }
 
+/* 'Select a catergory' label */
 label[for="category"] {
-    font-size: clamp(20px, 3vw, 40px);
+    font-size: 32px;
     height: 40px;
     line-height: 40px;
 }
 
+/* Birthday input */
+/* look of the birthday display on the webpage. Transparent and white to make it match the color-scheme
+    without blocking too much of the webpage */
 input[type="date"] {
-    /* font-family: Arial, sans-serif; */
     background-color: transparent;
     color: white;
-    /* border: 1px solid #ccc; */
-    /* padding: 8px; */
     border: 2px;
     border-style: solid;
-    border-radius: 4px;
-    /*font-size: clamp(20px, 3vw, 40px);*/
+    border-radius: 6px;
     font-size: 24px;
     margin-right: 35px;
     padding: 10px 18px;
 }
 
+/* Calendar display */
 ::-webkit-calendar-picker-indicator {
     background-color: white;
+    border-radius: 6px;
 }
 
+/* 'Select a category' default */
+/* look of the category display on the webpage. Matches the visual of birthday input */
 select {
     background-color: transparent;
     color: white;
     border: 2px;
     border-style: solid;
-    border-radius: 4px;
+    border-radius: 6px;
     font-size: clamp(20px, 3vw, 40px);
     text-align: center;
 }
 
+/* Dropdown for select a category */
+/* Couldn't do transparent background so white background(default) with black text */
 select option {
     color: black;
 }
 
-input[type="text"] {
-    /* font-family: Arial, sans-serif; */
-    background-color: #f2f2f2;
-    /* border: 1px solid #ccc; */
-    /* padding: 8px; */
-    border-radius: 4px;
-    /*margin-left: 20px;*/
-
-    /* border: 3px solid rgb(0, 128, 0); */
-}
-
 /* Submit Button Styles */
 
+/* save button */
 input[type="button"] {
     position: absolute;
-    transition: background-color 1s ease;
+    transition: background-color 1s ease; /* change of color takes a second(ex. when you hover) */
     background-color: #1565C0;
     /*navy blue*/
     color: white;
@@ -257,57 +213,58 @@ input[type="button"] {
     font-size: clamp(15px, 1.5vw, 30px);
     margin-left: 320px;
     margin-top: -75px;
-    /*margin-bottom: 100px;*/
 }
 
+/* save button when hovered by mouse */
 input[type="button"]:hover {
     background-color: #0D47A1;
     /*midnight blue*/
 }
 
+/* save button when clicked */
 input[type="button"]:active {
     background-color: #2196F3;
     /*light blue*/
 }
 
+/* save button when 'tab' to */
 input[type="button"]:focus {
     outline: none;
     box-shadow: 0 0 0 2px #1A237E;
     /*dark blue*/
 }
 
-.center-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
+/* for all children of sidebar */
 #sidebar>* {
     margin-bottom: 10px;
     width: auto;
 }
 
+/* new horoscope button */
 #new-horo {
     grid-area: new-horo;
-    color: lightgrey;
-    background-color: transparent;
+    background-color: transparent; /* transparent to keep the same color as sidebar */
     border-radius: 8px;
     height: 5rem;
 }
 
+/* new horoscope button when hovered */
 #new-horo:hover {
     background-color: #9e9e9e;
     color: black;
 }
 
+/* new horoscope image on the button */
 #new-horo img {
     height: 4rem;
 }
 
+/* new horoscope image when hovered */
 #new-horo:hover img {
     filter: opacity(50%);
 }
 
+/* 'Past Horoscopes' on the sidebar */
 #sidebar-title {
     font-family: 'montserrat';
     grid-area: sidebar-title;
@@ -315,6 +272,7 @@ input[type="button"]:focus {
     margin-left: 10px;
 }
 
+/* clear all button on sidebar */
 #clear-horos {
     grid-area: clear-horos;
     color: lightgrey;
@@ -323,10 +281,12 @@ input[type="button"]:focus {
     border-radius: 3px;
 }
 
+/* clear all button when hovered */
 #clear-horos:hover {
     background-color: red;
 }
 
+/* past horoscopes that are saved */
 #saved-list {
     grid-area: saved-list;
     display: flex;
@@ -335,29 +295,25 @@ input[type="button"]:focus {
     overflow-y: auto;
 }
 
+/* positioning for date */
 label[for="birthday"],
 input[type="date"] select {
     margin-left: -340px;
-    /* margin-right: 16px;*/
 }
 
+/* positioning for category */
 input[type="category"],
 label[for="category"] select {
     margin-left: -340px;
 }
 
-label[for="birthday"] {
-    font-size: 32px;
-    /* Adjust the font size as desired */
+/* 'Birthday' and 'Select a category' labels */
+label {
+    font-family: 'pacifico';
 }
 
-label[for="category"] {
-    font-size: 32px;
-    /* Adjust the font size as desired */
-}
-
-
-select#category {
+/* font for dropdown menu on category */
+#category select{
     font-size: 24px;
     /* Adjust the font size as desired */
     padding: 10px 16px;
