@@ -16,6 +16,17 @@ function makeCounter(start) {
 
 let counter;
 
+/**
+ * Horoscope object:
+ * {
+ *      "id": Number,
+ *      "sign": string,
+ *      "birthday": string,
+ *      "date": Date,
+ *      "message": string,
+ *      "category": string
+ * }
+ */
 class Horoscope{
     constructor(sign, birthday, date, message, category) {
         this.id = counter();
@@ -36,13 +47,15 @@ function init() {
     horoscopes.forEach((horoscope) => {
         id = Math.max(id, horoscope.id);
     });
+    //have the id start from the last saved id so none overlap
     counter = makeCounter(id);
 
-    // Add each horoscopes to the <main> element
+    // Add each horoscopes to the #saved-list element
     addHoroscopesToDocument(horoscopes);
 
     const clear = document.querySelector("#clear-horos");
     const savedList = document.querySelector("#saved-list");
+    //clear horoscopes when clear button is clicked
     clear.addEventListener('click', function () {
         localStorage.clear();
         horoscopes = [];
@@ -131,4 +144,4 @@ function saveHoroscopesToStorage(horoscopes) {
     localStorage.setItem('horoscopes', JSON.stringify(horoscopes));
 }
 
-export {Horoscope, addHoroscopesToDocument, saveHoroscope};
+export {Horoscope, addHoroscopesToDocument, saveHoroscope, makeCounter};

@@ -59,3 +59,60 @@ describe('formatDynamicDate', () => {
     expect(result).toBe(expected);
   });
 });
+
+
+const { makeCounter } = require('../js/sidebar.js');
+
+describe('makeCounter', () => {
+  it('should return a function that increments and returns the next number each time it is called', () => {
+    const counter = makeCounter(0);
+
+    expect(counter()).toEqual(1);
+    expect(counter()).toEqual(2);
+    expect(counter()).toEqual(3);
+  });
+
+  it('should increment from the provided starting number', () => {
+    const counter = makeCounter(5);
+
+    expect(counter()).toEqual(6);
+    expect(counter()).toEqual(7);
+    expect(counter()).toEqual(8);
+  });
+});
+
+const { dateToHoroscope } = require('../js/horoscope.js');
+
+describe('dateToHoroscope', () => {
+  it('should return the correct zodiac sign for a given date within the range', () => {
+    const sign = dateToHoroscope('1990-07-23');
+    expect(sign).toEqual('Leo');
+  });
+
+  it('should return the correct zodiac sign when the date crosses the new year', () => {
+    const sign = dateToHoroscope('2000-01-01');
+    expect(sign).toEqual('Capricorn');
+  });
+
+  it('should return "NO SIGN FOUND" when no matching sign is found', () => {
+    const sign = dateToHoroscope('2023-12-32');
+    expect(sign).toEqual('NO SIGN FOUND');
+  });
+
+  it('should return the correct zodiac sign when the date is at the boundary of a sign', () => {
+    const sign = dateToHoroscope('1999-12-21');
+    expect(sign).toEqual('Sagittarius');
+  });
+
+  it('should handle leap years correctly', () => {
+    const sign = dateToHoroscope('2000-02-29');
+    expect(sign).toEqual('Pisces');
+  });
+
+  it('should handle invalid date strings gracefully', () => {
+    const sign = dateToHoroscope('invalidDate');
+    expect(sign).toEqual('NO SIGN FOUND');
+  });
+});
+
+
