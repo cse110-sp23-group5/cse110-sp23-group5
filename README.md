@@ -13,22 +13,37 @@ We merge our `dev` branch into `main` weekly after discussing our progress and a
 [//]: # (Version format: MAJOR.MINOR.PATCH)
 
 # Release Notes
+## Version 1.0.0
+- Design
+  - Improved graphics
+  - New fonts
+  - Updated layout to improve readability
+  - Animations when selecting a horoscope!
+- Switched "Submit" button to "Save," allowing users to save a horoscope to the sidebar
+- Sidebar
+  - Saves past horoscopes, including message and category, by clicking save button
+  - Delete individual horoscopes by clicking the 'X' that appears when hovering over a card
+  - Delete all horoscopes by clicking 'Clear All' button
+  - More readable display of the dates
+- Horoscopes are saved even leaving the page and returning
+
+# Changelog
+[//]: # (Previous release notes here)
 ## Version 0.2
 - Improved UI/UX
 - Added more responses
 
-# Changelog
-[//]: # (Previous release notes here)
 ## Version 0.1
 - Basic app skeleton
 - Allows for user input of birthday and response selection based on horoscope sign
 
 # Roadmap
 ## Short-term
-- Clean up design elements: UI/UX (Design)
-- Implement short description for each sign + category
-- Sidebar functionality
+- Continue improving the user experience
+  - Switch between multiple views: one for input and one for viewing horoscopes
+  - More user interaction and animations
 - Horoscope changes daily
+- Add short descriptions for each zodiac sign
 
 ## Medium-term
 - More accurate responses based on location
@@ -36,3 +51,6 @@ We merge our `dev` branch into `main` weekly after discussing our progress and a
 
 ## Long-term
 - Login/account system
+
+
+[Build Pipeline](admin/cipipeline/setup.md)

@@ -1,48 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Horoscope App, Team #5</title>
-    <link rel="icon" type="image/x-icon" href="images/star_favicon.ico">
-    <link rel="stylesheet" type="text/css" href="css/horoscope.css">
-    <script src="./js/horoscope.js" type="module"></script>
-    <script src="js/pastEntryCard.js" type="module"></script>
-    <script src="js/sidebar.js" type="module"></script>
-    <!-- <link rel="stylesheet" type="text/css" href="css/debug.css"> -->
-  </head>
-  <body>
-    <div id="sidebar">
-            
-    </div>
-    <main>
-      <div id="main">
-        <div id="interface">
-          <form id="user-form">
-            <p>Enter your information:</p>
-            <label for="birthday">Birthday:</label>
-            <input type="date" id="birthday" name="birthday"><br>
-            
-            <label for="location">Location:</label>
-            <input type="text" id="location" name="location"><br>
-            <br>
-            <input type="button" id="submit" value="SUBMIT">
-          </form>
-        <img class="center-image" id="sign-image" src="images/placeholder.png"> 
-        <h1 id="sign-display"> Find your sign!</h1>
-    </div>
-    <div id="output">
-        <h1 id="date-display"> Today is <script> document.write(new Date().toLocaleDateString()); </script> </h1>
-        <label for="category">Select a category:</label>
-        <select id="category" name="category">
-            <option value="love">Love</option>
-            <option value="health">Health</option>
-            <option value="career">Career</option>
-        </select>
+
+<head>
+  <title>Horoscope App, Team #5</title>
+  <link rel="icon" type="image/x-icon" href="images/star_favicon.ico">
+  <link rel="stylesheet" type="text/css" href="css/horoscope.css">
+  <script src="./js/horoscope.js" type="module"></script>
+  <script src="js/pastEntryCard.js" type="module"></script>
+  <script src="js/sidebar.js" type="module"></script>
+  <!-- <link rel="stylesheet" type="text/css" href="css/debug.css"> -->
+</head>
+
+<body>
+  <div id="sidebar">
+    <button id="new-horo">
+      <img src="images/newhoroscope.png">
+    </button>
+    <span id="sidebar-title">Past Horoscopes</span>
+    <button id="clear-horos">Clear All</button>
+    <div id="saved-list"></div>
+  </div>
+  <main>
+    <video src="https://github.com/ZhouYuantian/CSE110-Storge/raw/main/background.mp4" id="bgvideo" autoplay muted></video>
+    <img src="https://github.com/ZhouYuantian/CSE110-Storge/blob/main/background.jpg?raw=true" id="vbgimg">
+    <div id="main">
+      <div id="interface">
+        <form id="user-form">
+          <!--. <p>Enter your information:</p> -->
+          <br><br>
+          <label for="birthday">Birthday:</label>
+          <input type="date" id="birthday" name="birthday"><br>
+          <label for="category">Select a category:</label>
+          <select id="category" name="category">
+            <option value="Love">Love</option>
+            <option value="Health">Health</option>
+            <option value="Career">Career</option>
+          </select><br>
+
+          <br>
+          <input type="button" id="save" value="SAVE">
+        </form>
+        <!--. <img class="center-image" id="sign-image" src="images/placeholder.png"> -->
+        <!--. <h1 id="sign-display"> Find your sign!</h1> -->
+      </div>
+      <div id="output">
+        <!--. <h1 id="date-display"> Today is <script> document.write(new Date().toLocaleDateString()); </script> </h1> -->
 
         <p id="horoscope-fortune">
-            Enter your birthday above and choose a category to see your daily horoscope!
+          Enter your birthday above and choose a category to see your daily horoscope!
         </p>
       </div>
     </div>
-    </main>
-  </body>
+  </main>
+</body>
+
 </html>

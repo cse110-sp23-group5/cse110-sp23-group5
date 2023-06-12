@@ -1,6 +1,6 @@
 {
     "Aries": {
-        "love": [
+        "Love": [
             "Love will find you when you least expect it.",
             "A deep and fulfilling love connection is on the horizon.",
             "You are destined to experience a love that changes your life.",
@@ -28,7 +28,7 @@
             "Seek partners who can match your intensity and passion, Aries—someone who can handle your fiery nature creates a powerful and dynamic connection.",
             "Embrace your sense of humor and playfulness in love, Aries—finding a partner who shares your joy and laughter adds lightness to the relationship."
         ],
-        "career": [
+        "Career": [
             "A rewarding and fulfilling career path is awaiting your discovery.",
             "Your dedication and hard work will lead you to great success in your chosen field.",
             "A promotion or significant advancement in your career is on the horizon.",
@@ -56,7 +56,7 @@
             "Embrace your independent thinking and trust your instincts when making career decisions, Aries—your intuition guides you towards the right path.",
             "Seek opportunities that allow you to explore your diverse interests and engage in a variety of tasks, Aries—avoid monotony and embrace versatility."
         ],
-        "health": [
+        "Health": [
             "Your commitment to self-care will lead to optimal health and well-being.",
             "Embrace a balanced lifestyle for vibrant physical and mental health.",
             "Your dedication to regular exercise will result in increased strength and vitality.",
@@ -86,7 +86,7 @@
         ]
     },
     "Taurus": {
-        "love": [
+        "Love": [
             "Your heart will be captivated by a love that knows no boundaries.",
             "The universe is aligning to bring you the love you deserve.",
             "Love will enter your life like a beautiful and unexpected surprise.",
@@ -114,7 +114,7 @@
             "Seek partners who can bring stability and practicality to your life, Taurus—someone who complements your nature creates a balanced relationship.",
             "Embrace your sensual and indulgent side in love, Taurus—enjoying the pleasures of life with your partner adds depth and satisfaction to your relationships."
         ],
-        "career": [
+        "Career": [
             "The coming years hold tremendous growth and expansion in your professional life.",
             "Your expertise and knowledge will be highly sought after in your industry.",
             "Embrace new challenges, for they will lead to remarkable career breakthroughs.",
@@ -142,7 +142,7 @@
             "Consider careers that involve working with nature or the earth, Taurus—being connected to the natural world brings you a sense of fulfillment.",
             "Embody your loyalty and commitment to your work, Taurus—staying dedicated and loyal to your employer earns you respect and trust."
         ],
-        "health": [
+        "Health": [
             "Nourishing your body with wholesome foods will contribute to optimal health.",
             "A proactive approach to preventive care will safeguard your long-term health.",
             "Prepare for a period of heightened immune system strength and resilience.",
@@ -172,7 +172,7 @@
         ]
     },
     "Gemini": {
-        "love": [
+        "Love": [
             "Your genuine nature will attract a love that appreciates you for who you are.",
             "Love will heal the wounds of the past and create a bright future.",
             "The chemistry between you and a certain someone will be undeniable.",
@@ -200,7 +200,7 @@
             "Seek partners who can appreciate your light-hearted and playful nature, Gemini—finding someone who brings joy and laughter to your relationships adds a sense of fun.",
             "Embrace your love for learning and seek partners who can share your intellectual pursuits, Gemini—finding someone who enjoys exploring new ideas with you strengthens your connection."
         ],
-        "career": [
+        "Career": [
             "Your perseverance and resilience will propel you to new heights in your career.",
             "An unexpected opportunity will open doors to a promising career path.",
             "Your natural leadership qualities will lead to exciting career advancements.",
@@ -228,7 +228,7 @@
             "Consider careers that involve technology and digital communication, Gemini—your affinity for staying connected makes you adapt well to the digital age.",
             "Embody your ability to adapt to changing circumstances and seek careers that require flexibility, Gemini—navigating transitions is your expertise."
         ],
-        "health": [
+        "Health": [
             "Prepare for a health journey that brings greater balance and harmony to your body.",
             "Trust in your ability to achieve and maintain a healthy weight.",
             "Regular mindfulness practices will promote mental clarity and emotional well-being.",
@@ -258,7 +258,7 @@
         ]
     },
     "Cancer": {
-        "love": [
+        "Love": [
             "Your heart will find solace in the arms of a compassionate and understanding partner.",
             "Love will bring you stability and a sense of groundedness.",
             "Be open to unexpected connections, as they may lead to extraordinary love.",
@@ -286,7 +286,7 @@
             "Seek partners who can appreciate your sentimental and nostalgic side, Cancer—someone who cherishes your shared memories creates a deep emotional connection.",
             "Embrace your ability to create a sense of emotional security in your relationships, Cancer—providing a safe space for your partner to be vulnerable strengthens your connection."
         ],
-        "career": [
+        "Career": [
             "Your unique talents and skills will set you apart in your chosen profession.",
             "A career change may be in your future, bringing renewed passion and fulfillment.",
             "Trust in the timing of your career journey, as everything will fall into place.",
@@ -314,7 +314,7 @@
             "Consider careers that involve working with children or providing emotional support, Cancer—your caring nature makes a difference in their lives.",
             "Embody your ability to create a harmonious work environment in your career, Cancer—being a peacemaker and promoting cooperation leads to a positive atmosphere."
         ],
-        "health": [
+        "Health": [
             "Embrace self-love and self-care practices for optimal physical and mental health.",
             "Your commitment to hydration will support overall health and vitality.",
             "Prepare for improved digestion and gut health in your overall well-being.",
@@ -344,7 +344,7 @@
         ]
     },
     "Leo": {
-        "love": [
+        "Love": [
             "Embrace your natural charisma and confidence in love, Leo—your radiant personality attracts others to you.",
             "Seek partners who appreciate and admire your individuality, Leo—someone who recognizes and celebrates your unique qualities.",
             "Embody your passion and warmth in love, Leo—expressing your affection and love wholeheartedly deepens your connections.",
@@ -367,7 +367,7 @@
             "Seek partners who can appreciate your need for personal growth and evolution, Leo—finding someone who supports your journey enhances your relationships.",
             "Embrace your ability to shine and uplift others in love, Leo—your positive energy and charisma inspire those around you."
         ],
-        "career": [
+        "Career": [
             "A mentor or influential figure will guide you towards remarkable career opportunities.",
             "Embrace versatility, for it will open doors to diverse career paths.",
             "Your ability to adapt to change will be a key factor in your career success.",
@@ -390,7 +390,7 @@
             "Authority suits you, Leo—aim for positions of leadership where you can showcase your skills and inspire those around you.",
             "Your natural flair for the dramatic can be an asset in your career, Leo—let your expressive nature captivate others and leave a lasting impression."
         ],
-        "health": [
+        "Health": [
             "Prepare for increased resilience and adaptability in the face of health challenges.",
             "Your commitment to regular check-ups will ensure early detection of any health concerns.",
             "Embrace a lifestyle that promotes healthy relationships for overall well-being.",
@@ -418,7 +418,7 @@
         ]
     },
     "Virgo": {
-        "love": [
+        "Love": [
             "The wait will be worth it when love finds its way into your life.",
             "Love will bring a sense of purpose and meaning to your existence.",
             "Trust in the process, for love has a way of working out in the end.",
@@ -445,7 +445,7 @@
             "Celebrate your partner's uniqueness, Virgo—appreciate their individuality and encourage them to be their authentic selves within the relationship.",
             "Practice self-love, Virgo—prioritize your own well-being and happiness, as it sets the foundation for a healthy and fulfilling love life."
         ],
-        "career": [
+        "Career": [
             "Trust in your intuition, as it will guide you towards the right career choices.",
             "Prepare for a career that brings you joy, fulfillment, and a sense of purpose.",
             "Embrace challenges as stepping stones to new levels of career growth.",
@@ -472,7 +472,7 @@
             "Embrace your role as a problem solver in your career, Virgo—your ability to find solutions will make you indispensable.",
             "Trust in your abilities, Virgo—your skills and expertise are valuable assets in your professional journey."
         ],
-        "health": [
+        "Health": [
             "Adequate rest and recovery will enhance your physical and mental health.",
             "Prepare for improved cardiovascular health and increased stamina.",
             "Your commitment to a well-rounded exercise routine will enhance overall fitness.",
@@ -501,7 +501,7 @@
         ]
     },
     "Libra": {
-        "love": [
+        "Love": [
             "Love will be the driving force behind your personal growth and transformation.",
             "The love you deserve will bring you peace, harmony, and a sense of belonging.",
             "A kind and compassionate love will bring warmth and comfort to your life.",
@@ -529,7 +529,7 @@
             "Celebrate the union of opposites in love, Libra—finding balance between different perspectives creates a rich and fulfilling partnership.",
             "Cherish the beauty of romance, Libra—engage in acts of love and affection that make your heart soar."
         ],
-        "career": [
+        "Career": [
             "Prepare for a career that allows you to make a difference in people's lives.",
             "Your natural talents will flourish and lead to remarkable career achievements.",
             "Embrace collaboration and teamwork, as they will propel your career forward.",
@@ -557,7 +557,7 @@
             "Balance your desire for autonomy with collaboration, Libra—finding the right balance will lead to success and fulfillment in your career.",
             "Strive for a career that allows you to make a positive impact on others, Libra—contributing to the well-being of others will bring you fulfillment."
         ],
-        "health": [
+        "Health": [
             "Your commitment to reducing toxins will contribute to improved overall health.",
             "Trust in your body's ability to find balance and heal itself naturally.",
             "Regular self-care practices will promote emotional well-being and mental health.",
@@ -587,7 +587,7 @@
         ]
     },
     "Scorpio": {
-        "love": [
+        "Love": [
             "Love will bring out your inner strength and resilience.",
             "The love you encounter will inspire you to become the best version of yourself.",
             "Love will lead you to discover the true depths of your capacity to care and give.",
@@ -615,7 +615,7 @@
             "Seek emotional intimacy and connection, Scorpio—sharing your deepest fears and desires creates bonds that transcend superficiality.",
             "Embody authenticity and vulnerability in your relationships, Scorpio—being genuine and open allows love to flourish."
         ],
-        "career": [
+        "Career": [
             "Your resilience in the face of setbacks will lead to ultimate career success.",
             "A prestigious position or role is within reach in your career journey.",
             "A prestigious position or role is within reach in your career journey.",
@@ -643,7 +643,7 @@
             "Seek careers that involve public relations or diplomacy, Libra—your ability to navigate social dynamics will lead to professional success.",
             "Embody a leadership style that focuses on consensus-building and collaboration, Libra—your inclusive approach inspires and motivates others."
         ],
-        "health": [
+        "Health": [
             "Embrace a lifestyle that prioritizes work-life balance for overall well-being.",
             "Prepare for improved sleep quality and rejuvenation in your health.",
             "Trust in the power of positive affirmations to promote overall wellness.",
@@ -673,7 +673,7 @@
         ]
     },
     "Sagittarius": {
-        "love": [
+        "Love": [
             "Love will find a way to bridge any distance or obstacles in your path.",
             "Prepare to be surprised by the depth of love that unfolds in your life.",
             "The love that awaits you will be worth every moment of patience and longing.",
@@ -701,7 +701,7 @@
             "Embody optimism and enthusiasm in love, Sagittarius—your passion for life attracts partners who share your zest.",
             "Embrace the joy of the present moment in relationships, Sagittarius—appreciating the now deepens your connection with others."
         ],
-        "career": [
+        "Career": [
             "Embrace opportunities to step outside of your comfort zone for exponential career growth.",
             "Your positive mindset and optimism will attract favorable career opportunities.",
             "Prepare for a career that aligns with your values and contributes to your personal growth.",
@@ -729,7 +729,7 @@
             "Seek careers that involve event planning or organizing, Sagittarius—your knack for bringing people together shines in these roles.",
             "Embody your natural optimism and enthusiasm in your career, Sagittarius—your passion and drive propel you to achieve great things."
         ],
-        "health": [
+        "Health": [
             "Regular relaxation practices will promote overall mental and emotional well-being.",
             "Prepare for increased clarity and focus in your cognitive function.",
             "Your commitment to self-care rituals will nurture your overall well-being.",
@@ -759,7 +759,7 @@
         ]
     },
     "Capricorn": {
-        "love": [
+        "Love": [
             "A love that respects and celebrates your individuality is on its way.",
             "Prepare for a love that challenges you to grow and evolve.",
             "Love will inspire you to take leaps of faith and pursue your dreams.",
@@ -787,7 +787,7 @@
             "Seek partners who value your wisdom and advice, Capricorn—your practical insights can help your partner navigate life's challenges.",
             "Embrace your practical approach to problem-solving in relationships, Capricorn—finding practical solutions together strengthens the bond."
         ],
-        "career": [
+        "Career": [
             "Your determination and perseverance will lead you to overcome any career obstacles.",
             "Prepare for a career that allows you to combine your passions and expertise.",
             "Your career journey will be marked by meaningful and fulfilling milestones.",
@@ -815,7 +815,7 @@
             "Embody professionalism and reliability in your career, Capricorn—your strong sense of duty and responsibility lead to trust and respect.",
             "Seek careers that involve working with established structures and systems, Capricorn—your ability to navigate established frameworks is an asset."
         ],
-        "health": [
+        "Health": [
             "Your commitment to reducing stress will have a positive impact on your health.",
             "Embrace a lifestyle that promotes healthy social connections for overall well-being.",
             "Prepare for increased mental resilience and emotional stability in your health.",
@@ -845,7 +845,7 @@
         ]
     },
     "Aquarius": {
-        "love": [
+        "Love": [
             "Prepare for a love that brings balance and harmony to your life.",
             "Love will shine a light on the darkest corners of your soul, bringing healing and wholeness.",
             "The love you seek will make you feel seen, heard, and understood.",
@@ -873,7 +873,7 @@
             "Seek partners who support your social circle and friendships, Aquarius—someone who encourages your connections enhances your relationship.",
             "Embrace your love for spontaneity and adventure in relationships, Aquarius—seeking partners who are open to new experiences keeps the spark alive."
         ],
-        "career": [
+        "Career": [
             "Prepare for a career that allows you to leave a lasting legacy in your industry.",
             "Your ability to embrace change will lead to successful career transitions.",
             "Embrace your unique strengths, as they will be instrumental in your career success.",
@@ -901,7 +901,7 @@
             "Maintain a positive and optimistic mindset, Aquarius—cultivating a hopeful outlook contributes to your overall mental and emotional health.",
             "Embrace a routine that supports your well-being, Aquarius—establishing healthy habits and sticking to them promotes vitality and balance."
         ],
-        "health": [
+        "Health": [
             "Prepare for improved skin health and a radiant complexion.",
             "Your commitment to maintaining a positive work-life balance will enhance your health.",
             "Embrace holistic healing modalities for overall physical and mental well-being.",
@@ -931,7 +931,7 @@
         ]
     },
     "Pisces": {
-        "love": [
+        "Love": [
             "The love you deserve will bring out your inner radiance and beauty.",
             "Prepare for a love that transcends time and space.",
             "Love will inspire you to love yourself more deeply and unconditionally.",
@@ -959,7 +959,7 @@
             "Seek partners who encourage your dreams and support your creative pursuits, Pisces—someone who believes in your visions adds inspiration to your love life.",
             "Embrace your love for connection on a soul level, Pisces—finding a partner who resonates with your essence brings deep fulfillment to your relationship."
         ],
-        "career": [
+        "Career": [
             "Your passion and enthusiasm will be contagious, opening doors to exciting career prospects.",
             "Embrace a mindset of lifelong learning, as it will fuel your continuous career growth.",
             "Your career path will be characterized by exciting and unexpected opportunities.",
@@ -987,7 +987,7 @@
             "Embrace your natural ability to bring harmony and balance to your work, Pisces—seek roles where you can foster positive relationships and cooperation.",
             "Seek a career that allows you to connect with your spiritual side and explore your mystical interests, Pisces—this brings you a sense of fulfillment and purpose."
         ],
-        "health": [
+        "Health": [
             "Trust in your body's ability to find equilibrium and maintain homeostasis.",
             "Regular cardiovascular exercise will support heart health and overall well-being.",
             "Prepare for improved balance and stability in your physical health.",
