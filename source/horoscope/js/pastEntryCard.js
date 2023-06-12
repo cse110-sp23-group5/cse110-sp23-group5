@@ -24,17 +24,10 @@ class pastEntryCard extends HTMLElement {
 
     /**
      * Called when the .data property is set on this element
+     * Reformats dates to be more readable and saves information to dataset
      * 
      * @param {Horoscope} data - The data to pass into <past-entry-card>, 
-     *                          as a Horoscope object of following format:
-     *                          {
-     *                              "id": number,                             
-     *                              "sign": "string",
-     *                              "birthday": "string",
-     *                              "date": Date,
-     *                              "message": "string",
-     *                              "category": "string",
-     *                          }
+     *                          as a Horoscope object
      */
     set data(data) {
         //if nothing passed, return
@@ -69,7 +62,7 @@ class pastEntryCard extends HTMLElement {
         <span class="date">${formattedDate}</span>
         <span class="category">${data.category}</span>
         <button class="delete" aria-label="Close alert" type="button">
-            <span class="delete" aria-hidden="true">&#x2715;</span>         <!--Could also use &#10006;-->
+            <span class="delete" aria-hidden="true">&#x2715;</span>         
         </button>
         `;
     }
