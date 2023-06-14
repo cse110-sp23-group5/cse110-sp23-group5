@@ -13,6 +13,12 @@ We merge our `dev` branch into `main` weekly after discussing our progress and a
 [//]: # (Version format: MAJOR.MINOR.PATCH)
 
 # Release Notes
+## Version 1.1.0
+- Updated UI to make center animation more visible and not covered by other elements
+- Added zodiac sign title to better indicate to the user their sign
+
+# Changelog
+[//]: # (Previous release notes here)
 ## Version 1.0.0
 - Design
   - Improved graphics
@@ -27,8 +33,6 @@ We merge our `dev` branch into `main` weekly after discussing our progress and a
   - More readable display of the dates
 - Horoscopes are saved even leaving the page and returning
 
-# Changelog
-[//]: # (Previous release notes here)
 ## Version 0.2
 - Improved UI/UX
 - Added more responses
@@ -44,6 +48,7 @@ We merge our `dev` branch into `main` weekly after discussing our progress and a
   - More user interaction and animations
 - Horoscope changes daily
 - Add short descriptions for each zodiac sign
+- Allow user to only save each horoscope once
 
 ## Medium-term
 - More accurate responses based on location
