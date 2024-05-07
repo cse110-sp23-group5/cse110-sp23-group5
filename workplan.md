@@ -19,5 +19,10 @@
 - Discuss Guidelines for Pushing Features and Code Reviews
 - Pair Program for the first Sprint, in order to better acclimate people to the stack
 
-#### To Edit on Monday
-- List 
+#### Next Meeting - General Decisions 
+- Branch Protection System has been added
+- A seperate branch will be added for each issue, it will get pushed to main
+- Two people will get asked to code review but only one will have to approve before it gets pushed
+
+#### Task Assignments
+- 
