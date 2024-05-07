@@ -25,4 +25,7 @@
 - Two people will get asked to code review but only one will have to approve before it gets pushed
 
 #### Task Assignments
-- 
+- Design: create drawings for the buttons we discussed adding in meeting (go button, calendar) as well as a design for the saved fortunes page
+- Frontend: variety of UI fixes mentioned in the UI/UX Overhaul issue
+- Backend: Find an API to grab fortunes rather than random generation
+- Testing: Set up CI/CD Pipeline, which breaks when you create a fork
