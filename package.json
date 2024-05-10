@@ -18,15 +18,15 @@
   "main": "math.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cse110-sp23-group5/cse110-sp23-group5.git"
+    "url": "git+https://github.com/StephenTan12/Horoscope-Team-5.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cse110-sp23-group5/cse110-sp23-group5/issues"
+    "url": "https://github.com/StephenTan12/Horoscope-Team-5/issues"
   },
-  "homepage": "https://github.com/cse110-sp23-group5/cse110-sp23-group5#readme",
+  "homepage": "https://github.com/StephenTan12/Horoscope-Team-5#readme",
   "jest": {
     "preset": "jest-puppeteer",
     "verbose": true
