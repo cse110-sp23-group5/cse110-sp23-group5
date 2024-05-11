@@ -38,7 +38,8 @@ class Horoscope{
     }
 }
 
-let horoscopes = [];
+let horoscopes = new Set();
+let horoscopesJSON = new Set();
 
 function init() {
     // Get the horoscopes from localStorage
@@ -69,7 +70,20 @@ function init() {
  * @param {Horoscope} horoscope horoscope object to save
  */
 function saveHoroscope(horoscope) {
+
+    const replaceID = (key, value) => {
+        if (key === 'id') {
+          return undefined; // Exclude 'field2' from the JSON string
+        }
+        return value;
+    };
+
+    if (horoscopesJSON.has(JSON.stringify(horoscope, replaceID))) {
+        alert("You have already saved this horoscope!");
+        return;
+    }
     horoscopes.push(horoscope);
+    horoscopesJSON.add(JSON.stringify(horoscope, replaceID));
     addHoroscopesToDocument([horoscope]);
     saveHoroscopesToStorage(horoscopes);
 }

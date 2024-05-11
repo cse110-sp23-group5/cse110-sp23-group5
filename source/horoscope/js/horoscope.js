@@ -48,6 +48,7 @@ async function init() {
         let category = categoryElement.value;
         let message = fortuneElement.innerText;
         let today = new Date();
+        today.setHours(0,0,0,0);
         
         //save horoscope to local storage for sidebar
         let horoscopeElement = new Horoscope(sign, bday, today, message, category);
