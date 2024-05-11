@@ -38,7 +38,7 @@ class Horoscope{
     }
 }
 
-let horoscopes = new Set();
+let horoscopes = [];
 let horoscopesJSON = new Set();
 
 function init() {

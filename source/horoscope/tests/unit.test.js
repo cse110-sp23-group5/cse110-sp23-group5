@@ -116,3 +116,81 @@ describe('dateToHoroscope', () => {
 });
 
 
+const { saveHoroscope } = require('../js/sidebar.js');
+
+// Mock localStorage
+const localStorageMock = (() => {
+  let store = {};
+  return {
+    getItem: key => store[key],
+    setItem: (key, value) => {
+      store[key] = value.toString();
+    },
+    clear: () => {
+      store = {};
+    }
+  };
+})();
+
+// Mock the localStorage object
+Object.defineProperty(window, 'localStorage', {
+  value: localStorageMock
+});
+
+// Mock document.body.innerHTML
+document.body.innerHTML = `
+  <div id="saved-list"></div>
+`;
+
+// Test cases
+describe('saveHoroscope function', () => {
+
+  test('should save a new horoscope', () => {
+
+    let today = new Date();
+    // Define a mock horoscope object
+    const horoscope = {
+      id: 1,
+      sign: 'Aries',
+      birthday: 'March 21 - April 19',
+      date: today.setHours(0,0,0,0),
+      message: 'Some message',
+      category: 'General'
+    };
+
+    // Call the saveHoroscope function
+    saveHoroscope(horoscope);
+
+    // Retrieve the saved horoscopes from localStorage
+    const savedHoroscopes = JSON.parse(localStorage.getItem('horoscopes'));
+
+    // Expect the savedHoroscopes array to contain the mock horoscope
+    expect(savedHoroscopes).toContainEqual(horoscope);
+  });
+
+  
+
+  test('should not save a duplicate horoscope', () => {
+
+    let today = new Date();
+    // Define a mock horoscope object
+    const horoscope = {
+      id: 1,
+      sign: 'Aries',
+      birthday: 'March 21 - April 19',
+      date: today.setHours(0,0,0,0),
+      message: 'Some message',
+      category: 'General'
+    };
+
+    // Save the mock horoscope twice
+    saveHoroscope(horoscope);
+    saveHoroscope(horoscope);
+
+    // Retrieve the saved horoscopes from localStorage
+    const savedHoroscopes = JSON.parse(localStorage.getItem('horoscopes'));
+
+    // Expect only one instance of the mock horoscope to be saved
+    expect(savedHoroscopes.length).toBe(1);
+  });
+});
