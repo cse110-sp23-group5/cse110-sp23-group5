@@ -19,15 +19,21 @@
 - GitHub project board for issue tracking has been created [here](https://github.com/users/VijayP30/projects/1)
 
 #### Specify Stories More Concretely And Create Tasks For Each Story With Their Estimate/Priority
-- Design:
-- Frontend:
-- Backend:
-- Testing:
+- Design: Redesign webpages (P0, 2)
+- Frontend: UI/UX Cleanup (P1, 3)
+- Backend: Duplicate Storage Bug (P1, 2)
+- Testing: Setup CI/CD (P0, 4)
 
-#### Tasks For Next Meeting
+#### Tasks For Next Meeting (5/12)
 - Progress updates on each teams story:
-  - Design:
-  - Frontend:
-  - Backend:
-  - Testing:
+  - Design: Completed, and frontend team has started working on implementing the design
+  - Frontend: Started working on design updates that have been completed since previous meeting
+  - Backend: Fixed duplicate storage bug. Waiting for approvals and then merging. Need to decide next task
+  - Testing: CI/CD is set up. Waiting for approvals and then merging
+ 
+#### Tasks For Next Meeting (5/15)
+- Design: Start drafting mobile design
+- Frontend: Continue implementing new design from design team
+- Backend: Get PR approved, and start working towards next story (most likely will be working with testing team)
+- Testing: Look into API implementation and saving birthdays
 
