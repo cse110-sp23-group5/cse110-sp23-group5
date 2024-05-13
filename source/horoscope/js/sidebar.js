@@ -1,4 +1,3 @@
-import { clearHoroscope } from "./horoscope.js";
 window.addEventListener('DOMContentLoaded', init);
 
 
@@ -55,13 +54,14 @@ function init() {
 
     const clear = document.querySelector("#clear-horos");
     const savedList = document.querySelector("#saved-list");
-    //clear horoscopes when clear button is clicked
-    clear.addEventListener('click', function () {
-        localStorage.clear();
-        horoscopes = [];
-        savedList.innerHTML = "";
-        clearHoroscope();
-    });
+    if (clear != null) {
+        //clear horoscopes when clear button is clicked
+        clear.addEventListener('click', function () {
+            localStorage.clear();
+            horoscopes = [];
+            savedList.innerHTML = "";
+        });
+    }
 }
 
 /**
@@ -70,7 +70,7 @@ function init() {
  */
 function saveHoroscope(horoscope) {
     horoscopes.push(horoscope);
-    addHoroscopesToDocument([horoscope]);
+    // addHoroscopesToDocument([horoscope]);
     saveHoroscopesToStorage(horoscopes);
 }
 
@@ -80,6 +80,7 @@ function saveHoroscope(horoscope) {
 function onClick() {
     let horo = this.data;
     setHoroscope(horo);
+    //Todo: Since Separated Out Set Horoscope won't work Might Not need it.
 }
 
 /**
@@ -92,15 +93,11 @@ function deleteCard(event) {
     horoscopes = horoscopes.filter(obj => obj.id != id);
     saveHoroscopesToStorage(horoscopes);
 
-    clearHoroscope();
-
     // Remove the card from the DOM
     this.parentNode.parentNode.removeChild(this.parentNode);
     this.parentNode.remove();
     if(event.stopPropagation)
         event.stopPropagation();
-
-
 }
 
 /**

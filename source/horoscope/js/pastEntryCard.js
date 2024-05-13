@@ -64,6 +64,9 @@ class pastEntryCard extends HTMLElement {
         <button class="delete" aria-label="Close alert" type="button">
             <span class="delete" aria-hidden="true">&#x2715;</span>         
         </button>
+        <p class="message">
+          ${data.message}
+        </p>
         `;
     }
 

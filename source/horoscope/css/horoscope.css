@@ -80,16 +80,6 @@ main {
     z-index: -10;
 }
 
-/* in Sidebar */
-#sidebar {
-    display: grid;
-    grid-template:
-        [row1-start] "new-horo new-horo" 100px [row1-end] [row2-start] "sidebar-title clear-horos" 50px [row2-end] [row3-start] "saved-list saved-list" auto [row3-end] / 75% 25%;
-    grid-template-columns: 75% 25%;
-    width: 25%;
-    background-color: #424242;
-    padding: 10px;
-}
 
 /* all the input related components. 'Birthday', 'Select a category', and 'Save' button. */
 #user-form {
@@ -234,12 +224,6 @@ input[type="button"]:focus {
     /*dark blue*/
 }
 
-/* for all children of sidebar */
-#sidebar>* {
-    margin-bottom: 10px;
-    width: auto;
-}
-
 /* new horoscope button */
 #new-horo {
     grid-area: new-horo;
@@ -262,37 +246,6 @@ input[type="button"]:focus {
 /* new horoscope image when hovered */
 #new-horo:hover img {
     filter: opacity(50%);
-}
-
-/* 'Past Horoscopes' on the sidebar */
-#sidebar-title {
-    font-family: 'montserrat';
-    grid-area: sidebar-title;
-    align-self: center;
-    margin-left: 10px;
-}
-
-/* clear all button on sidebar */
-#clear-horos {
-    grid-area: clear-horos;
-    color: lightgrey;
-    background-color: transparent;
-    box-shadow: 0 0 0 2px lightgrey;
-    border-radius: 3px;
-}
-
-/* clear all button when hovered */
-#clear-horos:hover {
-    background-color: red;
-}
-
-/* past horoscopes that are saved */
-#saved-list {
-    grid-area: saved-list;
-    display: flex;
-    flex-flow: column nowrap;
-    width: auto;
-    overflow-y: auto;
 }
 
 /* positioning for date */

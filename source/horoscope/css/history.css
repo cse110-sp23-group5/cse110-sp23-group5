@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'montserrat';
+    src: url('fonts/Montserrat-Regular.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #424242;
+}
+main {
+   padding: 10px;
+   display: flex;
+   flex-direction: column;
+}
+
+/* for all children of sidebar */
+main >* {
+    margin-bottom: 10px;
+    width: auto;
+}
+
+/* 'Past Horoscopes' on the sidebar */
+h1 {
+    font-family: 'montserrat';
+    align-self: center;
+    margin-left: 10px;
+}
+
+/* Navbar Align Buttons to the right */
+nav {
+    display: flex;
+    justify-content: flex-end;
+}
+/* clear all button on sidebar */
+#clear-horos {
+    color: lightgrey;
+    background-color: transparent;
+    box-shadow: 0 0 0 2px lightgrey;
+    border-radius: 3px;
+    display: flex;
+    justify-self: flex-end;
+}
+
+/* clear all button when hovered */
+#clear-horos:hover {
+    background-color: red;
+}
+
+/* past horoscopes that are saved */
+#saved-list {
+    grid-area: saved-list;
+    display: flex;
+    flex-flow: column nowrap;
+    width: auto;
+    overflow-y: auto;
+}
