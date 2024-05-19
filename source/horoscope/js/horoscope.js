@@ -7,6 +7,8 @@ async function init() {
     let fortuneElement = document.getElementById('horoscope-fortune');
     let backgroundVideo=document.getElementById("bgvideo");
     let fortuneElementTitle = document.getElementById('horoscope-title');
+    let ableToSave = false;
+
     //clear the main page
     clearHoroscope();
 
@@ -49,10 +51,15 @@ async function init() {
         let message = fortuneElement.innerText;
         let today = new Date();
         
-        //save horoscope to local storage for sidebar
-        let horoscopeElement = new Horoscope(sign, bday, today, message, category);
-        saveHoroscope(horoscopeElement);
+        // Check if a new horoscope has been generated
+        if (ableToSave) {
+            //save horoscope to local storage for sidebar
+            let horoscopeElement = new Horoscope(sign, bday, today, message, category);
+            saveHoroscope(horoscopeElement);
+        }
+        ableToSave = false;
     })
+
 
     // add event listener for birthday change
     birthday.addEventListener('change',  async (event) => {
@@ -66,6 +73,8 @@ async function init() {
         
         //update text
         fortuneElement.innerText = await getPrompt();
+        // a new horoscope has been generated
+        ableToSave = true;
         // update horoscope sign
         let divElement = document.getElementById("horoscope-title");
         // set font style
@@ -77,7 +86,6 @@ async function init() {
         let date = document.getElementById('birthday').value;
         backgroundVideo.setAttribute("src","https://github.com/ZhouYuantian/CSE110-Storge/raw/main/"+dateToHoroscope(date)+".mp4");
         startMove(document.getElementById("output"));
-        
     });
 
     // add event listener for category change
