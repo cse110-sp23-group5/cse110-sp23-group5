@@ -60,6 +60,7 @@ function init() {
     clear.addEventListener('click', function () {
         localStorage.clear();
         horoscopes = [];
+        horoscopesJSON.clear();
         savedList.innerHTML = "";
         clearHoroscope();
     });
