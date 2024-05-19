@@ -10,12 +10,19 @@
    <script src="js/pastEntryCard.js" type="module"></script>
 </head>
 <body>
+   <header>
+      <h1>Past Horoscopes</h1>
+   </header>
    <main>
-      <h1 id="sidebar-title">Past Horoscopes</h1>
       <nav>
-         <button id="clear-horos">Clear All</button>
+         <button class="back">Go Back</button>
       </nav>
-      <div id="saved-list"></div>
+      <div class="readingsContainer">
+         <div class="clearContainer">
+            <button id="clear-horos">Clear All</button>
+         </div>
+         <div id="saved-list"></div>
+      </div>
    </main>
 </body>
 </html>

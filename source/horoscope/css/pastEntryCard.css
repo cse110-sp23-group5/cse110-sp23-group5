@@ -1,7 +1,7 @@
 
 
 article {
-    background-color: #757575;
+    background-color: #1a227eb7;
     border-radius: 8px;
     margin-bottom: 10px;
     color: white;
@@ -14,13 +14,13 @@ article {
     grid-template: 
         [row1-start] "image horoscope category"[row1-end]
         [row2-start] "image birthday date"  [row2-end]
-        [row3-start] "image message message"  [row3-end]
+        [row3-start] "image message ."  [row3-end]
         / 80px auto auto;
 }
 
 /* When hovering over a card, it changes color */
 article:hover{
-    background-color: #9E9E9E;
+    background-color: #2835c3;
     color:black;
 }
 
@@ -44,6 +44,12 @@ article:hover .category {
     border: none;
     background: none;
     grid-area: 1 / 4 / 3 / 5;
+    /* grid-area: delete; */
+}
+
+span.delete {
+    font-size: 20px;
+    color: white;
 }
 
 /* When hovering over delete button, changes color */

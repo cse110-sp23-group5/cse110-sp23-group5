@@ -5,46 +5,64 @@
     font-style: normal;
 }
 
-body {
-    background-color: #424242;
-}
-main {
-   padding: 10px;
-   display: flex;
-   flex-direction: column;
+@font-face {
+    font-family: 'pacifico';
+    src: url('fonts/Pacifico-Regular.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-/* for all children of sidebar */
-main >* {
-    margin-bottom: 10px;
-    width: auto;
-}
-
-/* 'Past Horoscopes' on the sidebar */
-h1 {
-    font-family: 'montserrat';
-    align-self: center;
-    margin-left: 10px;
-}
-
-/* Navbar Align Buttons to the right */
-nav {
-    display: flex;
-    justify-content: flex-end;
-}
-/* clear all button on sidebar */
-#clear-horos {
+/* Default Style for Buttons */
+button {
     color: lightgrey;
     background-color: transparent;
     box-shadow: 0 0 0 2px lightgrey;
     border-radius: 3px;
-    display: flex;
-    justify-self: flex-end;
 }
 
-/* clear all button when hovered */
-#clear-horos:hover {
-    background-color: red;
+button:hover {
+    background-color: #2835c3;
+}
+
+body {
+    background-image: url(../images/historyBackground.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body > * {
+    color:white;
+}
+
+/* Page Title */
+h1 {
+    font-family: 'pacifico';
+    font-size: 3rem;
+    text-shadow: 0 0 10px #1A237E;
+    text-align: center;
+}
+
+main {
+    display: grid;
+    grid-template: "back readings ." / 1fr 70% 1fr;
+    padding: 0 1ch;
+    column-gap: max(0.3rem, 5px);
+}
+
+/* Back Navigation */
+.back {
+    position:sticky;
+    top:50vh;
+    grid-area: back;
+}
+
+.readingsContainer {
+    grid-area: readings;
+}
+
+.clearContainer {
+    display: flex;
+    justify-content: flex-end;
 }
 
 /* past horoscopes that are saved */
@@ -54,4 +72,9 @@ nav {
     flex-flow: column nowrap;
     width: auto;
     overflow-y: auto;
+    margin: auto;
+}
+
+#saved-list > * {
+    margin: 0.3rem 0;
 }
