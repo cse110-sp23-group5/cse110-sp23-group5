@@ -1,0 +1,124 @@
+#landing-title {
+  font-size: 4em;
+  font-weight: bolder;
+  color: white;
+  margin-top: 40px;
+  /* adjust the spacing between the letters */
+  letter-spacing: 0.25em;
+
+}
+
+img {
+    /* send to back */
+    z-index: -1;
+
+    /* take up the full page, independant of other items */
+    position: absolute;
+
+    /* relatively center itself */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+body{
+    margin: 0;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+#birthday-div {
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+}
+
+#birthday-title {
+    font-size: 2em;
+    color: yellow;
+    margin-top: 20px;
+}
+
+#birthday-input {
+    font-size: 1.5em;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-left: 40px;
+    border: 2px solid yellow;
+    height: 10px;
+}
+
+#category {
+    font-size: 1.5em;
+    color: greenyellow;
+    /* outline the words */
+    text-shadow: 2px 2px 4px black;
+    margin-top: 20px;
+}
+
+/* Style for radio buttons */
+input[type="radio"] {
+    display: none; /* Hide the default radio button */
+}
+
+/* Style for button container */
+.radio-button {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Make it circular */
+    cursor: pointer;
+    text-align: center;
+    line-height: 100px;
+    margin-right: 10px;
+}
+
+/* Styling for label */
+.radio-button label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 16px;
+}
+
+/* Styling for each radio button color */
+#category-health + label {
+    background-color: #007bff; /* Blue */
+}
+
+#category-career + label {
+    background-color: purple; /* Green */
+}
+
+#category-love + label {
+    background-color: #dc3545; /* Red */
+}
+
+/* Styling for checked state */
+input[type="radio"]:checked + label {
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.2) inset; /* Adds a border when checked */
+}
+
+#submit {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #008000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.5em;
+}
