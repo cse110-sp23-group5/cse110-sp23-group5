@@ -71,19 +71,20 @@ function init() {
  */
 function saveHoroscope(horoscope) {
 
-    const replaceID = (key, value) => {
-        if (key === 'id') {
-          return undefined; // Exclude 'field2' from the JSON string
+    const replaceFields = (key, value) => {
+        const fieldsToExclude = ['id', 'date'];
+        if (fieldsToExclude.includes(key)) {
+            return undefined; // Exclude these fields from the JSON string
         }
         return value;
     };
 
-    if (horoscopesJSON.has(JSON.stringify(horoscope, replaceID))) {
+    if (horoscopesJSON.has(JSON.stringify(horoscope, replaceFields))) {
         alert("You have already saved this horoscope!");
         return;
     }
     horoscopes.push(horoscope);
-    horoscopesJSON.add(JSON.stringify(horoscope, replaceID));
+    horoscopesJSON.add(JSON.stringify(horoscope, replaceFields));
     addHoroscopesToDocument([horoscope]);
     saveHoroscopesToStorage(horoscopes);
 }
