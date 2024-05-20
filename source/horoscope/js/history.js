@@ -129,12 +129,12 @@ function getHoroscopesFromStorage() {
 /**
  * Takes in an array of Horoscopes and for each horoscope creates a
  * new <past-entry-card> element, adds the horoscope data to that card
- * using element.data = {...}, and then appends that new recipe
- * to the top of the sidebar
+ * using element.data = {...}, and then appends that new card
+ * to the top of the history
  * @param {Array<Horoscope>} horoscopes An array of horoscopes
  */
 function addHoroscopesToDocument(horoscopes) {
-    const sidebar = document.querySelector('#saved-list');
+    const history = document.querySelector('#saved-list');
   
     for (let horo of horoscopes) {
       let card = document.createElement('past-entry-card');
@@ -142,7 +142,7 @@ function addHoroscopesToDocument(horoscopes) {
       // need event listeners for each delete button
       const deleteButton = card.shadowRoot.querySelector('.delete');
       deleteButton.addEventListener('click', deleteCard);
-      sidebar.prepend(card);
+      history.prepend(card);
     }
 }
 

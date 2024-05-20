@@ -20,7 +20,7 @@ describe('Basic user flow for Website', () => {
         let obj = JSON.parse(localHoroscopes)[0];
         expect(obj["sign"]).toBe("Leo");
 
-        // Check if Horoscope is in sidebar
+        // Check if Horoscope is in history
         let pastEntries = await page.$$('past-entry-card');
         expect(pastEntries.length).toBe(1);
 

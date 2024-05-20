@@ -1,4 +1,4 @@
-import { Horoscope } from "./sidebar.js";
+import { Horoscope } from "./history.js";
 /**
  * Card displaying a past horoscope entry
  * 

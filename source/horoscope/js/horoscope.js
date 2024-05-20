@@ -1,4 +1,4 @@
-import { Horoscope, saveHoroscope } from "./sidebar.js";
+import { Horoscope, saveHoroscope } from "./history.js";
 window.addEventListener('DOMContentLoaded', init);
 async function init() {
     let save = document.getElementById('save');
@@ -53,7 +53,7 @@ async function init() {
         
         // Check if a new horoscope has been generated
         if (ableToSave) {
-            //save horoscope to local storage for sidebar
+            //save horoscope to local storage for history
             let horoscopeElement = new Horoscope(sign, bday, today, message, category);
             saveHoroscope(horoscopeElement);
         }

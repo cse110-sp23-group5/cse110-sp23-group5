@@ -4,7 +4,7 @@
 
 @import "pastEntryCard.css";
 
-/* New fonts for sidebar and input labels */
+/* New fonts for history and input labels */
 @font-face {
     font-family: 'montserrat';
     src: url('fonts/Montserrat-Regular.ttf') format('woff');
@@ -48,7 +48,7 @@ video {
     z-index: -1;
 }
 
-/* The center body, not including the sidebar */
+/* The center body */
 main {
     /* Center and scale the image nicely */
     background-position: center;
@@ -222,30 +222,6 @@ input[type="button"]:focus {
     outline: none;
     box-shadow: 0 0 0 2px #1A237E;
     /*dark blue*/
-}
-
-/* new horoscope button */
-#new-horo {
-    grid-area: new-horo;
-    background-color: transparent; /* transparent to keep the same color as sidebar */
-    border-radius: 8px;
-    height: 5rem;
-}
-
-/* new horoscope button when hovered */
-#new-horo:hover {
-    background-color: #9e9e9e;
-    color: black;
-}
-
-/* new horoscope image on the button */
-#new-horo img {
-    height: 4rem;
-}
-
-/* new horoscope image when hovered */
-#new-horo:hover img {
-    filter: opacity(50%);
 }
 
 /* positioning for date */
