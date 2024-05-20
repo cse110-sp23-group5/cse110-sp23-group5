@@ -5,12 +5,13 @@ async function init() {
     let birthday = document.getElementById('birthday');
     let categoryElement = document.getElementById('category');
     let fortuneElement = document.getElementById('horoscope-fortune');
-    let backgroundVideo=document.getElementById("bgvideo");
+    let backgroundVideo = document.getElementById("bgvideo");
     let fortuneElementTitle = document.getElementById('horoscope-title');
+
     //clear the main page
     clearHoroscope();
-
-
+    restoreBirthday();
+    
     /**
     * Called when you want to update the horoscope on the main page
     * Sets the corresponding category, birthday, and message
@@ -70,6 +71,22 @@ async function init() {
         let divElement = document.getElementById("horoscope-title");
         // set font style
         
+        //Store birthday into cache
+        const birthdayValue = new Date(document.getElementById('birthday').value);
+
+        if (Date.parse(birthdayValue)) {
+            let year = birthdayValue.getFullYear();
+            let month = String(birthdayValue.getMonth() + 1);
+            if (month.length < 2) {
+                month = '0' + month;
+            }
+            let day = String(birthdayValue.getDate() + 1);
+            if (day.length < 2) {
+                day = '0' + day;
+            }
+            localStorage.setItem("saved-birthday", year + "-" + month + "-" + day);
+        }
+
         let sign = dateToHoroscope(birthday);
         divElement.innerText = sign;
 
@@ -85,6 +102,15 @@ async function init() {
         fortuneElement.innerText = await getPrompt();       
     });
 
+    /**
+     * Restores saved birthday from local cache
+     */
+    async function restoreBirthday() {
+        const savedDate = localStorage.getItem('saved-birthday');
+        if (savedDate) {
+            birthday.value = savedDate;
+        }
+    }
     /**
      * Generates horoscope prompt based on category and sign
      * Randomly selects prompt from database
@@ -117,6 +143,32 @@ async function init() {
     newHoroscopeButton.addEventListener('click', (event => {
         clearHoroscope();
     }));
+
+    // TODO: instead of getting the date, day, and sign within the function, pass it
+    // as an argument instead
+    async function fetchDailyHoroscopePrediction() {
+        let predictions;
+        let categories = ['Love', 'Career', 'Health']
+    
+        return new Promise(async (resolve, reject) => {
+            await fetch('./json/horoResponses.json')
+            .then(response => response.json())
+            .then(data => {
+                //parse json
+                predictions = JSON.parse(JSON.stringify(data));
+                let date = new Date();
+                let day = date.getDate();
+                let sign = dateToHoroscope(document.getElementById('birthday').value);
+                let prediction = predictions[sign][categories[day % 3]];
+                let selectedPrediction = prediction[day % 26];
+                resolve(selectedPrediction);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                reject(error);
+            });  
+        });
+    }
 
 }
 
@@ -190,6 +242,6 @@ function dateToHoroscope(dateString) {
     
     // Check if a sign is found
     return matchingSign ? matchingSign.name : "NO SIGN FOUND";
-} 
+}
 
 export {dateToHoroscope, clearHoroscope}
