@@ -9,11 +9,14 @@ async function init() {
 }
 /**
  * runs on GO button click
+ * adds proper values to local storage and redirects to horoscope page
  * @returns {void}
  */
 function button() {
     let birthday;
 
+    //check if birthday is valid, if not use the one in local storage if it exists
+    // If neither, do not proceed
     if (checkValidBirthday(birthdayElement.value)) {
         birthday = birthdayElement.value;
     } else if (localStorage.getItem('birthday')) {
@@ -24,7 +27,10 @@ function button() {
 
     let sign = dateToHoroscope(birthday);
     let category = categoryElement.value;
-    checkValidCategory(category);
+    if (!checkValidCategory(category)){
+        alert("Please select a category");
+        return;
+    };
 
     //save horoscope to local storage for sidebar
     localStorage.setItem('birthday', birthday);
