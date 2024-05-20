@@ -38,6 +38,7 @@ class Horoscope{
 }
 
 let horoscopes = [];
+let horoscopesJSON = new Set();
 
 function init() {
     // Get the horoscopes from localStorage
@@ -55,12 +56,13 @@ function init() {
     const clear = document.querySelector("#clear-horos");
     const savedList = document.querySelector("#saved-list");
     if (clear != null) {
-        //clear horoscopes when clear button is clicked
-        clear.addEventListener('click', function () {
-            localStorage.clear();
-            horoscopes = [];
-            savedList.innerHTML = "";
-        });
+    //clear horoscopes when clear button is clicked
+    clear.addEventListener('click', function () {
+        localStorage.clear();
+        horoscopes = [];
+        horoscopesJSON.clear();
+        savedList.innerHTML = "";
+    });
     }
 }
 
@@ -69,8 +71,21 @@ function init() {
  * @param {Horoscope} horoscope horoscope object to save
  */
 function saveHoroscope(horoscope) {
+
+    const replaceFields = (key, value) => {
+        const fieldsToExclude = ['id', 'date'];
+        if (fieldsToExclude.includes(key)) {
+            return undefined; // Exclude these fields from the JSON string
+        }
+        return value;
+    };
+
+    if (horoscopesJSON.has(JSON.stringify(horoscope, replaceFields))) {
+        alert("You have already saved this horoscope!");
+        return;
+    }
     horoscopes.push(horoscope);
-    // addHoroscopesToDocument([horoscope]);
+    horoscopesJSON.add(JSON.stringify(horoscope, replaceFields));
     saveHoroscopesToStorage(horoscopes);
 }
 
@@ -126,7 +141,6 @@ function addHoroscopesToDocument(horoscopes) {
       card.data = horo;
       // need event listeners for each delete button
       const deleteButton = card.shadowRoot.querySelector('.delete');
-      card.addEventListener('click', onClick);
       deleteButton.addEventListener('click', deleteCard);
       sidebar.prepend(card);
     }
