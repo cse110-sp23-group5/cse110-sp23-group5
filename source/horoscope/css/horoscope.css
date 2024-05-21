@@ -206,22 +206,27 @@ input[type="button"] {
 }
 
 /* save button when hovered by mouse */
-input[type="button"]:hover {
+input[type="button"]:hover:enabled {
     background-color: #0D47A1;
     /*midnight blue*/
 }
 
 /* save button when clicked */
-input[type="button"]:active {
+input[type="button"]:active:enabled {
     background-color: #2196F3;
     /*light blue*/
 }
 
 /* save button when 'tab' to */
-input[type="button"]:focus {
+input[type="button"]:focus:enabled {
     outline: none;
     box-shadow: 0 0 0 2px #1A237E;
     /*dark blue*/
+}
+
+/* save button when disabled */
+input[type="button"]:disabled {
+    opacity: 0.5;
 }
 
 /* positioning for date */

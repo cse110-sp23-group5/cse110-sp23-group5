@@ -135,14 +135,16 @@ function getHoroscopesFromStorage() {
  */
 function addHoroscopesToDocument(horoscopes) {
     const history = document.querySelector('#saved-list');
-  
-    for (let horo of horoscopes) {
-      let card = document.createElement('past-entry-card');
-      card.data = horo;
-      // need event listeners for each delete button
-      const deleteButton = card.shadowRoot.querySelector('.delete');
-      deleteButton.addEventListener('click', deleteCard);
-      history.prepend(card);
+
+    if (history) {
+        for (let horo of horoscopes) {
+            let card = document.createElement('past-entry-card');
+            card.data = horo;
+            // need event listeners for each delete button
+            const deleteButton = card.shadowRoot.querySelector('.delete');
+            deleteButton.addEventListener('click', deleteCard);
+            history.prepend(card);
+        }
     }
 }
 
