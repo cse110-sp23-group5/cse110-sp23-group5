@@ -1,4 +1,4 @@
-import { Horoscope, saveHoroscope } from "./sidebar.js";
+import { Horoscope, saveHoroscope } from "./history.js";
 window.addEventListener('DOMContentLoaded', init);
 async function init() {
     let save = document.getElementById('save');
@@ -8,6 +8,9 @@ async function init() {
     let backgroundVideo=document.getElementById("bgvideo");
     let fortuneElementTitle = document.getElementById('horoscope-title');
     let ableToSave = false;
+
+    // Disable button
+    save.disabled = true;
 
     //clear the main page
     clearHoroscope();
@@ -39,25 +42,26 @@ async function init() {
 
     // Add event listener for the save button
     save.addEventListener('click', async () => {
-        let bday = birthday.value;
-        
-        if (bday.length != 10 || bday[4] != '-' || bday[7] != '-') {
-            alert("Please enter a valid date in the format MM/DD/YYYY");
-            return;
-        }
-        
-        let sign = dateToHoroscope(bday);
-        let category = categoryElement.value;
-        let message = fortuneElement.innerText;
-        let today = new Date();
-        
-        // Check if a new horoscope has been generated
         if (ableToSave) {
-            //save horoscope to local storage for sidebar
-            let horoscopeElement = new Horoscope(sign, bday, today, message, category);
-            saveHoroscope(horoscopeElement);
+            let bday = birthday.value;
+            
+            if (bday.length != 10 || bday[4] != '-' || bday[7] != '-') {
+                alert("Please enter a valid date in the format MM/DD/YYYY");
+                return;
+            }
+            
+            let sign = dateToHoroscope(bday);
+            let category = categoryElement.value;
+            let message = fortuneElement.innerText;
+            let today = new Date();
+            
+            // Check if a new horoscope has been generated
+                //save horoscope to local storage for history
+                let horoscopeElement = new Horoscope(sign, bday, today, message, category);
+                saveHoroscope(horoscopeElement);
         }
         ableToSave = false;
+        save.disabled = true;
     })
 
 
@@ -75,6 +79,8 @@ async function init() {
         fortuneElement.innerText = await getPrompt();
         // a new horoscope has been generated
         ableToSave = true;
+        save.disabled = false;
+
         // update horoscope sign
         let divElement = document.getElementById("horoscope-title");
         // set font style
@@ -119,13 +125,6 @@ async function init() {
             });  
         });
     }
-
-    //clear page when user clicks new horoscope
-    let newHoroscopeButton = document.getElementById('new-horo');
-    newHoroscopeButton.addEventListener('click', (event => {
-        clearHoroscope();
-    }));
-
 }
 
 /**

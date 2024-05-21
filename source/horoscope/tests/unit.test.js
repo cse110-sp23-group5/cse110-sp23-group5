@@ -61,7 +61,7 @@ describe('formatDynamicDate', () => {
 });
 
 
-const { makeCounter } = require('../js/sidebar.js');
+const { makeCounter } = require('../js/history.js');
 
 describe('makeCounter', () => {
   it('should return a function that increments and returns the next number each time it is called', () => {
@@ -116,7 +116,7 @@ describe('dateToHoroscope', () => {
 });
 
 
-const { saveHoroscope } = require('../js/sidebar.js');
+const { saveHoroscope } = require('../js/history.js');
 
 // Mock localStorage
 const localStorageMock = (() => {

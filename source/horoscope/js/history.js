@@ -1,4 +1,3 @@
-import { clearHoroscope } from "./horoscope.js";
 window.addEventListener('DOMContentLoaded', init);
 
 
@@ -56,14 +55,15 @@ function init() {
 
     const clear = document.querySelector("#clear-horos");
     const savedList = document.querySelector("#saved-list");
+    if (clear != null) {
     //clear horoscopes when clear button is clicked
     clear.addEventListener('click', function () {
         localStorage.clear();
         horoscopes = [];
         horoscopesJSON.clear();
         savedList.innerHTML = "";
-        clearHoroscope();
     });
+    }
 }
 
 /**
@@ -86,7 +86,6 @@ function saveHoroscope(horoscope) {
     }
     horoscopes.push(horoscope);
     horoscopesJSON.add(JSON.stringify(horoscope, replaceFields));
-    addHoroscopesToDocument([horoscope]);
     saveHoroscopesToStorage(horoscopes);
 }
 
@@ -96,6 +95,7 @@ function saveHoroscope(horoscope) {
 function onClick() {
     let horo = this.data;
     setHoroscope(horo);
+    //Todo: Since Separated Out Set Horoscope won't work Might Not need it.
 }
 
 /**
@@ -108,15 +108,11 @@ function deleteCard(event) {
     horoscopes = horoscopes.filter(obj => obj.id != id);
     saveHoroscopesToStorage(horoscopes);
 
-    clearHoroscope();
-
     // Remove the card from the DOM
     this.parentNode.parentNode.removeChild(this.parentNode);
     this.parentNode.remove();
     if(event.stopPropagation)
         event.stopPropagation();
-
-
 }
 
 /**
@@ -133,21 +129,22 @@ function getHoroscopesFromStorage() {
 /**
  * Takes in an array of Horoscopes and for each horoscope creates a
  * new <past-entry-card> element, adds the horoscope data to that card
- * using element.data = {...}, and then appends that new recipe
- * to the top of the sidebar
+ * using element.data = {...}, and then appends that new card
+ * to the top of the history
  * @param {Array<Horoscope>} horoscopes An array of horoscopes
  */
 function addHoroscopesToDocument(horoscopes) {
-    const sidebar = document.querySelector('#saved-list');
-  
-    for (let horo of horoscopes) {
-      let card = document.createElement('past-entry-card');
-      card.data = horo;
-      // need event listeners for each delete button
-      const deleteButton = card.shadowRoot.querySelector('.delete');
-      card.addEventListener('click', onClick);
-      deleteButton.addEventListener('click', deleteCard);
-      sidebar.prepend(card);
+    const history = document.querySelector('#saved-list');
+
+    if (history) {
+        for (let horo of horoscopes) {
+            let card = document.createElement('past-entry-card');
+            card.data = horo;
+            // need event listeners for each delete button
+            const deleteButton = card.shadowRoot.querySelector('.delete');
+            deleteButton.addEventListener('click', deleteCard);
+            history.prepend(card);
+        }
     }
 }
 
