@@ -10,7 +10,9 @@ async function init() {
     let ableToSave = false;
 
     // Disable button
-    save.disabled = true;
+    if (save) {
+        save.disabled = true;
+    }
 
     //clear the main page
     clearHoroscope();

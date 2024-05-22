@@ -36,8 +36,8 @@ function button() {
         return;
     }
 
-    let category = document.querySelector('input[name="category"]:checked').value;
-    if (!checkValidCategory(category)){
+    let categoryElement = document.querySelector('input[name="category"]:checked');
+    if (!checkValidCategory(categoryElement)){
         return;
     };
 

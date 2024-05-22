@@ -56,20 +56,22 @@ function init() {
 
     const clear = document.querySelector("#clear-horos");
     const savedList = document.querySelector("#saved-list");
-    if (clear != null) {
-    //clear horoscopes when clear button is clicked
-    clear.addEventListener('click', function () {
-        localStorage.removeItem('horoscopes');
-        horoscopes = [];
-        horoscopesJSON.clear();
-        savedList.innerHTML = "";
-    });
+    if (clear) {
+        //clear horoscopes when clear button is clicked
+        clear.addEventListener('click', function () {
+            localStorage.removeItem('horoscopes');
+            horoscopes = [];
+            horoscopesJSON.clear();
+            savedList.innerHTML = "";
+        });
     }
 
     const goBack = document.getElementById("back");
-    goBack.addEventListener('click', () => {
-        window.location.href = LANDING_PAGE;
-    })
+    if (goBack) {
+        goBack.addEventListener('click', () => {
+            window.location.href = LANDING_PAGE;
+        })
+    }
 }
 
 /**
