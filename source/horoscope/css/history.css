@@ -24,9 +24,8 @@ button:hover {
     background-color: #2835c3;
 }
 
-body {
-    background-image: url(../images/historyBackground.png);
-    background-repeat: no-repeat;
+html {
+    background: url(../images/historyBackground.png) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

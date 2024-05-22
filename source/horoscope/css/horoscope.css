@@ -211,11 +211,8 @@ input[type="button"] {
 
 /* save button */
 #save {
-    margin-left: -50px;
-    margin-top: 580px;
-    /*adjust the z so it appears above the other things*/
-    z-index: 9999;
-
+    margin-left: 320px;
+    margin-top: -75px;
 }
 
 

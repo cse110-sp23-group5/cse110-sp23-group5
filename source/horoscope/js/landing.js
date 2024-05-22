@@ -1,6 +1,5 @@
 import { dateToHoroscope } from './horoscope.js';
 
-const categoryElement = document.getElementById('category');
 const birthdayElement = document.getElementById('birthday-input');
 const HOROSCOPE_PAGE = 'horoscope.html';
 
@@ -8,29 +7,37 @@ window.addEventListener('DOMContentLoaded', init);
 async function init() {
     const submit = document.getElementById('submit');
     submit.addEventListener('click', button);
+
+    // Load in the Birthday if stored
+    let birthday = localStorage.getItem('birthday');
+    if (birthday) {
+        birthdayElement.value = birthday 
+    }
+
+    // fr-ca to get date in YYYY-MM-DD set max day to Today
+    birthdayElement.max = new Date().toLocaleDateString('fr-ca');
 }
+
 /**
  * runs on GO button click
  * adds proper values to local storage and redirects to horoscope page
  * @returns {void}
  */
 function button() {
-    let birthday;
+    let birthday = birthdayElement.value;
 
-    //check if birthday is valid, if not use the one in local storage if it exists
-    // If neither, do not proceed
-    if (checkValidBirthday(birthdayElement.value)) {
-        birthday = birthdayElement.value;
-    } else if (localStorage.getItem('birthday')) {
-        birthday = localStorage.getItem('birthday');
-    } else {
+    //check if birthday is valid Alerts Given in function
+    if (!checkValidBirthday(birthday)) {
         return;
     }
 
     let sign = dateToHoroscope(birthday);
-    let category = categoryElement.value;
+    if (!checkValidSign(sign)) {
+        return;
+    }
+
+    let category = document.querySelector('input[name="category"]:checked').value;
     if (!checkValidCategory(category)){
-        alert("Please select a category");
         return;
     };
 
@@ -49,7 +56,6 @@ function button() {
  * @returns {boolean} true if valid, false otherwise
  */
 function checkValidBirthday(birthday) {
-    check = true;
     if (birthday.length != 10 || birthday[4] != '-' || birthday[7] != '-') {
         alert("Please enter a valid date in the format MM/DD/YYYY");
     }
@@ -86,7 +92,7 @@ function checkValidSign(sign) {
  * @returns {boolean} true if valid, false otherwise
  */
 function checkValidCategory(category) {
-    if (category === "Select a category") {
+    if (!category) {
         alert("Please select a category");
         return false;
     }
