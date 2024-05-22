@@ -189,7 +189,7 @@ select option {
 
 /* Submit Button Styles */
 
-/* save button */
+/* save and submit button */
 input[type="button"] {
     position: absolute;
     transition: background-color 1s ease; /* change of color takes a second(ex. when you hover) */
@@ -201,6 +201,10 @@ input[type="button"] {
     border-radius: 4px;
     cursor: pointer;
     font-size: clamp(15px, 1.5vw, 30px);
+}
+
+/* save button */
+#save {
     margin-left: 320px;
     margin-top: -75px;
 }

@@ -1,5 +1,6 @@
-window.addEventListener('DOMContentLoaded', init);
+const LANDING_PAGE = 'landing.html';
 
+window.addEventListener('DOMContentLoaded', init);
 
 /**
  * A simple counter that increments each time it is called
@@ -55,14 +56,21 @@ function init() {
 
     const clear = document.querySelector("#clear-horos");
     const savedList = document.querySelector("#saved-list");
-    if (clear != null) {
-    //clear horoscopes when clear button is clicked
-    clear.addEventListener('click', function () {
-        localStorage.removeItem('horoscopes');
-        horoscopes = [];
-        horoscopesJSON.clear();
-        savedList.innerHTML = "";
-    });
+    if (clear) {
+        //clear horoscopes when clear button is clicked
+        clear.addEventListener('click', function () {
+            localStorage.removeItem('horoscopes');
+            horoscopes = [];
+            horoscopesJSON.clear();
+            savedList.innerHTML = "";
+        });
+    }
+
+    const goBack = document.getElementById("back");
+    if (goBack) {
+        goBack.addEventListener('click', () => {
+            window.location.href = LANDING_PAGE;
+        })
     }
 }
 

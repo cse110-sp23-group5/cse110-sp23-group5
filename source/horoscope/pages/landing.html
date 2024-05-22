@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Horoscope App, Team #5</title>
+    <link rel="icon" type="image/x-icon" href="../images/star_favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../css/landing.css">
+    <script src="../js/landing.js" type="module"></script>
+</head>
+
+<body>
+    <h1 id="landing-title">Horoscope</h1>
+
+    <div id="birthday-div">
+        <label id="birthday-title" >Birthday: </label>
+        <input type="date" id="birthday-input" name="birthday" min="1900-01-01">
+    </div>
+    <h3 id="category">Select a category: </h3>
+    <div id="category-radio-buttons">
+        <div class="radio-button">
+            <input type="radio" id="category-love" name="category" value="Love">
+            <label for="category-love">Love</label><br>
+        </div>
+        <div class="radio-button">
+            <input type="radio" id="category-health" name="category" value="Health">
+            <label for="category-health">Health</label><br>
+        </div>
+        <div class="radio-button">
+            <input type="radio" id="category-career" name="category" value="Career">
+            <label for="category-career">Career</label><br>
+        </div> 
+    </div>
+    <input type="button" id="submit" value="GO">
+</body>
+
+
+
+</html>
