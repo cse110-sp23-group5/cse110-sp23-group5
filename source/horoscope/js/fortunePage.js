@@ -54,7 +54,6 @@ async function init() {
                 let date = localStorage.getItem('birthday');
                 let sign = dateToHoroscope(date);
                 let horoscopeprompt = promptDB[sign][localStorage.getItem('category')];
-                console.log(horoscopeprompt);
                 let selectedPrompt = horoscopeprompt[Math.floor((Math.random() * horoscopeprompt.length)%horoscopeprompt.length)];
                 resolve(selectedPrompt);
             })
