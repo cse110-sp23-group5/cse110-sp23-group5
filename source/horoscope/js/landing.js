@@ -8,6 +8,11 @@ async function init() {
     const submit = document.getElementById('submit');
     submit.addEventListener('click', button);
 
+    const history = document.getElementById('history-button');
+    history.addEventListener('click', () => {
+        window.location.href = 'history.html';
+    });
+
     // Load in the Birthday if stored
     let birthday = localStorage.getItem('birthday');
     if (birthday) {
