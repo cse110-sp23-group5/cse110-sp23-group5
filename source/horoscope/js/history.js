@@ -1,5 +1,6 @@
-window.addEventListener('DOMContentLoaded', init);
+const LANDING_PAGE = 'landing.html';
 
+window.addEventListener('DOMContentLoaded', init);
 
 /**
  * A simple counter that increments each time it is called
@@ -64,6 +65,11 @@ function init() {
         savedList.innerHTML = "";
     });
     }
+
+    const goBack = document.getElementById("back");
+    goBack.addEventListener('click', () => {
+        window.location.href = LANDING_PAGE;
+    })
 }
 
 /**

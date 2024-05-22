@@ -52,7 +52,7 @@ main {
 }
 
 /* Back Navigation */
-.back {
+#back {
     position:sticky;
     top:50vh;
     grid-area: back;
