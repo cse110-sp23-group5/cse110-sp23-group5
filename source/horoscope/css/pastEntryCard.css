@@ -1,25 +1,26 @@
 
 
 article {
-    background-color: #757575;
+    background-color: #1a227eb7;
     border-radius: 8px;
     margin-bottom: 10px;
     color: white;
     display: grid;
-    height: 50px;
+    height: auto;
     row-gap: 5px;
     column-gap: 5px;
     padding: 16px;
     width: auto;
     grid-template: 
-        [row1-start] "image horoscope horoscope category" 60% [row1-end]
-        [row2-start] "image birthday birthday date" 40% [row2-end]
-        / 50px auto auto auto;
+        [row1-start] "image horoscope category"[row1-end]
+        [row2-start] "image birthday date"  [row2-end]
+        [row3-start] "image message ."  [row3-end]
+        / 80px auto auto;
 }
 
 /* When hovering over a card, it changes color */
 article:hover{
-    background-color: #9E9E9E;
+    background-color: #2835c3;
     color:black;
 }
 
@@ -43,6 +44,12 @@ article:hover .category {
     border: none;
     background: none;
     grid-area: 1 / 4 / 3 / 5;
+    /* grid-area: delete; */
+}
+
+span.delete {
+    font-size: 20px;
+    color: white;
 }
 
 /* When hovering over delete button, changes color */
@@ -74,10 +81,16 @@ article:hover .category {
     grid-area: image;
     max-width: 100%;
     height: auto;
+    align-self: center;
+    justify-self: center;
 }
 
 .sign {
     grid-area: horoscope;
     margin: 0px;
     font-size: 150%;
+}
+
+.message {
+    grid-area: message;
 }
