@@ -15,10 +15,17 @@ async function init() {
 
     // begin horoscope animation upon opening site
     let date = localStorage.getItem('birthday')
-    backgroundVideo.setAttribute("src","https://github.com/ZhouYuantian/CSE110-Storge/raw/main/"+dateToHoroscope(date)+".mp4");
-    startMove(document.getElementById("output"));
+
+    if (backgroundVideo) {
+        backgroundVideo.setAttribute("src","https://github.com/ZhouYuantian/CSE110-Storge/raw/main/"+dateToHoroscope(date)+".mp4");
+    }
+
+    if (document.getElementById("output")) {
+        startMove(document.getElementById("output"));
+    }
 
     // get and load in the fortune as well as the sign
+
     fortuneElement.innerText = await getPrompt();
     fortuneElementTitle.innerText = dateToHoroscope(date);
 
@@ -54,7 +61,6 @@ async function init() {
                 let date = localStorage.getItem('birthday');
                 let sign = dateToHoroscope(date);
                 let horoscopeprompt = promptDB[sign][localStorage.getItem('category')];
-                console.log(horoscopeprompt);
                 let selectedPrompt = horoscopeprompt[Math.floor((Math.random() * horoscopeprompt.length)%horoscopeprompt.length)];
                 resolve(selectedPrompt);
             })
