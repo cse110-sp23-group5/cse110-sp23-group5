@@ -58,7 +58,7 @@ function init() {
     if (clear != null) {
     //clear horoscopes when clear button is clicked
     clear.addEventListener('click', function () {
-        localStorage.clear();
+        localStorage.removeItem('horoscopes');
         horoscopes = [];
         horoscopesJSON.clear();
         savedList.innerHTML = "";
