@@ -41,10 +41,11 @@ function button() {
         return;
     };
 
+    // console.log(categoryElement.value);
     //save horoscope to local storage for sidebar
     localStorage.setItem('birthday', birthday);
     localStorage.setItem('sign', sign);
-    localStorage.setItem('category', category);
+    localStorage.setItem('category', categoryElement.value);
 
     //redirect to horoscope page
     window.location.href = HOROSCOPE_PAGE;

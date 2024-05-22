@@ -2,47 +2,33 @@
 <html lang="en">
 
 <head>
-  <title>Horoscope App, Team #5</title>
-  <link rel="icon" type="image/x-icon" href="../images/star_favicon.ico">
-  <link rel="stylesheet" type="text/css" href="../css/horoscope.css">
-  <script src="../js/horoscope.js" type="module"></script>
-  <script src="../js/pastEntryCard.js" type="module"></script>
-  <script src="../js/history.js" type="module"></script>
-  <!-- <link rel="stylesheet" type="text/css" href="css/debug.css"> -->
+    <title>Horoscope App, Team #5</title>
+    <link rel="icon" type="image/x-icon" href="../images/star_favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../css/horoscope.css">
+    <script src="../js/horoscope.js" type="module"></script>
 </head>
 
 <body>
-  <main>
-    <video src="https://github.com/ZhouYuantian/CSE110-Storge/raw/main/background.mp4" id="bgvideo" autoplay
-      muted></video>
-    <img src="../images/background.jpg" id="vbgimg" alt="background-image">
-    <div id="main">
-      <form id="user-form">
-        <!--. <p>Enter your information:</p> -->
-        <br><br>
-        <label for="birthday">Birthday:</label>
-        <input type="date" id="birthday" name="birthday">
-        <label for="category">Select a category:</label>
-        <select id="category" name="category">
-          <option value="Love">Love</option>
-          <option value="Health">Health</option>
-          <option value="Career">Career</option>\
-        </select><br>
-
-        <br>
-        <input type="button" id="save" value="SAVE">
-      </form>
-      <!--. <img class="center-image" id="sign-image" src="images/placeholder.png"> -->
-      <!--. <h1 id="sign-display"> Find your sign!</h1> -->
-      <div id="output">
-        <!--. <h1 id="date-display"> Today is <script> document.write(new Date().toLocaleDateString()); </script> </h1> -->
-        <h1 id="horoscope-title">Your Horoscope</h1>
-        <p id="horoscope-fortune">
-          Enter your birthday above and choose a category to see your daily horoscope!
-        </p>
-      </div>
-    </div>
-  </main>
+    <main>
+        <video src="https://github.com/ZhouYuantian/CSE110-Storge/raw/main/background.mp4" id="bgvideo" autoplay
+            muted></video>
+        <img src="../images/horoscopeBackground.jpg" id="vbgimg">
+        <div id="main">
+            <div id="save-redo-buttons" class="button-container">
+                <div class="r-button">
+                    <input type="button" id="redo" value="REDO">
+                </div>
+                <div class="s-button">
+                    <input type="button" id="save" value="SAVE">
+                </div>
+            </div>
+            <div id="output">
+                <h1 id="horoscope-title">Your Horoscope</h1>
+                <div id="horoscope-fortune">
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
