@@ -1,5 +1,5 @@
 ## Work Planning Document
-### Week 7
+### Week 8
 #### Assigned Groups
 - Backend: Pranav, Leo, Matthew
 - Frontend: Harry, Helen, Aaron
