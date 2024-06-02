@@ -1,0 +1,104 @@
+@font-face {
+   font-family: 'montserrat';
+   src: url('fonts/Montserrat-Regular.ttf') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'pacifico';
+   src: url('fonts/Pacifico-Regular.ttf') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+html {
+   background-image: url(../images/dailyBackground.png);
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-attachment: fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+}
+
+@supports (background-image: url(../images/dailyBackground.webp)) {
+   html {
+      background-image: url(../images/dailyBackground.webp);
+   }
+}
+
+body > * {
+   color:white;
+   font-family: 'monsterrat', sans-serif;
+}
+
+body {
+   display: grid;
+   grid-template: "back main ." / 1fr 70% 1fr;
+   column-gap: max(0.3rem, 5px);
+}
+
+main {
+   grid-area: main;
+}
+
+/* Default Style for Buttons */
+button {
+   color: lightgrey;
+   background-color: transparent;
+   box-shadow: 0 0 0 2px lightgrey;
+   border-radius: 3px;
+}
+
+button:hover {
+   background-color: #2835c3;
+}
+
+#back{
+   grid-area: back;
+   top:50vh;
+   position:sticky;
+   margin-left: 1rem;
+}
+
+/* Page Title */
+h1 {
+   font-family: 'pacifico';
+   font-size: 3rem;
+   text-shadow: 0 0 10px #1A237E;
+   text-align: center;
+}
+
+/* Daily Card For each sign */
+daily-card {
+   display: grid;
+   grid-template:
+   [row1-start] "image sign"[row1-end]
+   [row2-start] "image reading"  [row2-end]
+   / 80px auto;
+   column-gap: 5px;
+   row-gap: 5px;
+   background-color: #0068dfc2;
+   border-radius: 8px;
+   padding: 16px;
+   margin: 1rem;
+}
+
+.dailyImg {
+   grid-area: image;
+   max-width: 100%;
+   align-self: center;
+   justify-self: center;
+}
+
+.dailySign {
+   grid-area: sign; 
+   font-size: 2rem;
+}
+
+.dailyReading {
+   grid-area: reading;
+   font-size: clamp(10px, 3vw, 20px);
+}
