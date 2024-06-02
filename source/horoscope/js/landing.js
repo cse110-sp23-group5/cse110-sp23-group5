@@ -2,6 +2,8 @@ import { dateToHoroscope } from './horoscope.js';
 
 const birthdayElement = document.getElementById('birthday-input');
 const HOROSCOPE_PAGE = 'horoscope.html';
+const HISTORY_PAGE = 'history.html'
+const DAILY_PAGE = 'daily.html'
 
 window.addEventListener('DOMContentLoaded', init);
 async function init() {
@@ -10,8 +12,13 @@ async function init() {
 
     const history = document.getElementById('history-button');
     history.addEventListener('click', () => {
-        window.location.href = 'history.html';
+        window.location.href = HISTORY_PAGE;
     });
+
+    const daily = document.getElementById('daily-button');
+    daily.addEventListener('click', () => {
+        window.location.href = DAILY_PAGE;
+    })
 
     // Load in the Birthday if stored
     let birthday = localStorage.getItem('birthday');
