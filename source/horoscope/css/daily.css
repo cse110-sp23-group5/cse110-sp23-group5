@@ -86,19 +86,19 @@ daily-card {
    margin: 1rem;
 }
 
-.dailyImg {
+.daily-img {
    grid-area: image;
    max-width: 100%;
    align-self: center;
    justify-self: center;
 }
 
-.dailySign {
+.daily-sign {
    grid-area: sign; 
    font-size: 2rem;
 }
 
-.dailyReading {
+.daily-reading {
    grid-area: reading;
    font-size: clamp(10px, 3vw, 20px);
 }

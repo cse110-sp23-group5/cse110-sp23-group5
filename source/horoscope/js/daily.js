@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', init);
 
 async function init() {
    let userSign = localStorage.getItem('sign');
-   let goBack = document.getElementById('back');
+   const goBack = document.getElementById('back');
    goBack.addEventListener("click", () => {
       window.location.href = LANDING_PAGE;
    });
@@ -62,7 +62,7 @@ function populatePredictions(dailyPred) {
    let readingsElement;
 
    SIGNNAMES.forEach((sign) => {
-      readingsElement = document.getElementById(sign + "Reading");
+      readingsElement = document.getElementById(sign + "-reading");
       readingsElement.innerHTML = dailyPred.get(sign);
    })
 }
@@ -72,7 +72,7 @@ function populatePredictions(dailyPred) {
  * @param {string} sign users' Sign
  */
 function moveSignToTop(sign) {
-   let elToMove = document.getElementById(sign+"Card");
+   let elToMove = document.getElementById(sign+"-card");
    let parentEl = elToMove.parentNode;
    let moveBeforeEl = parentEl.firstChild;
 
