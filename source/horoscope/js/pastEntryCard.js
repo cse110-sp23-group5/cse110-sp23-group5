@@ -1,4 +1,4 @@
-import { Horoscope } from "./sidebar.js";
+import { Horoscope } from "./history.js";
 /**
  * Card displaying a past horoscope entry
  * 
@@ -13,7 +13,7 @@ class pastEntryCard extends HTMLElement {
 
         const style = document.createElement('link');
         style.setAttribute('rel', 'stylesheet');
-        style.setAttribute('href', 'css/pastEntryCard.css');
+        style.setAttribute('href', '../css/pastEntryCard.css');
 
 
         shadow.appendChild(style);
@@ -55,7 +55,7 @@ class pastEntryCard extends HTMLElement {
          * as well as the birthday, date createdand category, and a delete button
          */
         article.innerHTML = `
-        <img class="horo" src="./images/Horoscopes/${data.sign}.png"
+        <img class="horo" src="../images/Horoscopes/${data.sign}.png"
             alt="${data.sign}">
         <span class="sign">${data.sign}</span>
         <span class="birthday">${birthdayDisplay}</span>
@@ -64,6 +64,9 @@ class pastEntryCard extends HTMLElement {
         <button class="delete" aria-label="Close alert" type="button">
             <span class="delete" aria-hidden="true">&#x2715;</span>         
         </button>
+        <p class="message">
+          ${data.message}
+        </p>
         `;
     }
 
