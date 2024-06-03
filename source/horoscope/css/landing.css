@@ -10,7 +10,7 @@
     margin: 0;
 }
 
-body{
+body {
     background-image: url(../images/landingBackground.png);
     background-repeat: no-repeat;
     background-position: center center;
@@ -36,12 +36,12 @@ body{
 }
 
 #landing-title {
-  font-size: 4em;
+  font-size: 7em;
   font-weight: bolder;
   color: white;
   margin-top: 0.5em;
   /* adjust the spacing between the letters */
-  letter-spacing: 0.25em;
+  letter-spacing: 0.3em;
 
 }
 
@@ -52,24 +52,24 @@ body{
 }
 
 #birthday-title {
-    font-size: 2em;
-    color: yellow;
+    font-size: 4em;
+    color: rgb(247, 211, 87);
     margin-top: 20px;
 }
 
 #birthday-input {
-    font-size: 1.5em;
-    padding: 10px;
-    border-radius: 10px;
-    margin-top: 30px;
+    font-size: 3.5em;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 60px;
     margin-left: 40px;
-    border: 2px solid yellow;
+    border: 4px solid rgb(247, 211, 87);
     height: 10px;
 }
 
 #category {
-    font-size: 1.5em;
-    color: greenyellow;
+    font-size: 3.5em;
+    color: rgb(125, 206, 122);
     /* outline the words */
     text-shadow: 2px 2px 4px black;
     margin-top: 20px;
@@ -83,62 +83,70 @@ input[type="radio"] {
 /* Style for button container */
 .radio-button {
     display: inline-block;
-    width: 6em;
-    height: 6em;
+    width: 9em;
+    height: 9em;
     border-radius: 50%; /* Make it circular */
     cursor: pointer;
     text-align: center;
-    line-height: 6rem;
-    margin-right: 10px;
+    line-height: 9rem;
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-top: 25px;
 }
 
 /* Styling for label */
 .radio-button label {
     display: block;
     border-radius: 50%;
-    color: #fff;
-    font-size: 16px;
+    color: rgb(0, 0, 0);
+    font-size: 38px;
 }
 
 /* Styling for each radio button color */
 #category-health + label {
-    background-color: #007bff;
+    background-color: rgb(228, 195, 245);
 }
 
 #category-health + label:hover {
-    background-color: #016bdb; 
+    background-color: rgb(185, 174, 240); 
 }
 
 #category-career + label {
-    background-color: purple; 
+    background-color: rgb(173, 228, 252); 
 }
 
 #category-career + label:hover {
-    background-color: #5C005C;
+    background-color: rgb(173, 197, 250);
 }
 
 #category-love + label {
-    background-color: #dc3545;
+    background-color: rgb(243, 184, 178);
 }
 
 #category-love + label:hover {
-    background-color: #a42835;
+    background-color: rgb(239, 147, 129);
 }
 
 /* Styling for checked state */
 input[type="radio"]:checked + label {
-    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.442) inset; /* Adds a border when checked */
+    box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.442) inset; /* Adds a border when checked */
 }
 
 #submit {
-    margin-top: 20px;
+    margin-top: -15px;
     padding: 10px 20px;
-    background-color: #008000;
-    color: white;
+    background-color: rgb(187, 220, 148);
+    color: rgb(0, 0, 0);
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1.5em;
+    font-size: 1.8em;
+    font-family: 'pacifico', sans-serif;
+}
+
+#submit:hover {
+    background-image: linear-gradient(to left, rgb(187, 220, 148), rgb(163, 204, 123));
+    box-shadow: 4px 4px 12px rgba(0,0,0,0.3);
 }
 
 #history {
@@ -165,3 +173,4 @@ input[type="radio"]:checked + label {
     filter: brightness(0.8);
     transform: scale(1.05);
 }
+
