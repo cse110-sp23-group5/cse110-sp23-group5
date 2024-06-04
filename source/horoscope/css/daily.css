@@ -35,13 +35,8 @@ body > * {
 }
 
 body {
-   display: grid;
-   grid-template: "back main ." / 1fr 70% 1fr;
-   column-gap: max(0.3rem, 5px);
-}
-
-main {
-   grid-area: main;
+   margin: auto;
+   width: 70%;
 }
 
 /* Default Style for Buttons */
@@ -56,14 +51,11 @@ button:hover {
    background-color: #2835c3;
 }
 
-#back{
-   grid-area: back;
-   top:50vh;
-   position:sticky;
-   margin-left: 1rem;
+/* Page Header */
+header {
+   margin: 1rem;
 }
 
-/* Page Title */
 h1 {
    font-family: 'pacifico';
    font-size: 3rem;
