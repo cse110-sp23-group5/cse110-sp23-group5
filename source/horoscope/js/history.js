@@ -123,6 +123,20 @@ function deleteCard(event) {
         event.stopPropagation();
 }
 
+
+/**
+ * Copies text, given as parameter to the clipboard
+ * @param {string} text - The text to be copied to the clipboard.
+ */
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(function() {
+      alert('Text copied to clipboard successfully!');
+    }, function(err) {
+      alert('Failed to copy text: ', err);
+    });
+  }
+  
+
 /**
  * Reads 'horoscopes' from localStorage and returns an array of
  * all of the horoscopes found (parsed, not in string form). If
@@ -151,6 +165,12 @@ function addHoroscopesToDocument(horoscopes) {
             // need event listeners for each delete button
             const deleteButton = card.shadowRoot.querySelector('.delete');
             deleteButton.addEventListener('click', deleteCard);
+
+            //need event listeners for each copy button
+            const copyButton = card.shadowRoot.querySelector('.copy');
+            copyButton.addEventListener('click', function(){
+                copyToClipboard(horo.message);
+            });
             history.prepend(card);
         }
     }

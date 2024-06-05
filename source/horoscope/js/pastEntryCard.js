@@ -17,9 +17,7 @@ class pastEntryCard extends HTMLElement {
 
 
         shadow.appendChild(style);
-        shadow.appendChild(article);
-
-        
+        shadow.appendChild(article); 
     }
 
     /**
@@ -63,6 +61,9 @@ class pastEntryCard extends HTMLElement {
         <span class="category">${data.category}</span>
         <button class="delete" aria-label="Close alert" type="button">
             <span class="delete" aria-hidden="true">&#x2715;</span>         
+        </button>
+        <button class="copy" aria-label="Copy alert" type="button">
+            <img class="copy" src="../images/copy.png" alt="copy"></img>
         </button>
         <p class="message">
           ${data.message}
@@ -129,6 +130,7 @@ function formatDynamicDate(date) {
       return date.toLocaleDateString(undefined, options);
     }
 }
+
 
 customElements.define('past-entry-card', pastEntryCard);
 export { formatDynamicDate };
