@@ -32,20 +32,6 @@ async function init() {
     // fr-ca to get date in YYYY-MM-DD set max day to Today
     birthdayElement.max = new Date().toLocaleDateString('fr-ca');
 
-    const birthdayHoroscope = document.getElementById("birthday-horoscope");
-    if (birthdayHoroscope) {
-        birthdayHoroscope.addEventListener('click', () => {
-            window.location.href = LANDING_PAGE;
-        })
-    }
-
-    const history = document.getElementById("history");
-    if (history) {
-        history.addEventListener('click', () => {
-            window.location.href = HISTORY_PAGE;
-        })
-    }
-
     const daily = document.getElementById("daily-horoscope");
     if (daily) {
         daily.addEventListener('click', () => {
@@ -60,6 +46,13 @@ async function init() {
     //         window.location.href = LOVE_PAGE;
     //     })
     // }
+
+    const history = document.getElementById("history");
+    if (history) {
+        history.addEventListener('click', () => {
+            window.location.href = HISTORY_PAGE;
+        })
+    }
 }
 
 /**
