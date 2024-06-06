@@ -9,7 +9,21 @@
 </head>
 
 <body>
-    <h1 id="landing-title">Horoscope</h1>
+    <div class="header-container">
+        <h1 id="landing-title">Horoscope</h1>
+        <nav class="navbar">
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav no-search">
+                <li class="nav-item"><a id="daily-horoscope">Daily Horoscope</a></li>
+                <li class="nav-item"><a id="love-compatibility">Love Compatibility</a></li>
+                <li class="nav-item"><a id="history">History</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <div id="birthday-div">
         <label id="birthday-title" >Birthday: </label>
@@ -31,16 +45,5 @@
         </div> 
     </div>
     <input type="button" id="submit" value="GO">
-    <nav id="history">
-        <button id="daily-button">
-            Daily
-        </button>
-        <button id="history-button">
-          <img src="../images/history-icon.png" alt="History Button">
-        </button>
-    </nav>
 </body>
-
-
-
 </html>

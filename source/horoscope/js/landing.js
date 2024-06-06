@@ -4,21 +4,24 @@ const birthdayElement = document.getElementById('birthday-input');
 const HOROSCOPE_PAGE = 'horoscope.html';
 const HISTORY_PAGE = 'history.html'
 const DAILY_PAGE = 'daily.html'
+const LANDING_PAGE = 'landing.html';
+// UNCOMMENT WHEN LOVE COMPATIBILITY PAGE IS READY
+// const LOVE_PAGE = 'compatibility.html';
 
 window.addEventListener('DOMContentLoaded', init);
 async function init() {
     const submit = document.getElementById('submit');
     submit.addEventListener('click', button);
 
-    const history = document.getElementById('history-button');
-    history.addEventListener('click', () => {
-        window.location.href = HISTORY_PAGE;
-    });
-
-    const daily = document.getElementById('daily-button');
-    daily.addEventListener('click', () => {
-        window.location.href = DAILY_PAGE;
-    })
+    // Mobile Menu
+    document.getElementById('mobile-menu').addEventListener('click', function() {
+        var nav = document.querySelector('.nav');
+        if (nav.style.display === 'block') {
+            nav.style.display = 'none';
+        } else {
+            nav.style.display = 'block';
+        }
+    });    
 
     // Load in the Birthday if stored
     let birthday = localStorage.getItem('birthday');
@@ -28,6 +31,35 @@ async function init() {
 
     // fr-ca to get date in YYYY-MM-DD set max day to Today
     birthdayElement.max = new Date().toLocaleDateString('fr-ca');
+
+    const birthdayHoroscope = document.getElementById("birthday-horoscope");
+    if (birthdayHoroscope) {
+        birthdayHoroscope.addEventListener('click', () => {
+            window.location.href = LANDING_PAGE;
+        })
+    }
+
+    const history = document.getElementById("history");
+    if (history) {
+        history.addEventListener('click', () => {
+            window.location.href = HISTORY_PAGE;
+        })
+    }
+
+    const daily = document.getElementById("daily-horoscope");
+    if (daily) {
+        daily.addEventListener('click', () => {
+            window.location.href = DAILY_PAGE;
+        })
+    }
+
+    // UNCOMMENT WHEN LOVE COMPATIBILITY PAGE IS READY
+    // const love = document.getElementById("love-compatibility");
+    // if (love) {
+    //     love.addEventListener('click', () => {
+    //         window.location.href = LOVE_PAGE;
+    //     })
+    // }
 }
 
 /**
