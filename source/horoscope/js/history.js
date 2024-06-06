@@ -163,17 +163,15 @@ function fallbackCopyTextToClipboard(text) {
  * @param {string} text - The text to be copied to the clipboard.
  */
 function copyToClipboard(text) {
-    if (!navigator.clipboard) {
-      fallbackCopyTextToClipboard(text);
-      return;
+    try {
+        navigator.clipboard.writeText(text).then(function() {
+            alert("Copied to clipboard!");
+            console.log('Async: Copying to clipboard was successful!');
+        });
+    } catch (err) {
+        console.error('Async: Could not copy text: ', err);
+        fallbackCopyTextToClipboard(text);
     }
-    navigator.clipboard.writeText(text).then(function() {
-      alert("Copied to clipboard!");
-      console.log('Async: Copying to clipboard was successful!');
-    }, function(err) {
-      alert("Failed to copy to clipboard!");
-      console.error('Async: Could not copy text: ', err);
-    });
 }
 
 /**
