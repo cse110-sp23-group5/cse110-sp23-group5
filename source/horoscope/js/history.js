@@ -125,17 +125,52 @@ function deleteCard(event) {
 
 
 /**
+ * This was necessary due to compatibility issues found in testing.
+ * It uses document.execCommand('copy'), which is depreciated.
+ * Copies text, given as parameter to the clipboard.
+ * @param {string} text - The text to be copied to the clipboard.
+ */
+function fallbackCopyTextToClipboard(text) {
+    var textArea = document.createElement("textarea");
+    textArea.value = text;
+    
+    // Avoid scrolling to bottom
+    textArea.style.top = "0";
+    textArea.style.left = "0";
+    textArea.style.position = "fixed";
+  
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+  
+    try {
+      var successful = document.execCommand('copy');
+      var msg = successful ? 'successful' : 'unsuccessful';
+      console.log('Fallback: Copying text command was ' + msg);
+    } catch (err) {
+      console.error('Fallback: Oops, unable to copy', err);
+    }
+  
+    document.body.removeChild(textArea);
+}
+
+/**
  * Copies text, given as parameter to the clipboard
+ * If the browser is incompatible, it uses fallbackCopyTextToClipboard,
+ * which uses a depreciated module to access the same thing.
  * @param {string} text - The text to be copied to the clipboard.
  */
 function copyToClipboard(text) {
+    if (!navigator.clipboard) {
+      fallbackCopyTextToClipboard(text);
+      return;
+    }
     navigator.clipboard.writeText(text).then(function() {
-      alert('Text copied to clipboard successfully!');
+      console.log('Async: Copying to clipboard was successful!');
     }, function(err) {
-      alert('Failed to copy text: ', err);
+      console.error('Async: Could not copy text: ', err);
     });
-  }
-  
+}
 
 /**
  * Reads 'horoscopes' from localStorage and returns an array of

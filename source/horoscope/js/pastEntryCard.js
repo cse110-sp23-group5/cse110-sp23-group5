@@ -15,7 +15,6 @@ class pastEntryCard extends HTMLElement {
         style.setAttribute('rel', 'stylesheet');
         style.setAttribute('href', '../css/pastEntryCard.css');
 
-
         shadow.appendChild(style);
         shadow.appendChild(article); 
     }
@@ -65,6 +64,10 @@ class pastEntryCard extends HTMLElement {
         <button class="copy" aria-label="Copy alert" type="button">
             <img class="copy" src="../images/copy.png" alt="copy"></img>
         </button>
+        <a class="twitter-share-button"
+        href="https://twitter.com/intent/tweet?text=${data.message}">
+          Tweet
+        </a>
         <p class="message">
           ${data.message}
         </p>
