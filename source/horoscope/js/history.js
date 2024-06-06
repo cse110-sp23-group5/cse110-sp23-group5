@@ -146,8 +146,10 @@ function fallbackCopyTextToClipboard(text) {
     try {
       var successful = document.execCommand('copy');
       var msg = successful ? 'successful' : 'unsuccessful';
+      alert("Copied to clipboard!");
       console.log('Fallback: Copying text command was ' + msg);
     } catch (err) {
+      alert("Failed to copy to clipboard!");
       console.error('Fallback: Oops, unable to copy', err);
     }
   
@@ -166,8 +168,10 @@ function copyToClipboard(text) {
       return;
     }
     navigator.clipboard.writeText(text).then(function() {
+      alert("Copied to clipboard!");
       console.log('Async: Copying to clipboard was successful!');
     }, function(err) {
+      alert("Failed to copy to clipboard!");
       console.error('Async: Could not copy text: ', err);
     });
 }
