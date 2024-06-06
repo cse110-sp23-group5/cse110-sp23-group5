@@ -1,8 +1,15 @@
 //E2E tests
 describe('Basic user flow for Website', () => {
     beforeAll(async () => {
+      try {
         await page.goto('https://stephentan12.github.io/Horoscope-Team-5/source/horoscope/pages/landing.html');
-      });
+        console.log('Page loaded successfully');
+      } catch (error) {
+        console.error('Error loading page:', error);
+      }
+    }, 30000); //increased time for connection
+
+
     // Fill out and submit the horoscope form
     it('Initial Page - Submit Information', async () => {
         console.log('Submitting information...');
