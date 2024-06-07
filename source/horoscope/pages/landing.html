@@ -10,7 +10,17 @@
 </head>
 
 <body>
-    <h1 id="landing-title">Horoscope</h1>
+    <div class="header-container">
+        <h1 id="landing-title">Horoscope</h1>
+        <nav class="navbar">
+            <img src="../images/menu.png" alt="Menu Button" class="menu-toggle" id="menu" tabindex=0>
+            <ul class="dropdown">
+                <li class="dropdown-item"><a id="daily-horoscope" tabindex="0">Daily Horoscope</a></li>
+                <li class="dropdown-item"><a id="love-compatibility" tabindex="0">Love Compatibility</a></li>
+                <li class="dropdown-item"><a id="history" tabindex="0">History</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <div id="birthday-div">
         <label id="birthday-title" >Birthday: </label>
@@ -31,7 +41,6 @@
             <label for="category-career">Career</label><br>
         </div> 
     </div>
-
     <input type="button" id="submit" value="START">
     <div id="history">
         <button id="history-button">
@@ -40,4 +49,3 @@
     </div>
   </body>
 </html>
-

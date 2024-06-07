@@ -149,30 +149,37 @@ input[type="radio"]:checked + label {
     box-shadow: 4px 4px 12px rgba(0,0,0,0.3);
 }
 
-nav {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-}
-  
-#history-button {
-    background: none;
-    border: none;
+.navbar {
+    list-style-type: none;
     padding: 0;
-    cursor: pointer;
-}
-  
-#history-button img {
-    width: 40px;
-    height: 40px;
-    transition: filter 0.3s ease, transform 0.3s ease;
+    margin: 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
-nav > button:hover {
-    filter: brightness(0.8);
-    transform: scale(1.05);
+.menu-toggle {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 50px;
+}
+
+.dropdown {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: #333;
+    border: 1px solid #ccc;
+}
+
+.dropdown-item {
+    padding: 10px 20px;
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -224,4 +231,14 @@ nav > button:hover {
     border-radius: 50%;
     padding: 0;
     margin: 2px;    
+}
+
+.dropdown-item a {
+    text-decoration: none;
+    color: white;
+}
+
+.dropdown-item:hover {
+    background-color: black;
+    transition: 0.7s;
 }
