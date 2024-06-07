@@ -73,6 +73,12 @@ main {
     grid-area: main;
 }
 
+.backContainer {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: -20px;
+}
+
 .clearContainer {
     display: flex;
     justify-content: flex-end;
@@ -90,4 +96,44 @@ main {
 
 #saved-list > * {
     margin: 0.3rem 0;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        column-gap: 0;
+    }
+
+    .backContainer, 
+    .clearContainer {
+        justify-content: center;
+        margin: 0;
+    }
+
+    #back {
+        position: static;
+        margin-bottom: 1rem;
+    }
+
+    .readingsContainer {
+        width: 100%;
+    }
+
+    #saved-list {
+        width: 95%;
+        overflow-y: visible;
+        margin-top: 1em;
+    }
+
+    button {
+        /* outline: 2px solid green; */
+        font-size: 1em;
+        padding: 0.5em 1em;
+    }
 }
