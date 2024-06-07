@@ -164,6 +164,8 @@ function fallbackCopyTextToClipboard(text) {
  */
 function copyToClipboard(text) {
     try {
+        // write a line of code that throws an error
+        throw Error('This is an error');
         navigator.clipboard.writeText(text).then(function() {
             alert("Copied to clipboard!");
             console.log('Async: Copying to clipboard was successful!');
@@ -171,6 +173,7 @@ function copyToClipboard(text) {
     } catch (err) {
         console.error('Async: Could not copy text: ', err);
         fallbackCopyTextToClipboard(text);
+        return; // Add this line to exit the function after the error is caught
     }
 }
 

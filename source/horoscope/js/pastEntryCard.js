@@ -3,6 +3,8 @@ import { Horoscope } from "./history.js";
  * Card displaying a past horoscope entry
  * 
  */
+const hyperlink_rick_roll = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+
 class pastEntryCard extends HTMLElement {
     constructor() {
         super();
@@ -47,6 +49,8 @@ class pastEntryCard extends HTMLElement {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         const birthdayDisplay = birthday.toLocaleDateString(undefined, options);
 
+        const tweet = data.message + "  Get your fortune: " + hyperlink_rick_roll;
+
         /**
          * Display the image and name of the user's horoscope, 
          * as well as the birthday, date createdand category, and a delete button
@@ -65,8 +69,8 @@ class pastEntryCard extends HTMLElement {
             <img class="copy" src="../images/copy.png" alt="copy"></img>
         </button>
         <a class="twitter-share-button"
-        href="https://twitter.com/intent/tweet?text=${data.message}">
-          Tweet
+        href="https://twitter.com/intent/tweet?text=${tweet}">
+          <img class="twitter" src="../images/X_logo.png" alt="Tweet"></img>
         </a>
         <p class="message">
           ${data.message}

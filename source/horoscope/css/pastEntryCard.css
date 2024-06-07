@@ -25,7 +25,7 @@ article:hover{
 }
 
 /* When hovering over a card, delete button appears */
-article:hover .delete, article:hover .copy {
+article:hover .delete, article:hover .copy, article:hover .twitter-share-button {
     display: block;
 }
 
@@ -69,6 +69,29 @@ img.copy{
     height: 25px;
     width: 25px;
     margin: auto;
+}
+
+.twitter-share-button {
+    display: none;
+}
+
+a.twitter-share-button {
+    display: none;
+    border: none;
+    background: none;
+    grid-area: 3 / 4 / 5 / 5;
+    margin-right: 40px;
+    height: 35px;
+    width: 35px;
+    justify-self: end;
+}
+
+img.twitter {
+    height: 25px;
+    width: 25px;
+    justify-self: center;
+    margin-left: 5px;
+    margin-top: 5px;
 }
 
 span.delete {
