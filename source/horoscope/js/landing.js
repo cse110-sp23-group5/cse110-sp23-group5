@@ -4,21 +4,56 @@ const birthdayElement = document.getElementById('birthday-input');
 const HOROSCOPE_PAGE = 'horoscope.html';
 const HISTORY_PAGE = 'history.html'
 const DAILY_PAGE = 'daily.html'
+const LANDING_PAGE = 'landing.html';
+// UNCOMMENT WHEN LOVE COMPATIBILITY PAGE IS READY
+// const LOVE_PAGE = 'compatibility.html';
 
 window.addEventListener('DOMContentLoaded', init);
 async function init() {
     const submit = document.getElementById('submit');
     submit.addEventListener('click', button);
 
-    const history = document.getElementById('history-button');
-    history.addEventListener('click', () => {
-        window.location.href = HISTORY_PAGE;
+    // Menu button
+    var menu = document.getElementById('menu');
+    menu.addEventListener('click', toggleDropdown);
+    menu.addEventListener('keydown', function(event) {
+        console.log(event.key);
+        if (event.key === 'Enter' || event.key === ' ') {
+            toggleDropdown();
+        }
     });
 
-    const daily = document.getElementById('daily-button');
+    const daily = document.getElementById('daily-horoscope');
     daily.addEventListener('click', () => {
-        window.location.href = DAILY_PAGE;
+        clickDropdownPage(DAILY_PAGE);
     })
+    daily.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+            clickDropdownPage(DAILY_PAGE);
+        }
+    });
+
+    // UNCOMMENT WHEN LOVE COMPATIBILITY PAGE IS READY
+    // const love = document.getElementById('love-compatibility');
+    // love.addEventListener('click', () => {
+    //     clickDropdownPage(LOVE_PAGE);
+    // })
+    // love.addEventListener('keydown', function(event) {
+    //     if (event.key === 'Enter' || event.key === ' ') {
+    //         clickDropdownPage(LOVE_PAGE);
+    //     }
+    // });
+
+
+    const history = document.getElementById('history');
+    history.addEventListener('click', () => {
+        window.location.href = HISTORY_PAGE;
+    })
+    history.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+            window.location.href = HISTORY_PAGE;
+        }
+    });
 
     // Load in the Birthday if stored
     let birthday = localStorage.getItem('birthday');
@@ -70,16 +105,16 @@ function button() {
  */
 function checkValidBirthday(birthday) {
     if (birthday.length != 10 || birthday[4] != '-' || birthday[7] != '-') {
-        alert("Please enter a valid date in the format MM/DD/YYYY");
+        alert('Please enter a valid date in the format MM/DD/YYYY');
     }
     else if (isNaN(Date.parse(birthday))) {
-        alert("Please enter a valid date in the format MM/DD/YYYY");
+        alert('Please enter a valid date in the format MM/DD/YYYY');
     }
     else if (new Date(birthday) > new Date()) {
-        alert("Please enter a valid date in the past");
+        alert('Please enter a valid date in the past');
     }
-    else if (new Date(birthday) < new Date("1900-01-01")) {
-        alert("Please enter a valid date after 1900");
+    else if (new Date(birthday) < new Date('1900-01-01')) {
+        alert('Please enter a valid date after 1900');
     } else {
         return true;
     }
@@ -92,8 +127,8 @@ function checkValidBirthday(birthday) {
  * @returns {boolean} true if valid, false otherwise
  */
 function checkValidSign(sign) {
-    if (sign === "NO SIGN FOUND") {
-        alert("Please enter a valid date");
+    if (sign === 'NO SIGN FOUND') {
+        alert('Please enter a valid date');
         return false;
     }
     return true;
@@ -106,8 +141,26 @@ function checkValidSign(sign) {
  */
 function checkValidCategory(category) {
     if (!category) {
-        alert("Please select a category");
+        alert('Please select a category');
         return false;
     }
     return true;
+}
+
+/**
+ * Toggles the navigation menu
+ * @returns {void}
+ */
+function toggleDropdown() {
+    var nav = document.querySelector('.dropdown');
+    nav.style.display = (nav.style.display === 'block') ? 'none' : 'block';
+}
+
+/**
+ * Redirects to the selected page
+ * @param {string} page
+ * @returns {void}
+ */
+function clickDropdownPage(page) {
+    window.location.href = page;
 }
