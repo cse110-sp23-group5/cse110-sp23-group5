@@ -13,15 +13,46 @@ async function init() {
     const submit = document.getElementById('submit');
     submit.addEventListener('click', button);
 
-    // Mobile Menu
-    document.getElementById('mobile-menu').addEventListener('click', function() {
-        var nav = document.querySelector('.nav');
-        if (nav.style.display === 'block') {
-            nav.style.display = 'none';
-        } else {
-            nav.style.display = 'block';
+    // Menu button
+    var menu = document.getElementById('menu');
+    menu.addEventListener('click', toggleDropdown);
+    menu.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            toggleDropdown();
         }
-    });    
+    });
+
+    const daily = document.getElementById("daily-horoscope");
+    daily.addEventListener('click', () => {
+        clickDropdownPage(DAILY_PAGE);
+    })
+    daily.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            clickDropdownPage(DAILY_PAGE);
+        }
+    });
+
+    // UNCOMMENT WHEN LOVE COMPATIBILITY PAGE IS READY
+    // const love = document.getElementById("love-compatibility");
+    // love.addEventListener('click', () => {
+    //     clickDropdownPage(LOVE_PAGE);
+    // })
+    // love.addEventListener('keydown', function(event) {
+    //     if (event.key === 'Enter') {
+    //         clickDropdownPage(LOVE_PAGE);
+    //     }
+    // });
+
+
+    const history = document.getElementById("history");
+    history.addEventListener('click', () => {
+        window.location.href = HISTORY_PAGE;
+    })
+    history.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            window.location.href = HISTORY_PAGE;
+        }
+    });
 
     // Load in the Birthday if stored
     let birthday = localStorage.getItem('birthday');
@@ -31,28 +62,6 @@ async function init() {
 
     // fr-ca to get date in YYYY-MM-DD set max day to Today
     birthdayElement.max = new Date().toLocaleDateString('fr-ca');
-
-    const daily = document.getElementById("daily-horoscope");
-    if (daily) {
-        daily.addEventListener('click', () => {
-            window.location.href = DAILY_PAGE;
-        })
-    }
-
-    // UNCOMMENT WHEN LOVE COMPATIBILITY PAGE IS READY
-    // const love = document.getElementById("love-compatibility");
-    // if (love) {
-    //     love.addEventListener('click', () => {
-    //         window.location.href = LOVE_PAGE;
-    //     })
-    // }
-
-    const history = document.getElementById("history");
-    if (history) {
-        history.addEventListener('click', () => {
-            window.location.href = HISTORY_PAGE;
-        })
-    }
 }
 
 /**
@@ -135,4 +144,22 @@ function checkValidCategory(category) {
         return false;
     }
     return true;
+}
+
+/**
+ * Toggles the navigation menu
+ * @returns {void}
+ */
+function toggleDropdown() {
+    var nav = document.querySelector('.dropdown');
+    nav.style.display = (nav.style.display === 'block') ? 'none' : 'block';
+}
+
+/**
+ * Redirects to the selected page
+ * @param {string} page
+ * @returns {void}
+ */
+function clickDropdownPage(page) {
+    window.location.href = page;
 }

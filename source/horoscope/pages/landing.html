@@ -12,15 +12,11 @@
     <div class="header-container">
         <h1 id="landing-title">Horoscope</h1>
         <nav class="navbar">
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="nav no-search">
-                <li class="nav-item"><a id="daily-horoscope">Daily Horoscope</a></li>
-                <li class="nav-item"><a id="love-compatibility">Love Compatibility</a></li>
-                <li class="nav-item"><a id="history">History</a></li>
+            <img src="../images/menu.png" alt="Menu Button" class="menu-toggle" id="menu" tabindex=0>
+            <ul class="dropdown">
+                <li class="dropdown-item"><a id="daily-horoscope" tabindex="0">Daily Horoscope</a></li>
+                <li class="dropdown-item"><a id="love-compatibility" tabindex="0">Love Compatibility</a></li>
+                <li class="dropdown-item"><a id="history" tabindex="0">History</a></li>
             </ul>
         </nav>
     </div>
@@ -31,7 +27,7 @@
     </div>
     <h3 id="category">Select a category: </h3>
     <div id="category-radio-buttons">
-        <div class="radio-button">
+        <div class="radio-button"   >
             <input type="radio" id="category-love" name="category" value="Love">
             <label for="category-love">Love</label><br>
         </div>
