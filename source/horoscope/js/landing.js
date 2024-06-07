@@ -17,39 +17,40 @@ async function init() {
     var menu = document.getElementById('menu');
     menu.addEventListener('click', toggleDropdown);
     menu.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter') {
+        console.log(event.key);
+        if (event.key === 'Enter' || event.key === ' ') {
             toggleDropdown();
         }
     });
 
-    const daily = document.getElementById("daily-horoscope");
+    const daily = document.getElementById('daily-horoscope');
     daily.addEventListener('click', () => {
         clickDropdownPage(DAILY_PAGE);
     })
     daily.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter') {
+        if (event.key === 'Enter' || event.key === ' ') {
             clickDropdownPage(DAILY_PAGE);
         }
     });
 
     // UNCOMMENT WHEN LOVE COMPATIBILITY PAGE IS READY
-    // const love = document.getElementById("love-compatibility");
+    // const love = document.getElementById('love-compatibility');
     // love.addEventListener('click', () => {
     //     clickDropdownPage(LOVE_PAGE);
     // })
     // love.addEventListener('keydown', function(event) {
-    //     if (event.key === 'Enter') {
+    //     if (event.key === 'Enter' || event.key === ' ') {
     //         clickDropdownPage(LOVE_PAGE);
     //     }
     // });
 
 
-    const history = document.getElementById("history");
+    const history = document.getElementById('history');
     history.addEventListener('click', () => {
         window.location.href = HISTORY_PAGE;
     })
     history.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter') {
+        if (event.key === 'Enter' || event.key === ' ') {
             window.location.href = HISTORY_PAGE;
         }
     });
@@ -104,16 +105,16 @@ function button() {
  */
 function checkValidBirthday(birthday) {
     if (birthday.length != 10 || birthday[4] != '-' || birthday[7] != '-') {
-        alert("Please enter a valid date in the format MM/DD/YYYY");
+        alert('Please enter a valid date in the format MM/DD/YYYY');
     }
     else if (isNaN(Date.parse(birthday))) {
-        alert("Please enter a valid date in the format MM/DD/YYYY");
+        alert('Please enter a valid date in the format MM/DD/YYYY');
     }
     else if (new Date(birthday) > new Date()) {
-        alert("Please enter a valid date in the past");
+        alert('Please enter a valid date in the past');
     }
-    else if (new Date(birthday) < new Date("1900-01-01")) {
-        alert("Please enter a valid date after 1900");
+    else if (new Date(birthday) < new Date('1900-01-01')) {
+        alert('Please enter a valid date after 1900');
     } else {
         return true;
     }
@@ -126,8 +127,8 @@ function checkValidBirthday(birthday) {
  * @returns {boolean} true if valid, false otherwise
  */
 function checkValidSign(sign) {
-    if (sign === "NO SIGN FOUND") {
-        alert("Please enter a valid date");
+    if (sign === 'NO SIGN FOUND') {
+        alert('Please enter a valid date');
         return false;
     }
     return true;
@@ -140,7 +141,7 @@ function checkValidSign(sign) {
  */
 function checkValidCategory(category) {
     if (!category) {
-        alert("Please select a category");
+        alert('Please select a category');
         return false;
     }
     return true;
