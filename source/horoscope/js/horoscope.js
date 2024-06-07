@@ -25,28 +25,33 @@ async function init() {
     }
 
     // get and load in the fortune as well as the sign
-
-    fortuneElement.innerText = await getPrompt();
-    fortuneElementTitle.innerText = dateToHoroscope(date);
+    if (fortuneElement) {
+        fortuneElement.innerText = await getPrompt();
+        fortuneElementTitle.innerText = dateToHoroscope(date);
+    }
 
     // Add event listener for the save button
-    save.addEventListener('click', async () => {
-        let bday = localStorage.getItem('birthday');
-        let sign = dateToHoroscope(bday);
-        let category = localStorage.getItem('category');
-        let message = fortuneElement.innerText;
-        let today = new Date();
-        
-        //save horoscope to local storage for sidebar
-        let horoscopeElement = new Horoscope(sign, bday, today, message, category);
-        saveHoroscope(horoscopeElement);
-        window.location.href = HISTORY_PAGE;
-    })
+    if (save) {
+        save.addEventListener('click', async () => {
+            let bday = localStorage.getItem('birthday');
+            let sign = dateToHoroscope(bday);
+            let category = localStorage.getItem('category');
+            let message = fortuneElement.innerText;
+            let today = new Date();
+            
+            //save horoscope to local storage for sidebar
+            let horoscopeElement = new Horoscope(sign, bday, today, message, category);
+            saveHoroscope(horoscopeElement);
+            window.location.href = HISTORY_PAGE;
+        })
+    }
 
     // Add event listener for the redo button
-    redo.addEventListener('click', async () => {
-        window.location.href = LANDING_PAGE;
-    }) 
+    if (redo) {
+        redo.addEventListener('click', async () => {
+            window.location.href = LANDING_PAGE;
+        }) 
+    }
 
     // function that parses the birthday and retreives the fortune from the json file
     async function getPrompt() {
@@ -137,7 +142,7 @@ function dateToHoroscope(dateString) {
         const end = new Date(`${year}-${sign.end}`).getTime();
         const birthdayTime = date.getTime();
         return (birthdayTime >= start && birthdayTime <= end);
-      });
+    });
     
     // Check if a sign is found
     return matchingSign ? matchingSign.name : "NO SIGN FOUND";

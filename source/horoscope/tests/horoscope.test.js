@@ -1,19 +1,32 @@
 //E2E tests
 describe('Basic user flow for Website', () => {
     beforeAll(async () => {
-        await page.goto('https://cse110-sp23-group5.github.io/cse110-sp23-group5/source/horoscope/horoscope.html');
-      });
+      try {
+        await page.goto('https://stephentan12.github.io/Horoscope-Team-5/source/horoscope/pages/landing.html');
+        console.log('Page loaded successfully');
+      } catch (error) {
+        console.error('Error loading page:', error);
+      }
+    }, 30000); //increased time for connection
+
+
     // Fill out and submit the horoscope form
     it('Initial Page - Submit Information', async () => {
         console.log('Submitting information...');
         // Submit birthday
-        await page.$eval('#birthday', el => el.value = '2003-08-05');
-        // Select health fortune from dropdown
-        await page.select('#category', 'Health')
+        await page.$eval('#birthday-input', el => el.value = '2003-08-05');
+        // Select health fortune from radio buttons
+        await page.$eval('#category-health', el => el.click());
         // Submit the form
-        await page.evaluate(() => {
-            document.querySelector('#save').click();
-        });
+        await Promise.all([
+          page.waitForNavigation(),
+          page.click('#submit') 
+        ]);
+
+        await Promise.all([
+          page.waitForNavigation(),
+          page.click('#save') 
+        ]);
 
         // Make sure localStorage is updated with the correct horoscope
         const localHoroscopes = await page.evaluate(() => localStorage.getItem("horoscopes"));

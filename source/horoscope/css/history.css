@@ -53,11 +53,12 @@ h1 {
     text-align: center;
 }
 
-main {
+body {
     display: grid;
-    grid-template: "back readings ." / 1fr 70% 1fr;
+    grid-template: "back main ." / 1fr 70% 1fr;
     padding: 0 1ch;
     column-gap: max(0.3rem, 5px);
+    height: 100vh;
 }
 
 /* Back Navigation */
@@ -67,8 +68,8 @@ main {
     grid-area: back;
 }
 
-.readingsContainer {
-    grid-area: readings;
+main {
+    grid-area: main;
 }
 
 .backContainer {
