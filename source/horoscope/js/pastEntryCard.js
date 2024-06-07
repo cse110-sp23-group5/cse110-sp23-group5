@@ -3,7 +3,7 @@ import { Horoscope } from "./history.js";
  * Card displaying a past horoscope entry
  * 
  */
-const hyperlink_rick_roll = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+const hyperlink = "https://stephentan12.github.io/Horoscope-Team-5/source/horoscope/pages/landing.html";
 
 class pastEntryCard extends HTMLElement {
     constructor() {
@@ -49,7 +49,7 @@ class pastEntryCard extends HTMLElement {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         const birthdayDisplay = birthday.toLocaleDateString(undefined, options);
 
-        const tweet = data.message + "  Get your fortune: " + hyperlink_rick_roll;
+        const tweet = data.message + "  Get your fortune: " + hyperlink;
 
         /**
          * Display the image and name of the user's horoscope, 
