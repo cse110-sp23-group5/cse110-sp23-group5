@@ -1,4 +1,5 @@
 import { Horoscope, saveHoroscope } from "./history.js";
+import {checkValidSign, checkValidBirthday} from "./landing.js"
 
 const birthdayElement1 = document.getElementById('birthday-input1');
 const birthdayElement2 = document.getElementById('birthday-input2');
@@ -173,10 +174,7 @@ function button() {
         return;
     }
 
-    let categoryElement = document.querySelector('input[name="category"]:checked');
-    if (!checkValidCategory(categoryElement)){
-        return;
-    };
+  
 
     // console.log(categoryElement.value);
     //save horoscope to local storage for sidebar
@@ -184,7 +182,6 @@ function button() {
     localStorage.setItem('birthday2', birthday2);
     localStorage.setItem('sign1', sign1);
     localStorage.setItem('sign2', sign2);
-    localStorage.setItem('category', categoryElement.value);
 
     //redirect to horoscope page
     window.location.href = COMPATIBILITY_RESULT_PAGE;

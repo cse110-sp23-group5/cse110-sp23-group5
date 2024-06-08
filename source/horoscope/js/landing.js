@@ -164,3 +164,5 @@ function toggleDropdown() {
 function clickDropdownPage(page) {
     window.location.href = page;
 }
+
+export {checkValidSign, checkValidBirthday}
