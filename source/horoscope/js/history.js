@@ -123,6 +123,59 @@ function deleteCard(event) {
         event.stopPropagation();
 }
 
+
+/**
+ * This was necessary due to compatibility issues found in testing.
+ * It uses document.execCommand('copy'), which is depreciated.
+ * Copies text, given as parameter to the clipboard.
+ * @param {string} text - The text to be copied to the clipboard.
+ */
+function fallbackCopyTextToClipboard(text) {
+    var textArea = document.createElement("textarea");
+    textArea.value = text;
+    
+    // Avoid scrolling to bottom
+    textArea.style.top = "0";
+    textArea.style.left = "0";
+    textArea.style.position = "fixed";
+  
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+  
+    try {
+      var successful = document.execCommand('copy');
+      var msg = successful ? 'successful' : 'unsuccessful';
+      alert("Copied to clipboard!");
+      console.log('Fallback: Copying text command was ' + msg);
+    } catch (err) {
+      alert("Failed to copy to clipboard!");
+      console.error('Fallback: Oops, unable to copy', err);
+    }
+  
+    document.body.removeChild(textArea);
+}
+
+/**
+ * Copies text, given as parameter to the clipboard
+ * If the browser is incompatible, it uses fallbackCopyTextToClipboard,
+ * which uses a depreciated module to access the same thing.
+ * @param {string} text - The text to be copied to the clipboard.
+ */
+function copyToClipboard(text) {
+    try {
+        // write a line of code that throws an error
+        navigator.clipboard.writeText(text).then(function() {
+            alert("Copied to clipboard!");
+            console.log('Async: Copying to clipboard was successful!');
+        });
+    } catch (err) {
+        console.error('Async: Could not copy text: ', err);
+        fallbackCopyTextToClipboard(text);
+        return; // Add this line to exit the function after the error is caught
+    }
+}
+
 /**
  * Reads 'horoscopes' from localStorage and returns an array of
  * all of the horoscopes found (parsed, not in string form). If
@@ -151,6 +204,12 @@ function addHoroscopesToDocument(horoscopes) {
             // need event listeners for each delete button
             const deleteButton = card.shadowRoot.querySelector('.delete');
             deleteButton.addEventListener('click', deleteCard);
+
+            //need event listeners for each copy button
+            const copyButton = card.shadowRoot.querySelector('.copy');
+            copyButton.addEventListener('click', function(){
+                copyToClipboard(horo.message);
+            });
             history.prepend(card);
         }
     }
