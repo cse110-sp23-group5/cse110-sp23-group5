@@ -151,13 +151,14 @@ main {
     background-color: rgb(244, 187, 65);
     /*navy blue*/
     color: black;
-    padding: 20px 40px;
+    padding: 10px 30px;
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    font-size: 33px;
+    font-size: 30px;
     font-weight: bold;
-    font-family: Garamond, Baskerville, Baskerville Old Face, Hoefler Text, Times New Roman, serif;
+    /* font-family: Garamond, Baskerville, Baskerville Old Face, Hoefler Text, Times New Roman, serif; */
+    font-family: 'pacifico';
 }
 
 /* Redo Button*/
@@ -167,13 +168,14 @@ main {
     background-color: rgb(70, 153, 120);
     /*navy blue*/
     color: white;
-    padding: 20px 40px;
+    padding: 10px 30px;
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    font-size: 33px;
+    font-size: 30px;
     font-weight: bold;
-    font-family: Garamond, Baskerville, Baskerville Old Face, Hoefler Text, Times New Roman, serif;
+    /* font-family: Garamond, Baskerville, Baskerville Old Face, Hoefler Text, Times New Roman, serif; */
+    font-family: 'pacifico';
 }
 
 /* save and redo button when hovered by mouse */

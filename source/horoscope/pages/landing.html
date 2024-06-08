@@ -6,7 +6,7 @@
     <link rel="icon" type="image/x-icon" href="../images/star_favicon.ico">
     <link rel="stylesheet" type="text/css" href="../css/landing.css">
     <script src="../js/landing.js" type="module"></script>
-    <script src="../js/main.js" type="module"></script>
+    <script src="../js/audioControl.js"></script>
 </head>
 
 <body>
@@ -42,6 +42,14 @@
         </div> 
     </div>
     <input type="button" id="submit" value="START">
+
+    <audio id="background-music" loop>
+        <source src="../audios/bgm_cornfield_chase_.mp3" type="audio/mpeg">
+    </audio>
+    <div id="audio-control">
+        <button id="audio-control-button">
+            <img src="../images/audio_off.png" alt="Toggle Audio" id="audio-icon">
+        </button>
     </div>
   </body>
 </html>

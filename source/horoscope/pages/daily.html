@@ -7,13 +7,14 @@
       <link rel="icon" type="image/x-icon" href="../images/star_favicon.ico">
       <link rel="stylesheet" type="text/css" href="../css/daily.css">
       <script src="../js/daily.js" type="module"></script>
+      <script src="../js/audioControl.js"></script>
    </head>
 <body>
    <header>
       <h1>Daily Horoscopes</h1>
-      <nav>
-         <button id="back">Go Back to Main Page</button>
-      </nav>
+      <div class="backContainer">
+         <button id="back">Back to Main Page</button>
+      </div>
    </header>
    <main>
       <daily-card id="Aquarius-card">
@@ -101,5 +102,8 @@
          </p>
       </daily-card>
    </main>
+   <audio id="background-music" loop>
+      <source src="../audios/bgm_cornfield_chase_.mp3" type="audio/mpeg">
+  </audio>
 </body>
 </html>
