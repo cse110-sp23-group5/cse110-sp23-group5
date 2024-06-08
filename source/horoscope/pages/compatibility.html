@@ -4,43 +4,47 @@
 <head>
     <title>Horoscope App, Team #5</title>
     <link rel="icon" type="image/x-icon" href="../images/star_favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/horoscope.css">
-    <script src="../js/horoscope.js" type="module"></script>
+    <link rel="stylesheet" type="text/css" href="../css/landing.css">
+    <script src="../js/landing.js" type="module"></script>
     <script src="../js/audioControl.js"></script>
 </head>
 
 <body>
-    <main>
-        <video src="https://github.com/ZhouYuantian/CSE110-Storge/raw/main/background.mp4" id="bgvideo" autoplay
-            muted></video>
-        <img src="../images/horoscopeBackground.jpg" id="vbgimg">
-        
-        <div id="date-input-box">
-            <label for="birthdate1">Birthdate 1:</label>
-            <input type="date" id="birthdate1" name="birthdate1">
-            <label for="birthdate2">Birthdate 2:</label>
-            <input type="date" id="birthdate2" name="birthdate2">
-        </div>
+    <div class="header-container">
+        <h1 id="landing-title">Love Compatibility</h1>
+        <nav class="navbar">
+            <img src="../images/menu.png" alt="Menu Button" class="menu-toggle" id="menu" tabindex=0>
+            <ul class="dropdown">
+                <li class="dropdown-item"><a id="daily-horoscope" tabindex="0">Daily Horoscope</a></li>
+                <li class="dropdown-item"><a id="love-compatibility" tabindex="0">Love Compatibility</a></li>
+                <li class="dropdown-item"><a id="history" tabindex="0">History</a></li>
+            </ul>
+        </nav>
+    </div>
 
-        <div id="main">
-            <div id="save-redo-buttons" class="button-container">
-                <div class="r-button">
-                    <input type="button" id="redo" value="REDO">
-                </div>
-                <div class="s-button">
-                    <input type="button" id="save" value="SAVE">
-                </div>
-            </div>
-            <div id="output">
-                <h1 id="horoscope-title">Your Horoscope</h1>
-                <div id="horoscope-fortune">
-                </div>
-            </div>
+    <div id="birthday-div">
+        <label id="birthday-title1" >Birthday 1: </label>
+        <input type="date" id="birthday-input" name="birthday" min="1900-01-01">
+    </div>
+    <div id="birthday-div">
+        <label id="birthday-title2" >Birthday 2: </label>
+        <input type="date" id="birthday-input" name="birthday" min="1900-01-01">
+    </div>
+    <div id="category-radio-buttons">
+        <div class="radio-button">
+            <input type="radio" id="category-compatibility" name="compatibility" value="compatibility">
+            <label for="category-compatibility">BEGIN</label><br>
         </div>
-    </main>
+    </div>
+    <input type="button" id="submit" value="START">
+
     <audio id="background-music" loop>
         <source src="../audios/bgm_cornfield_chase_.mp3" type="audio/mpeg">
     </audio>
-</body>
-
+    <div id="audio-control">
+        <button id="audio-control-button">
+            <img src="../images/audio_off.png" alt="Toggle Audio" id="audio-icon">
+        </button>
+    </div>
+  </body>
 </html>
