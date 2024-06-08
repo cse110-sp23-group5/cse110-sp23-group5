@@ -22,6 +22,7 @@ button {
 
 button:hover {
     background-color: #2835c3;
+    transition: 0.3s;
 }
 
 html {
@@ -46,6 +47,10 @@ body > * {
 }
 
 /* Page Title */
+.title {
+    text-align: center;
+}
+
 h1 {
     font-family: 'pacifico';
     font-size: 3rem;
@@ -53,22 +58,22 @@ h1 {
     text-align: center;
 }
 
-main {
+body {
     display: grid;
-    grid-template: "back readings ." / 1fr 70% 1fr;
+    grid-template: "back main ." / 1fr 70% 1fr;
     padding: 0 1ch;
     column-gap: max(0.3rem, 5px);
+    height: 100vh;
 }
 
-/* Back Navigation */
-#back {
-    position:sticky;
-    top:50vh;
-    grid-area: back;
-}
+main {
+    grid-area: main;
+} 
 
-.readingsContainer {
-    grid-area: readings;
+.backContainer {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: -20px;
 }
 
 .clearContainer {
@@ -76,7 +81,7 @@ main {
     justify-content: flex-end;
 }
 
-/* past horoscopes that are saved */
+ /* past horoscopes that are saved */
 #saved-list {
     grid-area: saved-list;
     display: flex;
@@ -88,4 +93,43 @@ main {
 
 #saved-list > * {
     margin: 0.3rem 0;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        column-gap: 0;
+    }
+
+    .backContainer, 
+    .clearContainer {
+        justify-content: center;
+        margin: 0;
+    }
+
+    #back {
+        position: static;
+        margin-bottom: 1rem;
+    }
+
+    .readingsContainer {
+        width: 100%;
+    }
+
+    #saved-list {
+        width: 95%;
+        overflow-y: visible;
+        margin-top: 1em;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 0.5em 1em;
+    }
 }

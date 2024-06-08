@@ -6,10 +6,21 @@
     <link rel="icon" type="image/x-icon" href="../images/star_favicon.ico">
     <link rel="stylesheet" type="text/css" href="../css/landing.css">
     <script src="../js/landing.js" type="module"></script>
+    <script src="../js/audioControl.js"></script>
 </head>
 
 <body>
-    <h1 id="landing-title">Horoscope</h1>
+    <div class="header-container">
+        <h1 id="landing-title">Horoscope</h1>
+        <nav class="navbar">
+            <img src="../images/menu.png" alt="Menu Button" class="menu-toggle" id="menu" tabindex=0>
+            <ul class="dropdown">
+                <li class="dropdown-item"><a id="daily-horoscope" tabindex="0">Daily Horoscope</a></li>
+                <li class="dropdown-item"><a id="love-compatibility" tabindex="0">Love Compatibility</a></li>
+                <li class="dropdown-item"><a id="history" tabindex="0">History</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <div id="birthday-div">
         <label id="birthday-title" >Birthday: </label>
@@ -30,14 +41,15 @@
             <label for="category-career">Career</label><br>
         </div> 
     </div>
-    <input type="button" id="submit" value="GO">
-    <div id="history">
-        <button id="history-button">
-          <img src="../images/history-icon.png" alt="History Button">
+    <input type="button" id="submit" value="START">
+
+    <audio id="background-music" loop>
+        <source src="../audios/bgm_cornfield_chase_.mp3" type="audio/mpeg">
+    </audio>
+    <div id="audio-control">
+        <button id="audio-control-button">
+            <img src="../images/audio_off.png" alt="Toggle Audio" id="audio-icon">
         </button>
     </div>
-</body>
-
-
-
+  </body>
 </html>

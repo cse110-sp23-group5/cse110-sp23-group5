@@ -3,26 +3,30 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>History</title>
+   <title>Horoscope App, Team #5</title>
    <link rel="icon" type="image/x-icon" href="../images/star_favicon.ico">
    <link rel="stylesheet" type="text/css" href="../css/history.css">
    <script src="../js/history.js" type="module"></script>
    <script src="../js/pastEntryCard.js" type="module"></script>
+   <script src="../js/audioControl.js"></script>
 </head>
 <body>
-   <header>
-      <h1>Past Horoscopes</h1>
-   </header>
-   <main>
-      <nav>
-         <button id="back">Go Back</button>
-      </nav>
-      <div class="readingsContainer">
-         <div class="clearContainer">
-            <button id="clear-horos">Clear All</button>
+      <main>
+         <div id="title">
+            <h1>Past Horoscopes</h1>
          </div>
-         <div id="saved-list"></div>
-      </div>
-   </main>
+         <div class="readingsContainer">
+            <div class="backContainer">
+               <button id="back">Back to Main Page</button>
+            </div>
+            <div class="clearContainer">
+               <button id="clear-horos">Clear All</button>
+            </div>
+            <div id="saved-list"></div>
+         </div>
+      </main>
+      <audio id="background-music" loop>
+         <source src="../audios/bgm_cornfield_chase_.mp3" type="audio/mpeg">
+      </audio>
 </body>
 </html>
