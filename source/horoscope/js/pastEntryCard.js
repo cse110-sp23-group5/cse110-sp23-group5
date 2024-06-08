@@ -3,6 +3,8 @@ import { Horoscope } from "./history.js";
  * Card displaying a past horoscope entry
  * 
  */
+const hyperlink = "https://stephentan12.github.io/Horoscope-Team-5/source/horoscope/pages/landing.html";
+
 class pastEntryCard extends HTMLElement {
     constructor() {
         super();
@@ -15,11 +17,8 @@ class pastEntryCard extends HTMLElement {
         style.setAttribute('rel', 'stylesheet');
         style.setAttribute('href', '../css/pastEntryCard.css');
 
-
         shadow.appendChild(style);
-        shadow.appendChild(article);
-
-        
+        shadow.appendChild(article); 
     }
 
     /**
@@ -50,6 +49,8 @@ class pastEntryCard extends HTMLElement {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         const birthdayDisplay = birthday.toLocaleDateString(undefined, options);
 
+        const tweet = data.message + "  Get your fortune: " + hyperlink;
+
         /**
          * Display the image and name of the user's horoscope, 
          * as well as the birthday, date createdand category, and a delete button
@@ -64,6 +65,13 @@ class pastEntryCard extends HTMLElement {
         <button class="delete" aria-label="Close alert" type="button">
             <span class="delete" aria-hidden="true">&#x2715;</span>         
         </button>
+        <button class="copy" aria-label="Copy alert" type="button">
+            <img class="copy" src="../images/copy.png" alt="copy"></img>
+        </button>
+        <a class="twitter-share-button"
+        href="https://twitter.com/intent/tweet?text=${tweet}">
+          <img class="twitter" src="../images/X_logo.png" alt="Tweet"></img>
+        </a>
         <p class="message">
           ${data.message}
         </p>
@@ -129,6 +137,7 @@ function formatDynamicDate(date) {
       return date.toLocaleDateString(undefined, options);
     }
 }
+
 
 customElements.define('past-entry-card', pastEntryCard);
 export { formatDynamicDate };
