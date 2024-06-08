@@ -64,6 +64,12 @@ h1 {
    text-align: center;
 }
 
+.backContainer {
+   display: flex;
+   justify-content: flex-start;
+   margin-bottom: -10px;
+}
+
 /* Daily Card For each sign */
 daily-card {
    display: grid;
@@ -94,4 +100,32 @@ daily-card {
 .daily-reading {
    grid-area: reading;
    font-size: clamp(10px, 3vw, 20px);
+}
+
+@media (max-width: 768px) {
+   h1 {
+       font-size: 2.5rem;
+   }
+
+   main {
+       display: flex;
+       flex-direction: column;
+       padding: 0;
+       column-gap: 0;
+   }
+
+   .backContainer{
+       justify-content: center;
+       margin: 0;
+   }
+
+   #back {
+       position: static;
+       margin-bottom: 1rem;
+   }
+
+   button {
+       font-size: 1em;
+       padding: 0.5em 1em;
+   }
 }
