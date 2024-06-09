@@ -1,4 +1,5 @@
 import { Horoscope, saveHoroscope } from "./history.js";
+import {dateToHoroscope} from "./horoscope.js";
 
 const COMPATIBILITY_PAGE = 'compatibility.html';
 const LANDING_PAGE = 'landing.html';
@@ -18,6 +19,8 @@ async function init() {
 
     // begin horoscope animation upon opening site
     let date = localStorage.getItem('birthday');
+    let date1 = localStorage.getItem('birthday1');
+    let date2 = localStorage.getItem('birthday2');
 
     if (backgroundVideo) {
         backgroundVideo.setAttribute("src","https://github.com/ZhouYuantian/CSE110-Storge/raw/main/"+dateToHoroscope(date)+".mp4");
@@ -30,7 +33,7 @@ async function init() {
     // get and load in the fortune as well as the sign
     if (fortuneElement) {
         fortuneElement.innerText = await getPrompt();
-        fortuneElementTitle.innerText = dateToHoroscope(date);
+        fortuneElementTitle.innerText = datesToHoroscope(date1, date2);
     }
 
 // no need to save these results
@@ -67,8 +70,9 @@ async function init() {
             .then(data => {
                 //parse json
                 promptDB = JSON.parse(JSON.stringify(data));
-                let date = localStorage.getItem('birthday1');
-                let sign = dateToHoroscope(date);
+                let date1 = localStorage.getItem('birthday1');
+                let date2 = localStorage.getItem('birthday2');
+                let sign = datesToHoroscope(date1, date2);
                 let horoscopeprompt = promptDB[sign];
                 // let selectedPrompt = horoscopeprompt[Math.floor((Math.random() * horoscopeprompt.length)%horoscopeprompt.length)];
                 resolve(horoscopeprompt);
@@ -159,7 +163,7 @@ function datesToHoroscope(dateString1, dateString2) {
     
     // Check if a sign is found
     if(matchingSign1 && matchingSign2)
-        return (matchingSign1.name+"+"+matchingSign2.name);
+        return matchingSign1.name+"+"+matchingSign2.name;
     return("NO SIGN FOUND");
 } 
 
