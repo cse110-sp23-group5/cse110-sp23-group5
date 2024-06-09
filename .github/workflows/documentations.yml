@@ -1,30 +1,17 @@
-name: documentations
-
-on:
-  push:
-    branches:
-      - '**'
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Generate JSDoc
-        run: npx jsdoc -c jsdoc.json
-
-      - name: Build
-        uses: andstor/jsdoc-action@v1
-        with:
-          recurse: true
-          output_dir: ./documentations
+{
+	"plugins": ["plugins/markdown"],
+	"source": {
+		"include": ["./source/horoscope/js/"],
+		"includePattern": ".+\\.js(doc|x)?$",
+		"excludePattern": "(node_modules/|docs)"
+	},
+	"templates": {
+		"cleverLinks": true,
+		"monospaceLinks": true
+	},
+	"opts": {
+		"destination": "./docs",
+		"recurse": true,
+		"readme": "./README.md"
+	}
+}
