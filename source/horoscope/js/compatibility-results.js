@@ -4,7 +4,7 @@ import {dateToHoroscope} from "./horoscope.js";
 const COMPATIBILITY_PAGE = 'compatibility.html';
 const LANDING_PAGE = 'landing.html';
 const HISTORY_PAGE = 'history.html';
-const SIGNNAMES = ['Aries+Libra','Taurus+Scorpio','Gemini+Sagittarius','Cancer+Capricorn','Leo+Aquarius','Virgo+Pisces'];
+const SIGNNAMES = ['Aries + Libra','Taurus + Scorpio','Gemini + Sagittarius','Cancer + Capricorn','Leo + Aquarius','Virgo + Pisces'];
 
 
 window.addEventListener('DOMContentLoaded', init);
@@ -66,17 +66,18 @@ async function init() {
         let promptDB;
 
         return new Promise(async (resolve, reject) => {
-            await fetch('../json/compatibility-responses.json')
+            await fetch('../json/compatibilityResponses.json')
             .then(response => response.json())
             .then(data => {
                 //parse json
-                console.log("data");
-                console.log(data);
                 promptDB = JSON.parse(JSON.stringify(data));
-                console.log(promptDB)
                 let date1 = localStorage.getItem('birthday1');
                 let date2 = localStorage.getItem('birthday2');
                 let sign = datesToHoroscope(date1, date2);
+                //if the sign is not in the list, use the default incompatible response
+                if (!SIGNNAMES.includes(sign)) {
+                    sign = "Default";
+                }
                 let horoscopeprompt = promptDB[sign];
                 // let selectedPrompt = horoscopeprompt[Math.floor((Math.random() * horoscopeprompt.length)%horoscopeprompt.length)];
                 resolve(horoscopeprompt);
@@ -128,7 +129,7 @@ function startMove(oDiv) {
      * @returns combined name of the zodiac signs of the two dates
      */
 function datesToHoroscope(dateString1, dateString2) {
-    return dateToHoroscope(dateString1) + "+" + dateToHoroscope(dateString2);
+    return dateToHoroscope(dateString1) + " + " + dateToHoroscope(dateString2);
 } 
 
 export {datesToHoroscope, clearHoroscope}
