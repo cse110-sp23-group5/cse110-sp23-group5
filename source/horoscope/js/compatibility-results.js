@@ -10,20 +10,19 @@ window.addEventListener('DOMContentLoaded', init);
 
 async function init() {
     // initialization of elements relevant to fortunePage.html
-    let save = document.getElementById('save');
-    let redo = document.getElementById('redo');
+    let save = document.getElementById('save-compatibility');
+    let redo = document.getElementById('redo-compatibility');
     let fortuneElement = document.getElementById('horoscope-fortune');
     let backgroundVideo=document.getElementById("bgvideo");
     let fortuneElementTitle = document.getElementById('horoscope-title');
 
     // begin horoscope animation upon opening site
-    let date = localStorage.getItem('birthday');
     let date1 = localStorage.getItem('birthday1');
     let date2 = localStorage.getItem('birthday2');
 
 
     if (backgroundVideo) {
-        backgroundVideo.setAttribute("src","https://github.com/ZhouYuantian/CSE110-Storge/raw/main/"+dateToHoroscope(date)+".mp4");
+        backgroundVideo.setAttribute("src","https://github.com/ZhouYuantian/CSE110-Storge/raw/main/"+dateToHoroscope(date1)+".mp4");
     }
 
     if (document.getElementById("output")) {
@@ -32,7 +31,7 @@ async function init() {
 
     // get and load in the fortune as well as the sign
     if (fortuneElement) {
-        fortuneElement.innerText = await getPrompt();
+        fortuneElement.innerText = await getPromptCompability();
         fortuneElementTitle.innerText = datesToHoroscope(date1, date2);
     }
 
@@ -40,14 +39,16 @@ async function init() {
     // Add event listener for the save button
     if (save) {
         save.addEventListener('click', async () => {
-            let bday = localStorage.getItem('birthday1');
-            let sign = dateToHoroscope(bday);
+            let date1 = localStorage.getItem('birthday1');
+            let date2 = localStorage.getItem('birthday2');
+
+            let sign = datesToHoroscope(date1, date2);
             let category = "Compatibility";
             let message = fortuneElement.innerText;
             let today = new Date();
             
             //save horoscope to local storage for sidebar
-            let horoscopeElement = new Horoscope(sign, bday, today, message, category);
+            let horoscopeElement = new Horoscope(sign, date1,today, message, category);
             saveHoroscope(horoscopeElement);
             window.location.href = HISTORY_PAGE;
         })
@@ -61,7 +62,7 @@ async function init() {
     }
 
     // function that parses the birthday and retreives the fortune from the json file
-    async function getPrompt() {
+    async function getPromptCompability() {
         let promptDB;
 
         return new Promise(async (resolve, reject) => {
@@ -78,7 +79,6 @@ async function init() {
                     sign = "Default";
                 }
                 let horoscopeprompt = promptDB[sign];
-                // let selectedPrompt = horoscopeprompt[Math.floor((Math.random() * horoscopeprompt.length)%horoscopeprompt.length)];
                 resolve(horoscopeprompt);
             })
             .catch(error => {
@@ -87,19 +87,6 @@ async function init() {
             });  
         });
     }
-
-}
-
-/**
- * Called when you want to clear the horoscope on the main page
- */
-function clearHoroscope() {
-
-    let fortuneElement = document.getElementById('horoscope-fortune')
-    fortuneElement.textContent = "Enter your birthday above and choose a category to see your daily horoscope!";
-    
-    let fortuneElementTitle = document.getElementById('horoscope-title');
-    fortuneElementTitle.textContent = "Your Horoscope";
 }
 
 /**
@@ -130,5 +117,3 @@ function startMove(oDiv) {
 function datesToHoroscope(dateString1, dateString2) {
     return dateToHoroscope(dateString1) + " + " + dateToHoroscope(dateString2);
 } 
-
-export {datesToHoroscope, clearHoroscope}

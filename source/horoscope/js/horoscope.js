@@ -7,8 +7,8 @@ window.addEventListener('DOMContentLoaded', init);
 
 async function init() {
     // initialization of elements relevant to fortunePage.html
-    let save = document.getElementById('save');
-    let redo = document.getElementById('redo');
+    let save = document.getElementById('save-horo');
+    let redo = document.getElementById('redo-horo');
     let fortuneElement = document.getElementById('horoscope-fortune');
     let backgroundVideo=document.getElementById("bgvideo");
     let fortuneElementTitle = document.getElementById('horoscope-title');

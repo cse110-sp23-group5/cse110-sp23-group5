@@ -10,7 +10,7 @@ const LOVE_PAGE = 'compatibility.html';
 
 window.addEventListener('DOMContentLoaded', init);
 async function init() {
-    const submit = document.getElementById('submit');
+    const submit = document.getElementById('submit-horo');
     submit.addEventListener('click', button);
 
     // Menu button

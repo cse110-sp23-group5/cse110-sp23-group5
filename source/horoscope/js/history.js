@@ -98,15 +98,6 @@ function saveHoroscope(horoscope) {
 }
 
 /**
- * When card is clicked, display the information on the main page
- */
-function onClick() {
-    let horo = this.data;
-    setHoroscope(horo);
-    //Todo: Since Separated Out Set Horoscope won't work Might Not need it.
-}
-
-/**
  * When delete button is clicked, delete the card and its data
  */
 function deleteCard(event) {
