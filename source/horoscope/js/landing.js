@@ -23,6 +23,16 @@ async function init() {
         }
     });
 
+    const landing = document.getElementById('landing-horoscope');
+    landing.addEventListener('click', () => {
+        clickDropdownPage(LANDING_PAGE);
+    })
+    landing.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+            clickDropdownPage(LANDING_PAGE);
+        }
+    });
+
     const daily = document.getElementById('daily-horoscope');
     daily.addEventListener('click', () => {
         clickDropdownPage(DAILY_PAGE);
@@ -33,7 +43,6 @@ async function init() {
         }
     });
 
-    // UNCOMMENT WHEN LOVE COMPATIBILITY PAGE IS READY
     const love = document.getElementById('love-compatibility');
     love.addEventListener('click', () => {
         clickDropdownPage(LOVE_PAGE);
@@ -43,7 +52,6 @@ async function init() {
             clickDropdownPage(LOVE_PAGE);
         }
     });
-
 
     const history = document.getElementById('history');
     history.addEventListener('click', () => {
