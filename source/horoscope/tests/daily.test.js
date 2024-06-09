@@ -4,7 +4,7 @@ const SIGNNAMES = ['Aquarius', 'Pisces', 'Aries', 'Taurus', 'Gemini', 'Cancer', 
 describe('Test Daily page', () => {
    beforeAll(async () => {
       try {
-         await page.goto('https://stephentan12.github.io/Horoscope-Team-5/source/horoscope/pages/daily.html');
+         await page.goto('http://127.0.0.1:5500/source/horoscope/pages/daily.html');
          console.log('Daily page loaded successfully');
       } catch (error) {
          console.error('Daily page load failed: ', error);

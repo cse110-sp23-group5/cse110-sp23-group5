@@ -24,5 +24,7 @@ jobs:
       - name: npm install
         run: npm ci
 
+      - name: host server
+        run: npm server
       - name: tests
         run: npm test
