@@ -39,20 +39,20 @@ async function init() {
 
 // no need to save these results
     // Add event listener for the save button
-    // if (save) {
-    //     save.addEventListener('click', async () => {
-    //         let bday = localStorage.getItem('birthday');
-    //         let sign = dateToHoroscope(bday);
-    //         let category = localStorage.getItem('category');
-    //         let message = fortuneElement.innerText;
-    //         let today = new Date();
+    if (save) {
+        save.addEventListener('click', async () => {
+            let bday = localStorage.getItem('birthday');
+            let sign = dateToHoroscope(bday);
+            let category = "Compatibility";
+            let message = fortuneElement.innerText;
+            let today = new Date();
             
-    //         //save horoscope to local storage for sidebar
-    //         let horoscopeElement = new Horoscope(sign, bday, today, message, category);
-    //         saveHoroscope(horoscopeElement);
-    //         window.location.href = HISTORY_PAGE;
-    //     })
-    // }
+            //save horoscope to local storage for sidebar
+            let horoscopeElement = new Horoscope(sign, bday, today, message, category);
+            saveHoroscope(horoscopeElement);
+            window.location.href = HISTORY_PAGE;
+        })
+    }
 
     // Add event listener for the redo button
     if (redo) {

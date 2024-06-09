@@ -96,7 +96,6 @@ function button() {
         return;
     };
 
-    // console.log(categoryElement.value);
     //save horoscope to local storage for sidebar
     localStorage.setItem('birthday', birthday);
     localStorage.setItem('sign', sign);
