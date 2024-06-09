@@ -6,7 +6,7 @@ const HISTORY_PAGE = 'history.html'
 const DAILY_PAGE = 'daily.html'
 const LANDING_PAGE = 'landing.html';
 // UNCOMMENT WHEN LOVE COMPATIBILITY PAGE IS READY
-// const LOVE_PAGE = 'compatibility.html';
+const LOVE_PAGE = 'compatibility.html';
 
 window.addEventListener('DOMContentLoaded', init);
 async function init() {
@@ -34,15 +34,15 @@ async function init() {
     });
 
     // UNCOMMENT WHEN LOVE COMPATIBILITY PAGE IS READY
-    // const love = document.getElementById('love-compatibility');
-    // love.addEventListener('click', () => {
-    //     clickDropdownPage(LOVE_PAGE);
-    // })
-    // love.addEventListener('keydown', function(event) {
-    //     if (event.key === 'Enter' || event.key === ' ') {
-    //         clickDropdownPage(LOVE_PAGE);
-    //     }
-    // });
+    const love = document.getElementById('love-compatibility');
+    love.addEventListener('click', () => {
+        clickDropdownPage(LOVE_PAGE);
+    })
+    love.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+            clickDropdownPage(LOVE_PAGE);
+        }
+    });
 
 
     const history = document.getElementById('history');
@@ -164,3 +164,5 @@ function toggleDropdown() {
 function clickDropdownPage(page) {
     window.location.href = page;
 }
+
+export {checkValidSign, checkValidBirthday}
