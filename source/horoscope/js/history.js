@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', init);
  * @returns function that returns an incremented number each time
  */
 function makeCounter(start) {
-    var i = start;
+    let i = start;
     return function() {
         return ++i;
     }
@@ -131,7 +131,7 @@ function deleteCard(event) {
  * @param {string} text - The text to be copied to the clipboard.
  */
 function fallbackCopyTextToClipboard(text) {
-    var textArea = document.createElement("textarea");
+    let textArea = document.createElement("textarea");
     textArea.value = text;
     
     // Avoid scrolling to bottom

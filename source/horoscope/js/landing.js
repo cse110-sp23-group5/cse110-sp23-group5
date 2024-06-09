@@ -14,7 +14,7 @@ async function init() {
     submit.addEventListener('click', button);
 
     // Menu button
-    var menu = document.getElementById('menu');
+    const menu = document.getElementById('menu');
     menu.addEventListener('click', toggleDropdown);
     menu.addEventListener('keydown', function(event) {
         console.log(event.key);
@@ -152,7 +152,7 @@ function checkValidCategory(category) {
  * @returns {void}
  */
 function toggleDropdown() {
-    var nav = document.querySelector('.dropdown');
+    const nav = document.querySelector('.dropdown');
     nav.style.display = (nav.style.display === 'block') ? 'none' : 'block';
 }
 
