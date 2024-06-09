@@ -2,7 +2,7 @@
 describe('Basic user flow for Website', () => {
     beforeAll(async () => {
       try {
-        await page.goto('https://stephentan12.github.io/Horoscope-Team-5/source/horoscope/pages/landing.html');
+        await page.goto('http://127.0.0.1:5500/source/horoscope/pages/landing.html');
         console.log('Page loaded successfully');
       } catch (error) {
         console.error('Error loading page:', error);
@@ -53,5 +53,4 @@ describe('Basic user flow for Website', () => {
     expect(localHoroscopes).toBe(null);
   }, 10000)
 });
-
 
