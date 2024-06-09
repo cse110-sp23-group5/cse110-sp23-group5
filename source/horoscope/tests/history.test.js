@@ -21,11 +21,11 @@ describe('Test history page', () => {
             // Submit the form 
             await Promise.all([
                page.waitForNavigation(),
-               page.click('#submit'),
+               page.click('#submit-horo'),
             ]);
             await Promise.all([
                page.waitForNavigation(),
-               page.click('#save')
+               page.click('#save-horo')
             ]);
             let storedHoro = await page.evaluate(() => localStorage.getItem('horoscopes'));
             let obj = JSON.parse(storedHoro);
