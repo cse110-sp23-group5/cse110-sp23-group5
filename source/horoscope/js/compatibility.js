@@ -1,4 +1,3 @@
-import { Horoscope, saveHoroscope } from "./history.js";
 import {checkValidSign, checkValidBirthday} from "./landing.js"
 
 const birthdayElement1 = document.getElementById('birthday-input1');
@@ -8,35 +7,8 @@ const COMPATIBILITY_RESULT_PAGE = 'compatibility-results.html';
 window.addEventListener('DOMContentLoaded', init);
 
 async function init() {
-
     const submit = document.getElementById('submit');
     submit.addEventListener('click', button);
-
-    // initialization of elements relevant to fortunePage.html
-    let fortuneElementTitle = document.getElementById('horoscope-title');
-
-    // function that parses the birthday and retreives the fortune from the json file
-    async function getPrompt() {
-        let promptDB;
-
-        return new Promise(async (resolve, reject) => {
-            await fetch('../json/compatibilityResponses.json')
-            .then(response => response.json())
-            .then(data => {
-                //parse json
-                promptDB = JSON.parse(JSON.stringify(data));
-                let date = localStorage.getItem('birthday');
-                let sign = dateToHoroscope(date);
-                let horoscopeprompt = promptDB[sign][localStorage.getItem('category')];
-                let selectedPrompt = horoscopeprompt[Math.floor((Math.random() * horoscopeprompt.length)%horoscopeprompt.length)];
-                resolve(selectedPrompt);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                reject(error);
-            });  
-        });
-    }
 }
 
 /**
@@ -97,7 +69,6 @@ function dateToHoroscope(dateString) {
  * @returns {void}
  */
 function button() {
-    console.log("HERE")
     let birthday1 = birthdayElement1.value;
     let birthday2 = birthdayElement2.value;
     //check if birthday is valid Alerts Given in function
