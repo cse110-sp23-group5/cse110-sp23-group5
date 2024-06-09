@@ -1,8 +1,9 @@
 //E2E tests
+const BASEURL = 'http://127.0.0.1:5500/source/horoscope/pages/'
 describe('Basic user flow for Website', () => {
     beforeAll(async () => {
       try {
-        await page.goto('http://127.0.0.1:5500/source/horoscope/pages/landing.html');
+        await page.goto(BASEURL + 'landing.html');
         console.log('Page loaded successfully');
       } catch (error) {
         console.error('Error loading page:', error);
