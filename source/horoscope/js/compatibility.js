@@ -18,7 +18,7 @@ async function init() {
     let save = document.getElementById('save');
     let redo = document.getElementById('redo');
     let fortuneElement = document.getElementById('horoscope-fortune');
-    let backgroundVideo=document.getElementById("bgvideo");
+    let backgroundVideo = document.getElementById("bgvideo");
     let fortuneElementTitle = document.getElementById('horoscope-title');
 
     // begin horoscope animation upon opening site
