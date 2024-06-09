@@ -18,4 +18,14 @@ describe('Test Daily page', () => {
             expect(text).not.toBe(failedLoad);
          }, 10000)
    })
+
+   it('Navigate Back to Landing', async () => {
+      await Promise.all([
+         page.waitForNavigation(),
+         page.click('#back')
+      ]);
+
+      let curUrl = await page.url();
+      expect(curUrl).toBe('http://127.0.0.1:5500/source/horoscope/pages/landing.html')
+   })
 });
