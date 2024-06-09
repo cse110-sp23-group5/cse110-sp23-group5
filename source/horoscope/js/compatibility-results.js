@@ -73,10 +73,15 @@ async function init() {
                 promptDB = JSON.parse(JSON.stringify(data));
                 let date1 = localStorage.getItem('birthday1');
                 let date2 = localStorage.getItem('birthday2');
-                let sign = datesToHoroscope(date1, date2);
+                let sign = 'Default'
+                let sign1 = datesToHoroscope(date1, date2);
+                let sign2 = datesToHoroscope(date2, date1);
                 //if the sign is not in the list, use the default incompatible response
-                if (!COMPATIBILITYNAMES.includes(sign)) {
-                    sign = "Default";
+                if (COMPATIBILITYNAMES.includes(sign1)) {
+                    sign = sign1;
+                }
+                else if (COMPATIBILITYNAMES.includes(sign2)) {
+                    sign = sign2;
                 }
                 let horoscopeprompt = promptDB[sign];
                 resolve(horoscopeprompt);
