@@ -165,12 +165,12 @@ function button() {
     let birthday1 = birthdayElement1.value;
     let birthday2 = birthdayElement2.value;
     //check if birthday is valid Alerts Given in function
-    if (!checkValidBirthday(birthday1) && !checkValidBirthday(birthday2)) {
+    if (!checkValidBirthday(birthday1) || !checkValidBirthday(birthday2)) {
         return;
     }
     let sign1 = dateToHoroscope(birthday1);
     let sign2 = dateToHoroscope(birthday2);
-    if (!checkValidSign(sign1) && !checkValidSign(sign2)) {
+    if (!checkValidSign(sign1) || !checkValidSign(sign2)) {
         return;
     }
 
