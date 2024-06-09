@@ -1,4 +1,4 @@
-import {checkValidSign, checkValidBirthday} from "./landing.js"
+import {checkValidSign, checkValidBirthday, loadMenuListeners} from "./landing.js"
 import { dateToHoroscope } from "./horoscope.js";
 
 const birthdayElement1 = document.getElementById('birthday-input1');
@@ -8,7 +8,7 @@ const COMPATIBILITY_RESULT_PAGE = 'compatibility-results.html';
 window.addEventListener('DOMContentLoaded', init);
 
 async function init() {
-
+    loadMenuListeners();
     // fr-ca to get date in YYYY-MM-DD set max day to Today
     birthdayElement1.max = new Date().toLocaleDateString('fr-ca');
     birthdayElement2.max = new Date().toLocaleDateString('fr-ca');

@@ -3,7 +3,7 @@ import {dateToHoroscope} from "./horoscope.js";
 
 const COMPATIBILITY_PAGE = 'compatibility.html';
 const HISTORY_PAGE = 'history.html';
-const SIGNNAMES = ['Aries + Libra','Taurus + Scorpio','Gemini + Sagittarius','Cancer + Capricorn','Leo + Aquarius','Virgo + Pisces'];
+const COMPATIBILITYNAMES = ['Aries + Libra','Taurus + Scorpio','Gemini + Sagittarius','Cancer + Capricorn','Leo + Aquarius','Virgo + Pisces'];
 
 
 window.addEventListener('DOMContentLoaded', init);
@@ -75,7 +75,7 @@ async function init() {
                 let date2 = localStorage.getItem('birthday2');
                 let sign = datesToHoroscope(date1, date2);
                 //if the sign is not in the list, use the default incompatible response
-                if (!SIGNNAMES.includes(sign)) {
+                if (!COMPATIBILITYNAMES.includes(sign)) {
                     sign = "Default";
                 }
                 let horoscopeprompt = promptDB[sign];
