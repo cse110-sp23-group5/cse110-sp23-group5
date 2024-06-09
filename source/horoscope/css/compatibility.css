@@ -11,14 +11,14 @@
 }
 
 body {
-    /* background-image: url(../images/landingBackground.png);
+    background-image: url(../images/landingBackground.png);
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover; */
+    background-size: cover;
 
     display: flex;
     flex-direction: column;
@@ -57,7 +57,7 @@ body {
     margin-top: 20px;
 }
 
-.birthday-input {
+.bday-input {
     font-size: 3.5em;
     padding: 20px;
     border-radius: 15px;

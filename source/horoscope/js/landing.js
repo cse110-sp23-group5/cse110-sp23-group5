@@ -11,7 +11,9 @@ const LOVE_PAGE = 'compatibility.html';
 window.addEventListener('DOMContentLoaded', init);
 async function init() {
     const submit = document.getElementById('submit-horo');
-    submit.addEventListener('click', button);
+    if (submit) {
+        submit.addEventListener('click', button);
+    }
 
     // Menu button
     const menu = document.getElementById('menu');
@@ -65,12 +67,14 @@ async function init() {
 
     // Load in the Birthday if stored
     let birthday = localStorage.getItem('birthday');
-    if (birthday) {
+    if (birthday && birthdayElement) {
         birthdayElement.value = birthday 
     }
 
     // fr-ca to get date in YYYY-MM-DD set max day to Today
-    birthdayElement.max = new Date().toLocaleDateString('fr-ca');
+    if (birthdayElement) {
+        birthdayElement.max = new Date().toLocaleDateString('fr-ca');
+    }
 }
 
 /**
