@@ -3,9 +3,7 @@ import {checkValidSign, checkValidBirthday} from "./landing.js"
 
 const birthdayElement1 = document.getElementById('birthday-input1');
 const birthdayElement2 = document.getElementById('birthday-input2');
-const LANDING_PAGE = 'landing.html';
 const COMPATIBILITY_RESULT_PAGE = 'compatibility-results.html';
-const HISTORY_PAGE = 'history.html';
 
 window.addEventListener('DOMContentLoaded', init);
 
@@ -15,51 +13,7 @@ async function init() {
     submit.addEventListener('click', button);
 
     // initialization of elements relevant to fortunePage.html
-    let save = document.getElementById('save');
-    let redo = document.getElementById('redo');
-    let fortuneElement = document.getElementById('horoscope-fortune');
-    let backgroundVideo = document.getElementById("bgvideo");
     let fortuneElementTitle = document.getElementById('horoscope-title');
-
-    // begin horoscope animation upon opening site
-    let date = localStorage.getItem('birthday')
-
-    if (backgroundVideo) {
-        backgroundVideo.setAttribute("src","https://github.com/ZhouYuantian/CSE110-Storge/raw/main/"+dateToHoroscope(date)+".mp4");
-    }
-
-    if (document.getElementById("output")) {
-        startMove(document.getElementById("output"));
-    }
-
-    // get and load in the fortune as well as the sign
-    if (fortuneElement) {
-        fortuneElement.innerText = await getPrompt();
-        fortuneElementTitle.innerText = dateToHoroscope(date);
-    }
-
-    // Add event listener for the save button
-    if (save) {
-        save.addEventListener('click', async () => {
-            let bday = localStorage.getItem('birthday');
-            let sign = dateToHoroscope(bday);
-            let category = localStorage.getItem('category');
-            let message = fortuneElement.innerText;
-            let today = new Date();
-            
-            //save horoscope to local storage for sidebar
-            let horoscopeElement = new Horoscope(sign, bday, today, message, category);
-            saveHoroscope(horoscopeElement);
-            window.location.href = HISTORY_PAGE;
-        })
-    }
-
-    // Add event listener for the redo button
-    if (redo) {
-        redo.addEventListener('click', async () => {
-            window.location.href = LANDING_PAGE;
-        }) 
-    }
 
     // function that parses the birthday and retreives the fortune from the json file
     async function getPrompt() {
@@ -95,25 +49,6 @@ function clearHoroscope() {
     
     let fortuneElementTitle = document.getElementById('horoscope-title');
     fortuneElementTitle.textContent = "Your Horoscope";
-}
-
-/**
- * Animates the opacity of a given element to fade in.
- * @param {HTMLElement} oDiv The element to animate
- */
-function startMove(oDiv) {
-    let alpha = 0;
-    var timer = null;
-    clearInterval(timer);
-    timer = setInterval(function(){
-        var speed = 1;               
-        if(alpha == 100) {
-            return;
-        } else {
-            alpha += speed;       
-            oDiv.style.opacity = alpha/100; 
-        }
-    }, 30);
 }
 
 /**

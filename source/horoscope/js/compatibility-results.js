@@ -2,7 +2,6 @@ import { Horoscope, saveHoroscope } from "./history.js";
 import {dateToHoroscope} from "./horoscope.js";
 
 const COMPATIBILITY_PAGE = 'compatibility.html';
-const LANDING_PAGE = 'landing.html';
 const HISTORY_PAGE = 'history.html';
 const SIGNNAMES = ['Aries + Libra','Taurus + Scorpio','Gemini + Sagittarius','Cancer + Capricorn','Leo + Aquarius','Virgo + Pisces'];
 
@@ -41,7 +40,7 @@ async function init() {
     // Add event listener for the save button
     if (save) {
         save.addEventListener('click', async () => {
-            let bday = localStorage.getItem('birthday');
+            let bday = localStorage.getItem('birthday1');
             let sign = dateToHoroscope(bday);
             let category = "Compatibility";
             let message = fortuneElement.innerText;
