@@ -1,4 +1,3 @@
-import { Horoscope, saveHoroscope } from "./history.js";
 import {checkValidSign, checkValidBirthday} from "./landing.js"
 import { dateToHoroscope } from "./horoscope.js";
 
@@ -34,7 +33,6 @@ async function init() {
  * @returns {void}
  */
 function button() {
-    console.log("HERE")
     let birthday1 = birthdayElement1.value;
     let birthday2 = birthdayElement2.value;
     //check if birthday is valid Alerts Given in function
@@ -47,9 +45,6 @@ function button() {
         return;
     }
 
-  
-
-    // console.log(categoryElement.value);
     //save horoscope to local storage for sidebar
     localStorage.setItem('birthday1', birthday1);
     localStorage.setItem('birthday2', birthday2);
