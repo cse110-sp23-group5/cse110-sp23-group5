@@ -1,10 +1,10 @@
 // E2E Test for daily page
 const SIGNNAMES = ['Aquarius', 'Pisces', 'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn'];
-
+const BASEURL = 'http://127.0.0.1:5500/source/horoscope/pages/'
 describe('Test Daily page', () => {
    beforeAll(async () => {
       try {
-         await page.goto('http://127.0.0.1:5500/source/horoscope/pages/daily.html');
+         await page.goto(BASEURL + 'daily.html');
          console.log('Daily page loaded successfully');
       } catch (error) {
          console.error('Daily page load failed: ', error);
@@ -26,6 +26,6 @@ describe('Test Daily page', () => {
       ]);
 
       let curUrl = await page.url();
-      expect(curUrl).toBe('http://127.0.0.1:5500/source/horoscope/pages/landing.html')
+      expect(curUrl).toBe(BASEURL + 'landing.html')
    })
 });
