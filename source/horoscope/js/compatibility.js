@@ -162,6 +162,7 @@ function dateToHoroscope(dateString) {
  * @returns {void}
  */
 function button() {
+    console.log("HERE")
     let birthday1 = birthdayElement1.value;
     let birthday2 = birthdayElement2.value;
     //check if birthday is valid Alerts Given in function
