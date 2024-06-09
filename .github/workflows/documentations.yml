@@ -1,17 +1,19 @@
-{
-	"plugins": ["plugins/markdown"],
-	"source": {
-		"include": ["./source/horoscope/js/"],
-		"includePattern": ".+\\.js(doc|x)?$",
-		"excludePattern": "(node_modules/|docs)"
-	},
-	"templates": {
-		"cleverLinks": true,
-		"monospaceLinks": true
-	},
-	"opts": {
-		"destination": "./docs",
-		"recurse": true,
-		"readme": "./README.md"
-	}
-}
+name: documentations
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build
+        uses: andstor/jsdoc-action@v1
+        with:
+          recurse: true
+          output_dir: ./documentations
