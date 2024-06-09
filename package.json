@@ -30,5 +30,8 @@
   "jest": {
     "preset": "jest-puppeteer",
     "verbose": true
+  },
+  "dependencies": {
+    "jsdoc": "^4.0.3"
   }
 }
