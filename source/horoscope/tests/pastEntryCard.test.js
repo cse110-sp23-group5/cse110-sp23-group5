@@ -10,7 +10,7 @@ describe("pastEntryCard Tests", () => {
     } catch (error) {
        console.error('Landing page load failed: ', error);
     }
-    
+
     horoscope = {
       sign: "Leo",
       birthday: "August 5, 2003",
@@ -82,5 +82,9 @@ describe("pastEntryCard Tests", () => {
     expect(date).toBe(horoscope.date);
     expect(message).not.toBe(null);
     expect(category).toBe(horoscope.category);
+
+    await page.$eval("#clear-horos", button =>
+      button.click()
+   );
   }, 10000);
 });
