@@ -1,19 +1,23 @@
 name: documentations
 
 on:
-  build:
-    name: Generate JSDoc
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-        # Generate JSDoc
-    - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build
+        uses: andstor/jsdoc-action@v1
         with:
-          node-version: 18
-          # cache installed dependencies for best performance. yarn and pnpm are also supported
-          cache: npm
-          cache-dependency-path: "/package-lock.json"
-    - name: Install npm dependencies
-        run: npm ci --prefer-offline --no-audit
-    - name: Generate JSDoc
-        run: npm run docgen 
+          recurse: true
+          output_dir: ./documentations
+
+      - name: JSDocs Build
+        run: "npm run docgen"
+
