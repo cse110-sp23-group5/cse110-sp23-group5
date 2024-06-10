@@ -17,3 +17,7 @@ jobs:
         with:
           recurse: true
           output_dir: ./documentations
+
+      - name: JSDocs Build
+        run: "npm run docgen"
+
