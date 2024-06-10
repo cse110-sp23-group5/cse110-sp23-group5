@@ -89,7 +89,7 @@ function saveHoroscope(horoscope) {
     };
 
     if (horoscopesJSON.has(JSON.stringify(horoscope, replaceFields))) {
-        alert("You have already saved this horoscope!");
+        // alert("You have already saved this horoscope!");
         return;
     }
     horoscopes.push(horoscope);
