@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', init);
  * @returns function that returns an incremented number each time
  */
 function makeCounter(start) {
-    var i = start;
+    let i = start;
     return function() {
         return ++i;
     }
@@ -98,15 +98,6 @@ function saveHoroscope(horoscope) {
 }
 
 /**
- * When card is clicked, display the information on the main page
- */
-function onClick() {
-    let horo = this.data;
-    setHoroscope(horo);
-    //Todo: Since Separated Out Set Horoscope won't work Might Not need it.
-}
-
-/**
  * When delete button is clicked, delete the card and its data
  */
 function deleteCard(event) {
@@ -131,7 +122,7 @@ function deleteCard(event) {
  * @param {string} text - The text to be copied to the clipboard.
  */
 function fallbackCopyTextToClipboard(text) {
-    var textArea = document.createElement("textarea");
+    let textArea = document.createElement("textarea");
     textArea.value = text;
     
     // Avoid scrolling to bottom

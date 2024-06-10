@@ -1,10 +1,23 @@
 # The Last Software Engineers
 ## CSE 112 SP23 Team 5
 
-This `README.md` serves as the landing page for our project and is updated as we add [code](https://github.com/StephenTan12/Horoscope-Team-5/tree/main/source), tests, [documentation](https://stephentan12.github.io/Horoscope-Team-5/docs/index.html) and other important artifacts.
+This `README.md` serves as the landing page for our project and is updated as we add [code](https://github.com/StephenTan12/Horoscope-Team-5/tree/main/source), [tests](https://github.com/StephenTan12/Horoscope-Team-5/tree/main/source/horoscope/tests), [documentation](https://github.com/StephenTan12/Horoscope-Team-5/tree/main/admin) and other important artifacts.
+
 
 ## [HOROSCOPE APP](https://stephentan12.github.io/Horoscope-Team-5/source/horoscope/pages/landing.html)
 
+### Features
+- Horoscope with birthday input
+- Daily horoscope readings
+- Love compatibility horoscope with two birthday inputs
+- Save and share horoscopes from a history page
+
+### Future Work
+- Creating a more robust database to pull readings from
+- Create an account system for users to save/share between their friends
+
+
+# CSE 110
 [//]: # (Version format: MAJOR.MINOR.PATCH)
 
 # Release Notes

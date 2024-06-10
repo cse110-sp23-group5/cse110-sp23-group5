@@ -5,20 +5,52 @@
     font-style: normal;
 }
 
+@media screen and (max-width: 768px) {
+    #landing-title {
+        font-size: 2em;
+        letter-spacing: 0.15em ;
+    }
+
+    #birthday-title {
+        font-size: 2.5em;
+    }
+
+    #birthday-input {
+        font-size: 2em ;
+        margin-top: 40px;
+        margin-left: 20px;
+        padding: 10px;
+    }
+
+    #category {
+        font-size: 2em;
+        margin-top: 10px;
+    }
+
+    .radio-button {
+        width: 6em;
+        height: 6em;
+        line-height: 6em;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+
+    .radio-button label {
+        font-size: 24px;
+    }
+
+    #submit {
+        font-size: 1.2em;
+        padding: 5px 10px;
+    }
+}
+
 
 * {
     margin: 0;
 }
 
 body {
-    /* background-image: url(../images/landingBackground.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover; */
 
     display: flex;
     flex-direction: column;
@@ -57,7 +89,7 @@ body {
     margin-top: 20px;
 }
 
-.birthday-input {
+.bday-input {
     font-size: 3.5em;
     padding: 20px;
     border-radius: 15px;
@@ -68,7 +100,7 @@ body {
 }
 
 
-#submit {
+#submit-compatibility {
     margin-top: 100px;
     padding: 10px 20px;
     background-color: rgb(187, 220, 148);
@@ -116,46 +148,6 @@ body {
 .dropdown-item {
     padding: 10px 20px;
     cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    #landing-title {
-        font-size: 4em;
-        letter-spacing: 0.15em;
-    }
-
-    #birthday-title {
-        font-size: 2.5em;
-    }
-
-    #birthday-input {
-        font-size: 2em;
-        margin-top: 40px;
-        margin-left: 20px;
-        padding: 10px;
-    }
-
-    #category {
-        font-size: 2em;
-        margin-top: 10px;
-    }
-
-    .radio-button {
-        width: 6em;
-        height: 6em;
-        line-height: 6em;
-        margin-right: 15px;
-        margin-left: 15px;
-    }
-
-    .radio-button label {
-        font-size: 24px;
-    }
-
-    #submit {
-        font-size: 1.2em;
-        padding: 5px 10px;
-    }
 }
 
 #daily-button {

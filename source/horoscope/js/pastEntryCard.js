@@ -51,13 +51,14 @@ class pastEntryCard extends HTMLElement {
 
         const tweet = data.message + "  Get your fortune: " + hyperlink;
 
+        let imgSign = data.sign.split(" ")[0];
         /**
          * Display the image and name of the user's horoscope, 
          * as well as the birthday, date createdand category, and a delete button
          */
         article.innerHTML = `
-        <img class="horo" src="../images/Horoscopes/${data.sign}.png"
-            alt="${data.sign}">
+        <img class="horo" src="../images/Horoscopes/${imgSign}.png"
+            alt="${imgSign}">
         <span class="sign">${data.sign}</span>
         <span class="birthday">${birthdayDisplay}</span>
         <span class="date">${formattedDate}</span>
