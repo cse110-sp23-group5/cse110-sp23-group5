@@ -9,7 +9,6 @@ describe("pastEntryCard Tests", () => {
        console.log('Landing page loaded successfully');
     } catch (error) {
        console.error('Landing page load failed: ', error);
-    }
 
     horoscope = {
       sign: "Leo",

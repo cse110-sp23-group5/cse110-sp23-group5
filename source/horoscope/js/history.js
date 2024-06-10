@@ -215,4 +215,4 @@ function saveHoroscopesToStorage(horoscopes) {
     localStorage.setItem('horoscopes', JSON.stringify(horoscopes));
 }
 
-export {Horoscope, addHoroscopesToDocument, saveHoroscope, makeCounter};
+export {Horoscope, addHoroscopesToDocument, saveHoroscope, makeCounter, fallbackCopyTextToClipboard, copyToClipboard};
