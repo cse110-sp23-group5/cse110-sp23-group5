@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "test": "jest",
-    "docgen": "npx jsdoc -c jsdoc.json"
+    "docgen": "npx jsdoc -c jsdoc.json",
     "server": "http-server -p=5500"
   },
   "devDependencies": {
