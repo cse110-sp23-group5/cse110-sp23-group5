@@ -35,7 +35,7 @@ describe("pastEntryCard Tests", () => {
 
     /**
      * had to repeat this since a variable can't be passed into the querySelector as it isn't
-     * within the scope the method being passed into page.evaluate
+     * within the scope of the method being passed into page.evaluate
      */
     let sign = await page.evaluate(() =>
       document
