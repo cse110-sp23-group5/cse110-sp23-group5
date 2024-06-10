@@ -145,7 +145,7 @@ main {
 }
 
 /* Save Button*/
-#save {
+.save {
     position: relative;
     transition: background-color 1s ease; /* change of color takes a second(ex. when you hover) */
     background-color: rgb(244, 187, 65);
@@ -162,7 +162,7 @@ main {
 }
 
 /* Redo Button*/
-#redo {
+.redo {
     position: relative;
     transition: background-color 1s ease; /* change of color takes a second(ex. when you hover) */
     background-color: rgb(70, 153, 120);

@@ -10,59 +10,77 @@ const LOVE_PAGE = 'compatibility.html';
 
 window.addEventListener('DOMContentLoaded', init);
 async function init() {
-    const submit = document.getElementById('submit');
-    submit.addEventListener('click', button);
+    const submit = document.getElementById('submit-horo');
+    if (submit) {
+        submit.addEventListener('click', button);
+    }
 
-    // Menu button
-    const menu = document.getElementById('menu');
-    menu.addEventListener('click', toggleDropdown);
-    menu.addEventListener('keydown', function(event) {
-        console.log(event.key);
-        if (event.key === 'Enter' || event.key === ' ') {
-            toggleDropdown();
-        }
-    });
-
-    const daily = document.getElementById('daily-horoscope');
-    daily.addEventListener('click', () => {
-        clickDropdownPage(DAILY_PAGE);
-    })
-    daily.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter' || event.key === ' ') {
-            clickDropdownPage(DAILY_PAGE);
-        }
-    });
-
-    // UNCOMMENT WHEN LOVE COMPATIBILITY PAGE IS READY
-    const love = document.getElementById('love-compatibility');
-    love.addEventListener('click', () => {
-        clickDropdownPage(LOVE_PAGE);
-    })
-    love.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter' || event.key === ' ') {
-            clickDropdownPage(LOVE_PAGE);
-        }
-    });
-
-
-    const history = document.getElementById('history');
-    history.addEventListener('click', () => {
-        window.location.href = HISTORY_PAGE;
-    })
-    history.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter' || event.key === ' ') {
-            window.location.href = HISTORY_PAGE;
-        }
-    });
-
+    loadMenuListeners();
     // Load in the Birthday if stored
     let birthday = localStorage.getItem('birthday');
-    if (birthday) {
+    if (birthday && birthdayElement) {
         birthdayElement.value = birthday 
     }
 
     // fr-ca to get date in YYYY-MM-DD set max day to Today
-    birthdayElement.max = new Date().toLocaleDateString('fr-ca');
+    if (birthdayElement) {
+        birthdayElement.max = new Date().toLocaleDateString('fr-ca');
+    }
+}
+
+/**
+ * Adds all the event listeners for the menu
+ */
+function loadMenuListeners() {
+        // Menu button
+        const menu = document.getElementById('menu');
+        menu.addEventListener('click', toggleDropdown);
+        menu.addEventListener('keydown', function(event) {
+            console.log(event.key);
+            if (event.key === 'Enter' || event.key === ' ') {
+                toggleDropdown();
+            }
+        });
+    
+        const landing = document.getElementById('landing-horoscope');
+        landing.addEventListener('click', () => {
+            clickDropdownPage(LANDING_PAGE);
+        })
+        landing.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                clickDropdownPage(LANDING_PAGE);
+            }
+        });
+    
+        const daily = document.getElementById('daily-horoscope');
+        daily.addEventListener('click', () => {
+            clickDropdownPage(DAILY_PAGE);
+        })
+        daily.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                clickDropdownPage(DAILY_PAGE);
+            }
+        });
+    
+        const love = document.getElementById('love-compatibility');
+        love.addEventListener('click', () => {
+            clickDropdownPage(LOVE_PAGE);
+        })
+        love.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                clickDropdownPage(LOVE_PAGE);
+            }
+        });
+    
+        const history = document.getElementById('history');
+        history.addEventListener('click', () => {
+            window.location.href = HISTORY_PAGE;
+        })
+        history.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                window.location.href = HISTORY_PAGE;
+            }
+        });
 }
 
 /**
@@ -88,7 +106,6 @@ function button() {
         return;
     };
 
-    // console.log(categoryElement.value);
     //save horoscope to local storage for sidebar
     localStorage.setItem('birthday', birthday);
     localStorage.setItem('sign', sign);
@@ -165,4 +182,4 @@ function clickDropdownPage(page) {
     window.location.href = page;
 }
 
-export {checkValidSign, checkValidBirthday}
+export {checkValidSign, checkValidBirthday, loadMenuListeners}
