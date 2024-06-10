@@ -1,7 +1,7 @@
 # The Last Software Engineers
 ## CSE 112 SP23 Team 5
 
-This `README.md` serves as the landing page for our project and is updated as we add [code](https://github.com/StephenTan12/Horoscope-Team-5/tree/main/source), tests, [documentation](https://github.com/StephenTan12/Horoscope-Team-5/docs/index.html) and other important artifacts.
+This `README.md` serves as the landing page for our project and is updated as we add [code](https://github.com/StephenTan12/Horoscope-Team-5/tree/main/source), tests, [documentation](https://stephentan12.github.io/Horoscope-Team-5/docs/index.html) and other important artifacts.
 
 ## [HOROSCOPE APP](https://stephentan12.github.io/Horoscope-Team-5/source/horoscope/pages/landing.html)
 
