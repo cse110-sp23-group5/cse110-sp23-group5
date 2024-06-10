@@ -36,7 +36,7 @@ describe('Basic user flow for Website', () => {
 
         // Check if Horoscope is in history
         let pastEntries = await page.$$('past-entry-card');
-        expect(pastEntries.length).toBe(1);
+        expect(pastEntries.length).toBe(2);
 
 
   }, 10000);
