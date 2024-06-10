@@ -5,20 +5,52 @@
     font-style: normal;
 }
 
+@media (max-width: 768px) {
+    #landing-title {
+        font-size: 2em !important;
+        letter-spacing: 0.15em !important;
+    }
+
+    #birthday-title {
+        font-size: 2.5em !important;
+    }
+
+    #birthday-input {
+        font-size: 2em  !important;
+        margin-top: 40px !important;
+        margin-left: 20px !important;
+        padding: 10px !important;
+    }
+
+    #category {
+        font-size: 2em !important;
+        margin-top: 10px !important;
+    }
+
+    .radio-button {
+        width: 6em !important;
+        height: 6em !important;
+        line-height: 6em !important;
+        margin-right: 15px !important;
+        margin-left: 15px !important;
+    }
+
+    .radio-button label {
+        font-size: 24px !important;
+    }
+
+    #submit {
+        font-size: 1.2em !important;
+        padding: 5px 10px !important;
+    }
+}
+
 
 * {
     margin: 0;
 }
 
 body {
-    background-image: url(../images/landingBackground.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
 
     display: flex;
     flex-direction: column;
@@ -116,46 +148,6 @@ body {
 .dropdown-item {
     padding: 10px 20px;
     cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    #landing-title {
-        font-size: 4em;
-        letter-spacing: 0.15em;
-    }
-
-    #birthday-title {
-        font-size: 2.5em;
-    }
-
-    #birthday-input {
-        font-size: 2em;
-        margin-top: 40px;
-        margin-left: 20px;
-        padding: 10px;
-    }
-
-    #category {
-        font-size: 2em;
-        margin-top: 10px;
-    }
-
-    .radio-button {
-        width: 6em;
-        height: 6em;
-        line-height: 6em;
-        margin-right: 15px;
-        margin-left: 15px;
-    }
-
-    .radio-button label {
-        font-size: 24px;
-    }
-
-    #submit {
-        font-size: 1.2em;
-        padding: 5px 10px;
-    }
 }
 
 #daily-button {
