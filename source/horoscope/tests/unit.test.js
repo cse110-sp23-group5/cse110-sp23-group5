@@ -194,3 +194,65 @@ describe('saveHoroscope function', () => {
     expect(savedHoroscopes.length).toBe(1);
   });
 });
+
+const { fallbackCopyTextToClipboard, copyToClipboard } = require('../js/history.js');
+
+describe('fallbackCopyTextToClipboard function', () => {
+  beforeAll(async () => {
+    global.alert = jest.fn();
+  });
+
+  test('should call document.execCommand', () => {
+    let text = "some text";
+    document.execCommand = jest.fn();
+
+    fallbackCopyTextToClipboard(text);
+    
+    expect(document.execCommand).toHaveBeenCalledWith("copy");
+  });
+
+  test('should result in error', () => {
+    let text = "some text";
+    let err = new Error("Command Failed");
+    document.execCommand.mockImplementation(() => {
+      throw err;
+    });
+    console.error = jest.fn()
+
+    fallbackCopyTextToClipboard(text);
+
+    expect(console.error).toHaveBeenCalledWith("Fallback: Oops, unable to copy", err);
+  });
+});
+
+describe('copyToClipboard function', () => {
+  beforeAll(async () => {
+    global.alert = jest.fn();
+  });
+
+  test('should save to clipboard', () => {
+    let text = "some text";
+    const mockedWriteText = jest.fn();
+    navigator.clipboard = {
+      writeText: mockedWriteText,
+    };
+
+    copyToClipboard(text);
+    
+    expect(mockedWriteText).toHaveBeenCalledTimes(1);
+    expect(mockedWriteText).toHaveBeenCalledWith(text);
+  });
+
+  test('should call fallbackCopyTextToClipboard', () => {
+    let text = "some text";
+    let err = new Error("Command Failed");
+    navigator.clipboard.writeText.mockImplementation(() => {
+      throw err;
+    });
+    document.execCommand = jest.fn();
+
+    copyToClipboard(text);
+
+    expect(document.execCommand).toHaveBeenCalledWith("copy");
+  });
+});
