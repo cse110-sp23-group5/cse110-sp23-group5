@@ -21,11 +21,11 @@ describe('Test history page', () => {
             // Submit the form 
             await Promise.all([
                page.waitForNavigation(),
-               page.click('#submit'),
+               page.click('#submit-horo'),
             ]);
             await Promise.all([
                page.waitForNavigation(),
-               page.click('#save')
+               page.click('#save-horo')
             ]);
             let storedHoro = await page.evaluate(() => localStorage.getItem('horoscopes'));
             let obj = JSON.parse(storedHoro);
@@ -58,7 +58,7 @@ describe('Test history page', () => {
       expect(await page.url()).not.toBe(orgUrl);
 
       await page.goto(BASEURL + 'history.html');
-   });
+   },20000);
 
    it('Delete Single History Card', async ()=> {
       let numElementsBefore = await page.$eval('#saved-list', el => el.childNodes.length);

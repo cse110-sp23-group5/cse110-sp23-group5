@@ -2,28 +2,27 @@ import { Horoscope, saveHoroscope } from "./history.js";
 import {dateToHoroscope} from "./horoscope.js";
 
 const COMPATIBILITY_PAGE = 'compatibility.html';
-const LANDING_PAGE = 'landing.html';
 const HISTORY_PAGE = 'history.html';
-const SIGNNAMES = ['Aries+Libra','Taurus+Scorpio','Gemini+Sagittarius','Cancer+Capricorn','Leo+Aquarius','Virgo+Pisces'];
+const COMPATIBILITYNAMES = ['Aries + Libra','Taurus + Scorpio','Gemini + Sagittarius','Cancer + Capricorn','Leo + Aquarius','Virgo + Pisces'];
 
 
 window.addEventListener('DOMContentLoaded', init);
 
 async function init() {
     // initialization of elements relevant to fortunePage.html
-    let save = document.getElementById('save');
-    let redo = document.getElementById('redo');
-    let fortuneElement = document.getElementById('horoscope-fortune');
-    let backgroundVideo=document.getElementById("bgvideo");
-    let fortuneElementTitle = document.getElementById('horoscope-title');
+    let save = document.getElementById('save-compatibility');
+    let redo = document.getElementById('redo-compatibility');
+    let fortuneElement = document.getElementById('compatibility-fortune');
+    let backgroundVideo=document.getElementById("bgvideo-compatibility");
+    let fortuneElementTitle = document.getElementById('compatibility-title');
 
-    // begin horoscope animation upon opening site
-    let date = localStorage.getItem('birthday');
+    // begin animation upon opening site
     let date1 = localStorage.getItem('birthday1');
     let date2 = localStorage.getItem('birthday2');
 
+
     if (backgroundVideo) {
-        backgroundVideo.setAttribute("src","https://github.com/ZhouYuantian/CSE110-Storge/raw/main/"+dateToHoroscope(date)+".mp4");
+        backgroundVideo.setAttribute("src","https://github.com/ZhouYuantian/CSE110-Storge/raw/main/"+dateToHoroscope(date1)+".mp4");
     }
 
     if (document.getElementById("output")) {
@@ -32,26 +31,28 @@ async function init() {
 
     // get and load in the fortune as well as the sign
     if (fortuneElement) {
-        fortuneElement.innerText = await getPrompt();
+        fortuneElement.innerText = await getPromptCompability();
         fortuneElementTitle.innerText = datesToHoroscope(date1, date2);
     }
 
 // no need to save these results
     // Add event listener for the save button
-    // if (save) {
-    //     save.addEventListener('click', async () => {
-    //         let bday = localStorage.getItem('birthday');
-    //         let sign = dateToHoroscope(bday);
-    //         let category = localStorage.getItem('category');
-    //         let message = fortuneElement.innerText;
-    //         let today = new Date();
+    if (save) {
+        save.addEventListener('click', async () => {
+            let date1 = localStorage.getItem('birthday1');
+            let date2 = localStorage.getItem('birthday2');
+
+            let sign = datesToHoroscope(date1, date2);
+            let category = "Compatibility";
+            let message = fortuneElement.innerText;
+            let today = new Date();
             
-    //         //save horoscope to local storage for sidebar
-    //         let horoscopeElement = new Horoscope(sign, bday, today, message, category);
-    //         saveHoroscope(horoscopeElement);
-    //         window.location.href = HISTORY_PAGE;
-    //     })
-    // }
+            //save horoscope to local storage for sidebar
+            let horoscopeElement = new Horoscope(sign, date1,today, message, category);
+            saveHoroscope(horoscopeElement);
+            window.location.href = HISTORY_PAGE;
+        })
+    }
 
     // Add event listener for the redo button
     if (redo) {
@@ -61,20 +62,28 @@ async function init() {
     }
 
     // function that parses the birthday and retreives the fortune from the json file
-    async function getPrompt() {
+    async function getPromptCompability() {
         let promptDB;
 
         return new Promise(async (resolve, reject) => {
-            await fetch('../json/compatibility-responses.json')
+            await fetch('../json/compatibilityResponses.json')
             .then(response => response.json())
             .then(data => {
                 //parse json
                 promptDB = JSON.parse(JSON.stringify(data));
                 let date1 = localStorage.getItem('birthday1');
                 let date2 = localStorage.getItem('birthday2');
-                let sign = datesToHoroscope(date1, date2);
+                let sign = 'Default'
+                let sign1 = datesToHoroscope(date1, date2);
+                let sign2 = datesToHoroscope(date2, date1);
+                //if the sign is not in the list, use the default incompatible response
+                if (COMPATIBILITYNAMES.includes(sign1)) {
+                    sign = sign1;
+                }
+                else if (COMPATIBILITYNAMES.includes(sign2)) {
+                    sign = sign2;
+                }
                 let horoscopeprompt = promptDB[sign];
-                // let selectedPrompt = horoscopeprompt[Math.floor((Math.random() * horoscopeprompt.length)%horoscopeprompt.length)];
                 resolve(horoscopeprompt);
             })
             .catch(error => {
@@ -83,18 +92,6 @@ async function init() {
             });  
         });
     }
-}
-
-/**
- * Called when you want to clear the horoscope on the main page
- */
-function clearHoroscope() {
-
-    let fortuneElement = document.getElementById('horoscope-fortune')
-    fortuneElement.textContent = "Enter your birthday above and choose a category to see your daily horoscope!";
-    
-    let fortuneElementTitle = document.getElementById('horoscope-title');
-    fortuneElementTitle.textContent = "Your Horoscope";
 }
 
 /**
@@ -120,51 +117,8 @@ function startMove(oDiv) {
      * Determines horoscope sign based on birthday
      * @param {string} dateString1 string representation of the date in form YYYY-MM-DD
      * @param {string} dateString2 string representation of the date in form YYYY-MM-DD
-     * @returns name of the zodiac sign
+     * @returns combined name of the zodiac signs of the two dates
      */
 function datesToHoroscope(dateString1, dateString2) {
-    // Array of signs. Capricorn is repeated since it crosses the new year
-    
-    const zodiacSigns = [
-        { name: "Capricorn", start: "01-01", end: "01-19" },
-        { name: "Aquarius", start: "01-20", end: "02-18" },
-        { name: "Pisces", start: "02-19", end: "03-20" },
-        { name: "Aries", start: "03-21", end: "04-19" },
-        { name: "Taurus", start: "04-20", end: "05-20" },
-        { name: "Gemini", start: "05-21", end: "06-20" },
-        { name: "Cancer", start: "06-21", end: "07-22" },
-        { name: "Leo", start: "07-23", end: "08-22" },
-        { name: "Virgo", start: "08-23", end: "09-22" },
-        { name: "Libra", start: "09-23", end: "10-22" },
-        { name: "Scorpio", start: "10-23", end: "11-21" },
-        { name: "Sagittarius", start: "11-22", end: "12-21" },
-        { name: "Capricorn", start: "12-22", end: "12-31" },
-    ];
-
-    // Find the correct sign object.
-    // Date is 1 day off when printing to console because of time zone conversions.
-    const date1 = new Date(dateString1);
-    const date2 = new Date(dateString2);
-    const year1 = dateString1.substring(0,4);
-    const year2 = dateString2.substring(0,4);
-
-    const matchingSign1 = zodiacSigns.find(sign1 => {
-        const start = new Date(`${year1}-${sign1.start}`).getTime();
-        const end = new Date(`${year1}-${sign1.end}`).getTime();
-        const birthdayTime = date1.getTime();
-        return (birthdayTime >= start && birthdayTime <= end);
-    });
-    const matchingSign2 = zodiacSigns.find(sign2 => {
-        const start = new Date(`${year2}-${sign2.start}`).getTime();
-        const end = new Date(`${year2}-${sign2.end}`).getTime();
-        const birthdayTime = date2.getTime();
-        return (birthdayTime >= start && birthdayTime <= end);
-    });
-    
-    // Check if a sign is found
-    if(matchingSign1 && matchingSign2)
-        return matchingSign1.name+"+"+matchingSign2.name;
-    return("NO SIGN FOUND");
+    return dateToHoroscope(dateString1) + " + " + dateToHoroscope(dateString2);
 } 
-
-export {datesToHoroscope, clearHoroscope}

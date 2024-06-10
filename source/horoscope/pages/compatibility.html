@@ -4,7 +4,7 @@
 <head>
     <title>Horoscope App, Team #5</title>
     <link rel="icon" type="image/x-icon" href="../images/star_favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/landing.css">
+    <link rel="stylesheet" type="text/css" href="../css/compatibility.css">
     <script src="../js/compatibility.js" type="module"></script>
     <script src="../js/audioControl.js"></script>
 </head>
@@ -15,22 +15,23 @@
         <nav class="navbar">
             <img src="../images/menu.png" alt="Menu Button" class="menu-toggle" id="menu" tabindex=0>
             <ul class="dropdown">
-                <li class="dropdown-item"><a id="daily-horoscope" tabindex="0">Daily Horoscope</a></li>
+                <li class="dropdown-item"><a id="landing-horoscope" tabindex="0">Horoscope</a></li>
                 <li class="dropdown-item"><a id="love-compatibility" tabindex="0">Love Compatibility</a></li>
+                <li class="dropdown-item"><a id="daily-horoscope" tabindex="0">Daily Horoscope</a></li>
                 <li class="dropdown-item"><a id="history" tabindex="0">History</a></li>
             </ul>
         </nav>
     </div>
 
     <div id="birthday-div">
-        <label id="birthday-title1" >Birthday 1: </label>
-        <input type="date" id="birthday-input1" name="birthday1" min="1900-01-01">
+        <label class="birthday-title" >Birthday 1: </label>
+        <input type="date" class="bday-input" id="birthday-input1" name="birthday1" min="1900-01-01" id="birthday-input1">
     </div>
     <div id="birthday-div">
-        <label id="birthday-title2" >Birthday 2: </label>
-        <input type="date" id="birthday-input2" name="birthday2" min="1900-01-01">
+        <label class="birthday-title" >Birthday 2: </label>
+        <input type="date" class="bday-input" id="birthday-input2" name="birthday2" min="1900-01-01" id="birthday-input2">
     </div>
-    <input type="button" id="submit" value="START">
+    <input type="button" id="submit-compatibility" value="START">
 
     <audio id="background-music" loop>
         <source src="../audios/bgm_cornfield_chase_.mp3" type="audio/mpeg">

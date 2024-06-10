@@ -2,22 +2,27 @@ import { Horoscope, saveHoroscope } from "./history.js";
 
 const LANDING_PAGE = 'landing.html';
 const HISTORY_PAGE = 'history.html';
+const HOROSCOPE_PAGE = 'horoscope.html';
 
 window.addEventListener('DOMContentLoaded', init);
 
 async function init() {
     // initialization of elements relevant to fortunePage.html
-    let save = document.getElementById('save');
-    let redo = document.getElementById('redo');
+    let save = document.getElementById('save-horo');
+    let redo = document.getElementById('redo-horo');
     let fortuneElement = document.getElementById('horoscope-fortune');
-    let backgroundVideo=document.getElementById("bgvideo");
+    let backgroundVideo=document.getElementById("bgvideo-horo");
     let fortuneElementTitle = document.getElementById('horoscope-title');
 
     // begin horoscope animation upon opening site
-    let date = localStorage.getItem('birthday')
+    let date = localStorage.getItem('birthday');
+
+    // if (window.location.href !== HOROSCOPE_PAGE) {
+    //     return;
+    // }
 
     if (backgroundVideo) {
-        backgroundVideo.setAttribute("src","https://github.com/ZhouYuantian/CSE110-Storge/raw/main/"+dateToHoroscope(date)+".mp4");
+        // backgroundVideo.setAttribute("src","https://github.com/ZhouYuantian/CSE110-Storge/raw/main/"+dateToHoroscope(date)+".mp4");
     }
 
     if (document.getElementById("output")) {

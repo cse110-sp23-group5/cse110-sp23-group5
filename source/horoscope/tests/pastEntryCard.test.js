@@ -6,9 +6,9 @@ describe("pastEntryCard Tests", () => {
   beforeAll(async () => {
     try {
        await page.goto('http://127.0.0.1:5500/source/horoscope/pages/landing.html');
-       console.log('Daily page loaded successfully');
+       console.log('Landing page loaded successfully');
     } catch (error) {
-       console.error('Daily page load failed: ', error);
+       console.error('Landing page load failed: ', error);
     }
 
     horoscope = {
@@ -25,12 +25,12 @@ describe("pastEntryCard Tests", () => {
     await page.$eval('#category-health', el => el.click());
     await Promise.all([
       page.waitForNavigation(),
-      page.click('#submit') 
+      page.click('#submit-horo') 
     ]);
 
     await Promise.all([
       page.waitForNavigation(),
-      page.click('#save') 
+      page.click('#save-horo') 
     ]);
 
     /**
@@ -82,5 +82,9 @@ describe("pastEntryCard Tests", () => {
     expect(date).toBe(horoscope.date);
     expect(message).not.toBe(null);
     expect(category).toBe(horoscope.category);
+
+    await page.$eval("#clear-horos", button =>
+      button.click()
+   );
   }, 10000);
 });
