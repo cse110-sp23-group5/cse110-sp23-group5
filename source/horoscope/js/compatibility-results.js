@@ -12,11 +12,11 @@ async function init() {
     // initialization of elements relevant to fortunePage.html
     let save = document.getElementById('save-compatibility');
     let redo = document.getElementById('redo-compatibility');
-    let fortuneElement = document.getElementById('horoscope-fortune');
-    let backgroundVideo=document.getElementById("bgvideo");
-    let fortuneElementTitle = document.getElementById('horoscope-title');
+    let fortuneElement = document.getElementById('compatibility-fortune');
+    let backgroundVideo=document.getElementById("bgvideo-compatibility");
+    let fortuneElementTitle = document.getElementById('compatibility-title');
 
-    // begin horoscope animation upon opening site
+    // begin animation upon opening site
     let date1 = localStorage.getItem('birthday1');
     let date2 = localStorage.getItem('birthday2');
 

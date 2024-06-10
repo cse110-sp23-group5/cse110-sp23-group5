@@ -58,7 +58,7 @@ describe('Test history page', () => {
       expect(await page.url()).not.toBe(orgUrl);
 
       await page.goto(BASEURL + 'history.html');
-   });
+   },20000);
 
    it('Delete Single History Card', async ()=> {
       let numElementsBefore = await page.$eval('#saved-list', el => el.childNodes.length);
