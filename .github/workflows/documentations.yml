@@ -1,19 +1,21 @@
 name: documentations
 
 on:
-  push:
-    branches:
-      - main
-
-jobs:
-  deploy:
+  build:
+    name: Generate JSDoc
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Build
-        uses: andstor/jsdoc-action@v1
+        # Generate JSDoc
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          recurse: true
-          output_dir: ./documentations
+          node-version: 18
+          # cache installed dependencies for best performance. yarn and pnpm are also supported
+          cache: npm
+          cache-dependency-path: "./fortunetelling/package-lock.json"
+      - name: Install npm dependencies
+        working-directory: ./fortunetelling
+        run: npm ci --prefer-offline --no-audit
+      - name: Generate JSDoc
+        working-directory: ./fortunetelling
+        run: npm run docgen 
