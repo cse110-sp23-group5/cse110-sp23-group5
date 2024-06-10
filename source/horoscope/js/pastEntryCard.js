@@ -10,7 +10,6 @@ class pastEntryCard extends HTMLElement {
         super();
 
         const shadow = this.attachShadow({ mode: "open" });
-
         const article = document.createElement('article');
 
         const style = document.createElement('link');
@@ -84,8 +83,6 @@ class pastEntryCard extends HTMLElement {
     get data(){
         // Query the article so you can get the information from it
         const article = this.shadowRoot.querySelector('article');
-
-
         const sign = article.querySelector(".sign").textContent;
         const category = article.querySelector(".category").textContent;
         const message = article.dataset.message;
@@ -95,10 +92,6 @@ class pastEntryCard extends HTMLElement {
         let horoscope = new Horoscope(sign, birthday, date, message, category);
         return horoscope;
     }
-
-    
-
-
 }
 
 /**
@@ -137,7 +130,6 @@ function formatDynamicDate(date) {
       return date.toLocaleDateString(undefined, options);
     }
 }
-
 
 customElements.define('past-entry-card', pastEntryCard);
 export { formatDynamicDate };
