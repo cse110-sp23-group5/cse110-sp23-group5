@@ -2,7 +2,8 @@
   "name": "horoscope",
   "version": "1.0.0",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "docgen": "npx jsdoc -c jsdoc.json"
   },
   "devDependencies": {
     "@babel/core": "^7.22.5",
