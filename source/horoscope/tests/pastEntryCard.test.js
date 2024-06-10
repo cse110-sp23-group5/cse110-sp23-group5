@@ -33,6 +33,10 @@ describe("pastEntryCard Tests", () => {
       page.click('#save') 
     ]);
 
+    /**
+     * had to repeat this since a variable can't be passed into the querySelector as it isn't
+     * within the scope the method being passed into page.evaluate
+     */
     let sign = await page.evaluate(() =>
       document
         .querySelector('#saved-list > past-entry-card')
